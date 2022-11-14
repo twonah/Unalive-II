@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Mygame
+{ 
 public class Controll_Script : MonoBehaviour
 {
     [SerializeField] private PlayerMovement PM; //Players Movement
@@ -15,8 +17,8 @@ public class Controll_Script : MonoBehaviour
 
     void Start()
     {
-        _DreamWalk.SetActive(false);
-    }
+            _DreamWalk.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);// Change the opactiy to clear 
+        }
 
 
     private void Awake()
@@ -56,10 +58,11 @@ public class Controll_Script : MonoBehaviour
 
                 DreamWalkerPosition(1.0f, 0f, 0f); // spawns next to the player
 
-                SetActive(true);
+                SetActive(1);
 
                 print("YOU ARE PLAYING AS DREAMWALKER");
             }
+
 
             if (!DM.enabled) // switch to Player
             {
@@ -67,9 +70,9 @@ public class Controll_Script : MonoBehaviour
 
             CameraPlay("Base Layer.Player_Cam");
 
-            DreamWalkerPosition(1.0f, 0f, 0f);
+            DreamWalkerPosition(0.5f, 0f, 0f);
 
-            SetActive(false);
+            SetActive(0);
 
             _DreamWalk.transform.SetParent(_parent);
 
@@ -93,9 +96,10 @@ public class Controll_Script : MonoBehaviour
         _DreamWalk.transform.localPosition = new Vector3(x, y, z);
     }
 
-    private void SetActive(bool tgl)
+    private void SetActive(int OpaNum)
     {
-        _DreamWalk.SetActive(tgl);
-    }
+            _DreamWalk.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, OpaNum);
+        }
 
+}
 }

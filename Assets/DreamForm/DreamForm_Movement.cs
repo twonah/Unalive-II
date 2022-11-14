@@ -22,12 +22,6 @@ public class DreamForm_Movement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
 
-    
-
-
-
-
-
 
 
     // Update is called once per frame
