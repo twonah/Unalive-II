@@ -18,7 +18,8 @@ public class Controll_Script : MonoBehaviour
     void Start()
     {
             _DreamWalk.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);// Change the opactiy to clear 
-        }
+            DM.enabled = DM.enabled;
+    }
 
 
     private void Awake()
@@ -56,7 +57,7 @@ public class Controll_Script : MonoBehaviour
 
                 CameraPlay("Base Layer.DreamWalk_Cam");
 
-                DreamWalkerPosition(1.0f, 0f, 0f); // spawns next to the player
+                DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
 
                 SetActive(1);
 

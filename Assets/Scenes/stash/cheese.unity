@@ -996,7 +996,9 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 678993998}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 1423358821}
+  - {fileID: 2010235068}
   m_Instructions:
   - m_FullHash: -954115000
     m_VirtualCamera: {fileID: 1423358821}
@@ -2336,7 +2338,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
@@ -2351,7 +2353,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1737675773}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 16f692005873bbb40adce3c859993913, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2433,20 +2435,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737675773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee7295e953988549b12169ffc574382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dashingPower: 24
   speed: 8
-  jumpingPower: 14
+  jumpingPower: 5
   rb: {fileID: 1737675776}
   groundCheck: {fileID: 223589211}
-  tr: {fileID: 1737675775}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1843513602
 GameObject:
   m_ObjectHideFlags: 0

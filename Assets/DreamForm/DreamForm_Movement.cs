@@ -16,9 +16,11 @@ public class DreamForm_Movement : MonoBehaviour
     public float speed = 8f;
     public float jumpingPower = 14f;
 
+    private bool canSpirit = true; // detects if Dreamform can use spirit form or not
+
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private TrailRenderer tr;
     [SerializeField] private LayerMask groundLayer;
 
 
@@ -34,9 +36,13 @@ public class DreamForm_Movement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
@@ -44,10 +50,22 @@ public class DreamForm_Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
+
+        if (Input.GetButtonDown("Down"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -jumpingPower);
+        }
+
+        if (Input.GetButtonUp("Down"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0.0f);
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
+
 
         Flip();
     }
@@ -71,9 +89,7 @@ public class DreamForm_Movement : MonoBehaviour
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
-        tr.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
@@ -84,5 +100,11 @@ public class DreamForm_Movement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
+
+    private void SpiritForm ()
+    {
+
+    }
+    
 
 }
