@@ -36,27 +36,27 @@ public class DreamForm_Movement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetKeyUp(KeyCode.W))
         {
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
 
-        if (Input.GetButtonDown("Down"))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             rb.velocity = new Vector2(rb.velocity.x, -jumpingPower);
         }
 
-        if (Input.GetButtonUp("Down"))
+        if (Input.GetKeyUp(KeyCode.S))
         {
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
