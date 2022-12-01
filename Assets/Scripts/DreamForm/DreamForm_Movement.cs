@@ -16,7 +16,7 @@ public class DreamForm_Movement : MonoBehaviour
     public float speed = 8f;
     public float jumpingPower = 14f;
 
-    private bool canSpirit = true; // detects if Dreamform can use spirit form or not
+    //private bool canSpirit = true; // detects if Dreamform can use spirit form or not
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -36,27 +36,27 @@ public class DreamForm_Movement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetButtonUp("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
 
-        if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetButtonDown("Down"))
         {
             rb.velocity = new Vector2(rb.velocity.x, -jumpingPower);
         }
 
-        if (Input.GetKeyUp(KeyCode.S))
+        if (Input.GetButtonUp("Down"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
@@ -101,10 +101,10 @@ public class DreamForm_Movement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void SpiritForm ()
+    private void SpiritForm()
     {
 
     }
-    
+
 
 }

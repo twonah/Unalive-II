@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class DreamForm_Punch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    // public Animator DreamAttack_anim
+
+    public Transform attackPoint;
+    public float attackRange = 1;
+    public LayerMask enemyLayers; // detecting enemies
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0)) // Checks the left mouse button
+        {
+            Attack();
+        }
     }
+
+    void Attack()
+    {
+        Debug.Log("You pressed mouse 1");
+
+        // insert attack animation
+
+        //detect enemies in range
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        //damage enemies
+        foreach (Collider2D enemy in hitEnemies)
+        {
+
+            Debug.Log("We Hit" + enemy.name);
+        }
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
 }
