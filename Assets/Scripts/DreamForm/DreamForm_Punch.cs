@@ -11,6 +11,8 @@ public class DreamForm_Punch : MonoBehaviour
     public float attackRange = 1;
     public LayerMask enemyLayers; // detecting enemies
 
+    public float attackDamage;
+
 
     // Update is called once per frame
     void Update()
@@ -35,6 +37,8 @@ public class DreamForm_Punch : MonoBehaviour
         {
 
             Debug.Log("We Hit" + enemy.name);
+
+            enemy.GetComponent<HitPoints>().TakeDamage(attackDamage);
         }
 
     }
