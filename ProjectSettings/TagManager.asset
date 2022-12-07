@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Ground
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Effect
+    uniqueID: 2922521207
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 988292587
+    locked: 0
+  - name: Wall
+    uniqueID: 1648345485
+    locked: 0
+  - name: BG
+    uniqueID: 960113467
     locked: 0

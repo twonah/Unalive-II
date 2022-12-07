@@ -7,6 +7,8 @@ public class EnemyMoveToPlayer : MonoBehaviour
     [SerializeField] private float _walkSpeed;
     [SerializeField] private float _distance;
 
+    [SerializeField] private FaceDirectionCheck Self_FC;
+
     private bool _onGround;
     private bool _isHitWall;
 
@@ -19,7 +21,6 @@ public class EnemyMoveToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Flip();
     }
 
     // Update is called once per frame
@@ -28,8 +29,17 @@ public class EnemyMoveToPlayer : MonoBehaviour
         MoveToPlayer();
 
         _distance = _target.transform.position.x - _rb.transform.position.x;
+        //Not Done yet
+        if(_distance == 0)
+        {
+            return;
+        }
 
-        if (_distance == 0)
+        if (_distance >= 0 && Self_FC._FacingLeft)
+        {
+            Flip();
+        }
+        if(_distance <= 0 && Self_FC._FacingRight)
         {
             Flip();
         }
@@ -37,28 +47,22 @@ public class EnemyMoveToPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _onGround = !Physics2D.OverlapCircle(_groundCheckPos.position, 0.1f, _groundLayer); //Check is a ground circle is not overlap with ground
+        _onGround = Physics2D.OverlapCircle(_groundCheckPos.position, 0.1f, _groundLayer); //Check is a ground circle is overlap with ground
         _isHitWall = Physics2D.OverlapCircle(_wallCheckPos.position, 0.1f, _groundLayer);   //Check is a wall circle hit ground layer
 
     }
 
     private void MoveToPlayer()
     {
-        
-
-        if (_onGround == false)
+        if (_onGround == true)
         {
-            //_rb.transform.position = new Vector2(_rb.velocity.x, _rb.velocity.y);
-            //_rb.transform.position = Vector2.MoveTowards(_rb.transform.position, new Vector2(_target.position.x, transform.position.y), _walkSpeed * Time.deltaTime);
+            _rb.transform.position = Vector2.MoveTowards(_rb.transform.position, new Vector2(_target.position.x, transform.position.y), _walkSpeed * Time.deltaTime);
         }
-
-        
     }
 
     void Flip()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        //_walkSpeed *= -1;
     }
 
 }
