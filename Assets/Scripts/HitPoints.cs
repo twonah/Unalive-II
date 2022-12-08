@@ -5,14 +5,14 @@ using UnityEngine;
 public class HitPoints : MonoBehaviour
 {
     [SerializeField] private float _maxHitPoints;
-    [SerializeField] private float _currentHitPoints;
+    [SerializeField] public float _CurrentHitPoints;
 
     [SerializeField] private Animator _anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        _currentHitPoints = _maxHitPoints;
+        _CurrentHitPoints = _maxHitPoints;
     }
 
     // Update is called once per frame
@@ -23,10 +23,10 @@ public class HitPoints : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _currentHitPoints -= damage;
+        _CurrentHitPoints -= damage;
         _anim.SetFloat("TakingDamage", 1);
 
-        if(_currentHitPoints <= 0)
+        if(_CurrentHitPoints <= 0)
         {
             _anim.SetTrigger("Die");
         }
