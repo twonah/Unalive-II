@@ -44,12 +44,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 988292587
+  - name: BG-Wallpaper
+    uniqueID: 1114248029
+    locked: 0
+  - name: BG-Decorate
+    uniqueID: 1187324345
+    locked: 0
+  - name: BG-Platform
+    uniqueID: 960113467
     locked: 0
   - name: Wall
     uniqueID: 1648345485
     locked: 0
-  - name: BG
-    uniqueID: 960113467
+  - name: Ground
+    uniqueID: 988292587
+    locked: 0
+  - name: Character
+    uniqueID: 1584992115
     locked: 0
