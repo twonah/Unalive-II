@@ -166,7 +166,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -268,6 +268,7 @@ MonoBehaviour:
   _walkSpeed: 2.7
   _distance: 0
   Self_FC: {fileID: 6698630479256995118}
+  CS: {fileID: 0}
   _rb: {fileID: 6698630479256995111}
   _groundCheckPos: {fileID: 6698630479488823548}
   _wallCheckPos: {fileID: 6698630480655058633}
@@ -275,6 +276,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _target: {fileID: 0}
+  _physicalForm: {fileID: 0}
+  _dreamForm: {fileID: 0}
 --- !u!114 &6698630479256995118
 MonoBehaviour:
   m_ObjectHideFlags: 0

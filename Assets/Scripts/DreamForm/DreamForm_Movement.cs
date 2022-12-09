@@ -28,7 +28,7 @@ public class DreamForm_Movement : MonoBehaviour
 
     private void Awake()
     {
-        rb.velocity = new Vector2(0,0); ;
+        rb.velocity = new Vector2(0,0);
     }
 
 

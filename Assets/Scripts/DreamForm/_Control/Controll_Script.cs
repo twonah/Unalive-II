@@ -25,7 +25,7 @@ using UnityEngine;
 
             _dreamFormCollider.enabled = false;
 
-            _DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
+            //_DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
         }
 
 
@@ -67,9 +67,9 @@ using UnityEngine;
 
                     _dreamFormCollider.enabled = true;
 
-                    _DreamWalk.GetComponent<Rigidbody2D>().isKinematic = true;
+                    //_DreamWalk.GetComponent<Rigidbody2D>().isKinematic = true;
 
-                CameraPlay("Base Layer.DreamWalkCam");
+                    CameraPlay("Base Layer.DreamWalkCam");
 
                     DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
 
@@ -85,7 +85,7 @@ using UnityEngine;
 
                     _dreamFormCollider.enabled = false;
 
-                    _DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
+                    //_DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
     
                     CameraPlay("Base Layer.PlayerCam");
 
