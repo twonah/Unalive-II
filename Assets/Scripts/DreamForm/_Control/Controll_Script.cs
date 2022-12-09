@@ -58,7 +58,7 @@ namespace Mygame
                 {
                     isDreamWalker = true;
 
-                    CameraPlay("Base Layer.DreamWalk_Cam");
+                    CameraPlay("Base Layer.DreamWalkCam");
 
                     DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
 
@@ -72,7 +72,7 @@ namespace Mygame
                 {
                     isDreamWalker = false;
 
-                    CameraPlay("Base Layer.Player_Cam");
+                    CameraPlay("Base Layer.PlayerCam");
 
                     DreamWalkerPosition(0.5f, 0f, 0f);
 
