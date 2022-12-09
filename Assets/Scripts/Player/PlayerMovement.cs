@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Animator animator;
     private float horizontal;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
@@ -17,20 +18,26 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
+
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private LayerMask groundLayer;
 
-     // Update is called once per frame
-     void Update()
+    // Update is called once per frame
+    private void Start()
+    {
+        animator = gameObject.GetComponent<Animator>();
+    }
+    void Update()
     {
         if (isDashing)
         {
+            animator.SetBool("IsDash", false);
             return;
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if(Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
@@ -40,9 +47,13 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) &&canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
+
+            
             StartCoroutine(Dash());
+            animator.SetBool("IsDash", true);
+
         }
 
         Flip();
@@ -60,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal >0f)
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
@@ -78,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+
 
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
