@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mygame
-{
+
+
     public class Controll_Script : MonoBehaviour
     {
         [SerializeField] private PlayerMovement PM; //Players Movement
@@ -20,6 +20,12 @@ namespace Mygame
         {
             _DreamWalk.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);// Change the opactiy to clear 
             DM.enabled = DM.enabled;
+
+            Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
+
+            _dreamFormCollider.enabled = false;
+
+            _DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
         }
 
 
@@ -46,6 +52,7 @@ namespace Mygame
 
         void Switch()
         {
+            Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
             if (_control.Main.Switch.triggered) //E
             {
@@ -58,7 +65,11 @@ namespace Mygame
                 {
                     isDreamWalker = true;
 
-                    CameraPlay("Base Layer.DreamWalkCam");
+                    _dreamFormCollider.enabled = true;
+
+                    _DreamWalk.GetComponent<Rigidbody2D>().isKinematic = true;
+
+                CameraPlay("Base Layer.DreamWalkCam");
 
                     DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
 
@@ -72,6 +83,10 @@ namespace Mygame
                 {
                     isDreamWalker = false;
 
+                    _dreamFormCollider.enabled = false;
+
+                    _DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
+    
                     CameraPlay("Base Layer.PlayerCam");
 
                     DreamWalkerPosition(0.5f, 0f, 0f);
@@ -106,4 +121,4 @@ namespace Mygame
         }
 
     }
-}
+

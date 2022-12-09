@@ -115,7 +115,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1584992115
-  m_SortingLayer: 4
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1888113001, guid: 1a37cb5c78d46754f92f5f8cb97cef4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a61280ca511f24f913ffc05539fbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHitPoints: 5
-  _currentHitPoints: 0
+  _maxHitPoints: 1
+  _CurrentHitPoints: 0
   _anim: {fileID: 6698630479256995112}
 --- !u!114 &6698630479256995107
 MonoBehaviour:
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d59e5abef049bf41ac981bd5b67599d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eyeRange: 2.3
+  _eyeRange: 2.5
   E_Patrol: {fileID: 6698630479256995115}
   E_Explode: {fileID: 6698630479256995106}
   E_MoveTo: {fileID: 6698630479256995116}
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2404706f2403965468e4c92c49d21312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WalkSpeed: 1
+  _WalkSpeed: 1.5
   _rb: {fileID: 6698630479256995111}
   _groundCheckPos: {fileID: 6698630479488823548}
   _wallCheckPos: {fileID: 6698630480655058633}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb331e420b0cdcb468e92eebc9777faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 1.2
+  _walkSpeed: 2.7
   _distance: 0
   Self_FC: {fileID: 6698630479256995118}
   _rb: {fileID: 6698630479256995111}

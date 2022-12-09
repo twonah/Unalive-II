@@ -9,6 +9,8 @@ public class EnemyMoveToPlayer : MonoBehaviour
 
     [SerializeField] private FaceDirectionCheck Self_FC;
 
+    [SerializeField] private Controll_Script CS;
+
     private bool _onGround;
     private bool _isHitWall;
 
@@ -16,16 +18,23 @@ public class EnemyMoveToPlayer : MonoBehaviour
     [SerializeField] private Transform _groundCheckPos;
     [SerializeField] private Transform _wallCheckPos;
     [SerializeField] private LayerMask _groundLayer;
+
     [SerializeField] private Transform _target;
+
+    [SerializeField] private Transform _physicalForm;
+    [SerializeField] private Transform _dreamForm;
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        TargetSelect();
+
         MoveToPlayer();
 
         _distance = _target.transform.position.x - _rb.transform.position.x;
@@ -57,6 +66,18 @@ public class EnemyMoveToPlayer : MonoBehaviour
         if (_onGround == true)
         {
             _rb.transform.position = Vector2.MoveTowards(_rb.transform.position, new Vector2(_target.position.x, transform.position.y), _walkSpeed * Time.deltaTime);
+        }
+    }
+
+    private void TargetSelect()
+    {
+        if(CS.isDreamWalker)
+        {
+            _target = _dreamForm.transform;
+        }
+        if(!CS.isDreamWalker)
+        {
+            _target = _physicalForm.transform;
         }
     }
 
