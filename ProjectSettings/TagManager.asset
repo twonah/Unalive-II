@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DreamForm
   layers:
   - Default
   - TransparentFX
@@ -58,6 +59,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 988292587
+    locked: 0
+  - name: Object
+    uniqueID: 4097233971
     locked: 0
   - name: Character
     uniqueID: 1584992115
