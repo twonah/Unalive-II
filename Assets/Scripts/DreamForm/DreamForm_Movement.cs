@@ -12,8 +12,9 @@ public class DreamForm_Movement : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
 
+
     public float dashingPower = 24f;
-    public float speed = 8f;
+    public float speed = 4f;
     public float jumpingPower = 14f;
 
     //private bool canSpirit = true; // detects if Dreamform can use spirit form or not
@@ -23,6 +24,12 @@ public class DreamForm_Movement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+
+
+    private void Awake()
+    {
+        rb.velocity = new Vector2(0,0); ;
+    }
 
 
 
@@ -35,6 +42,7 @@ public class DreamForm_Movement : MonoBehaviour
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
+
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -70,6 +78,10 @@ public class DreamForm_Movement : MonoBehaviour
         Flip();
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // allows walking for dreamform
+    }
 
     private void Flip()
     {
@@ -81,6 +93,7 @@ public class DreamForm_Movement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
 
     private IEnumerator Dash()
     {
