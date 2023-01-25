@@ -36,6 +36,8 @@ public class DreamForm_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool changingElevation = false;
+
         if (isDashing)
         {
             return;
@@ -44,24 +46,28 @@ public class DreamForm_Movement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            changingElevation = true;
         }
         if (Input.GetButtonUp("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
 
+        /*
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+        */
 
 
-        if (Input.GetButtonDown("Down"))
+        if (Input.GetButton("Down"))
         {
             rb.velocity = new Vector2(rb.velocity.x, -jumpingPower);
+            changingElevation = true;
         }
 
         if (Input.GetButtonUp("Down"))
@@ -74,6 +80,10 @@ public class DreamForm_Movement : MonoBehaviour
             StartCoroutine(Dash());
         }
 
+        if (!changingElevation)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0.0f);
+        }
 
         Flip();
     }

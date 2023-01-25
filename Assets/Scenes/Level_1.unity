@@ -6924,6 +6924,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2541717742846368637, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: m_XDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541717742846368637, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: m_YDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541717742846368637, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: m_ZDamping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2541717743302499664, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: DM
       value: 
@@ -6944,6 +6956,10 @@ PrefabInstance:
       propertyPath: _DreamWalk
       value: 
       objectReference: {fileID: 1962090037}
+    - target: {fileID: 2541717743302499664, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: _dreamVirtualCam
+      value: 
+      objectReference: {fileID: 1973534723}
     - target: {fileID: 2541717743302499665, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 0
@@ -6995,6 +7011,18 @@ PrefabInstance:
     - target: {fileID: 2541717743302499671, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_Name
       value: Control
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541717743933570234, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: m_XDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541717743933570234, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: m_YDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541717743933570234, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: m_ZDamping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2541717744034006648, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_Follow
@@ -69601,6 +69629,29 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee7295e953988549b12169ffc574382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1962090050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962090037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce12633f0f27804898e6685542cba5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1973534723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2541717744621141409, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+  m_PrefabInstance: {fileID: 639616229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1997254128
