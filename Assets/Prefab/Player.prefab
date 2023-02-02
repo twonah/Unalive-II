@@ -202,17 +202,17 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.5137255, b: 0.8784314, a: 1}
-      key1: {r: 0.003921569, g: 1, b: 0.47843137, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.4522526, g: 0.6607107, b: 0.8628397, a: 1}
+      key1: {r: 0.45098042, g: 0.6666667, b: 0.8705883, a: 1}
+      key2: {r: 0.5372549, g: 0.2627451, b: 0.34509805, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 193
-      ctime1: 65535
-      ctime2: 0
+      ctime0: 0
+      ctime1: 193
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -227,7 +227,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
@@ -250,8 +250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6e6295bd567104c87cfe7601b7d3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashingTime: 0.3
+  dashingCooldown: 1
   dashingPower: 9
-  speed: 8
+  speed: 9
   jumpingPower: 14
   rb: {fileID: 8437296160184279259}
   groundCheck: {fileID: 8437296160951549077}

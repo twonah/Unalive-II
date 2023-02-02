@@ -6,15 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     Animator animator;
     private float horizontal;
-    private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    [SerializeField] float dashingTime = 0.2f;
+    [SerializeField] float dashingCooldown = 1f;
     private bool isFacingRight = true;
     private bool canDash = true;
     private bool isDashing;
 
-    public float dashingPower = 24f;
-    public float speed = 8f;
-    public float jumpingPower = 14f;
+    [SerializeField] float dashingPower = 24f;
+    [SerializeField] float speed = 8f;
+    [SerializeField] float jumpingPower = 14f;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -47,13 +47,10 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash || Input.GetButtonDown("Fire1") && canDash)
         {
-
-            
             StartCoroutine(Dash());
             animator.SetBool("IsDash", true);
-
         }
 
         Flip();
@@ -89,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-
 
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
