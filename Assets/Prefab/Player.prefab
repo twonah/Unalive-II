@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 8437296160699794363}
   - component: {fileID: 8437296160699794362}
   - component: {fileID: 8437296160699794341}
+  - component: {fileID: 5972406894326807331}
   m_Layer: 7
   m_Name: DreamForm
   m_TagString: DreamForm
@@ -639,6 +640,18 @@ MonoBehaviour:
   DM: {fileID: 8437296160699794365}
   DP: {fileID: 8437296160699794354}
   _anim: {fileID: 8437296160699794362}
+--- !u!114 &5972406894326807331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437296160699794355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce12633f0f27804898e6685542cba5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8437296160951549098
 GameObject:
   m_ObjectHideFlags: 0
