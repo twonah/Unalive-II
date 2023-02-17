@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-
-
 public class Controll_Script : MonoBehaviour
 {
     [SerializeField] private PlayerMovement PM; //Players Movement
@@ -17,7 +15,10 @@ public class Controll_Script : MonoBehaviour
 
     private Animator _camera;
     private PlayersControlls _control;
-    public bool isDreamWalker = false;
+    public bool isDreamWalkerToDreamform = false;
+    public bool isDreamWalkerToPlayer = false;
+    public bool isDreamform = false;
+    public bool isDreamWalker = false;      //Might not use but later
 
     void Start()
     {
@@ -28,7 +29,8 @@ public class Controll_Script : MonoBehaviour
 
         _dreamFormCollider.enabled = false;
 
-        //_DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
+        isDreamWalkerToDreamform = false;
+        isDreamWalkerToPlayer = false;
     }
 
 
@@ -66,11 +68,9 @@ public class Controll_Script : MonoBehaviour
 
             if (!PM.enabled) // switch to Dreamwalk
             {
-                isDreamWalker = true;
+                StartCoroutine(TransformToDreamform());
 
                 _dreamFormCollider.enabled = true;
-
-                //_DreamWalk.GetComponent<Rigidbody2D>().isKinematic = true;
 
                 CameraPlay("Base Layer.DreamWalkCam");
 
@@ -87,33 +87,36 @@ public class Controll_Script : MonoBehaviour
 
             if (!DM.enabled) // switch to Player
             {
-                isDreamWalker = false;
+                StartCoroutine(TransformToPlayer());
 
                 _dreamFormCollider.enabled = false;
 
-                //_DreamWalk.GetComponent<Rigidbody2D>().isKinematic = false;
-
                 CameraPlay("Base Layer.PlayerCam");
-
-                //DreamWalkerPosition(0.5f, 0f, 0f);
-
-                SetActive(0);
-
-                //_DreamWalk.transform.SetParent(_parent);
 
                 print("YOU ARE PLAYING AS PLAYER");
             }
         }
-
-
+    }
+    private IEnumerator TransformToDreamform()
+    {
+        isDreamWalkerToDreamform = true;
+        yield return new WaitForSeconds(1f);
+        isDreamform = true;
+        isDreamWalkerToDreamform = false;
     }
 
-
+    private IEnumerator TransformToPlayer()
+    {
+        isDreamWalkerToPlayer = true;
+        yield return new WaitForSeconds(1f);
+        isDreamform = false;
+        isDreamWalkerToPlayer = false;
+        SetActive(0);
+    }
 
     private void CameraPlay(string CamName)
     {
         _camera.Play(CamName, 0, 0.25f);
-
     }
 
     private void DreamWalkerPosition(float x, float y, float z)

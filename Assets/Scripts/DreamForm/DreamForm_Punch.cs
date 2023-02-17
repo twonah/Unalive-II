@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DreamForm_Punch : MonoBehaviour
 {
-
     // public Animator DreamAttack_anim
 
     public Transform attackPoint;
@@ -12,14 +11,6 @@ public class DreamForm_Punch : MonoBehaviour
     public LayerMask enemyLayers; // detecting enemies
 
     public float attackDamage;
-
-    [SerializeField] private Animator _anim;
-
-
-
-
-
-
 
     // Update is called once per frame
     void Update()
@@ -35,9 +26,6 @@ public class DreamForm_Punch : MonoBehaviour
     {
 
         Debug.Log("You pressed mouse 1");
-
-        // insert attack animation
-        _anim.SetTrigger("Attack");
 
         //detect enemies in range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);

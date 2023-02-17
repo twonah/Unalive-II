@@ -5,15 +5,18 @@ using UnityEngine;
 public class Saw : MonoBehaviour
 {
     [Header("Saw type")]
-    [SerializeField] private bool MoveableSaw;
-    [SerializeField] private bool StaySaw;
+    [SerializeField] private bool _moveableSaw;
+    [SerializeField] private bool _staySaw;
+
+    [SerializeField] private bool _spinAnimation;
 
     [Header("General")]
     [SerializeField] private Rigidbody2D _sawRB;
     [SerializeField] private float _damage;
     private GameObject _player;
 
-    [Header("Moveable Saw")]
+    [Header("Moveable Saw Setting")]
+    [SerializeField] private Animator _sawAnim;
     [SerializeField] private Transform _fisrtPos;
     [SerializeField] private Transform _secondPos;
     [SerializeField] private Transform _nextPos;
@@ -28,6 +31,8 @@ public class Saw : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _sawAnim = GetComponent<Animator>();
+
         _player = GameObject.FindGameObjectWithTag("Player");
 
         _isMove = true;
@@ -38,16 +43,25 @@ public class Saw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MoveableSaw)
+        if(_moveableSaw)
         {
             Moveable_Saw();
         }
 
-        if(StaySaw)
+        if(_staySaw)
         {
             Stay_Saw();
         }
-       
+
+        if (_spinAnimation)
+        {
+            _sawAnim.SetBool("IsSpin", true);
+        }
+        else
+        {
+            _sawAnim.SetBool("IsSpin", false);
+        }
+
         Timer();
     }
     private void OnTriggerEnter2D(Collider2D collision)

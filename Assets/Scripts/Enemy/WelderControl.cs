@@ -14,20 +14,30 @@ public class WelderControl : MonoBehaviour
     [SerializeField] private Transform _eyePoint;
     [SerializeField] private LayerMask _targetLayer;
 
+    [SerializeField] private GameObject player;
+ 
+    public float Player_health;
+
     private bool _see = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        Player_health = player.GetComponent<HitPoints>()._CurrentHitPoints;
+
         WelderDetection();
 
-        WelderControls();
+        if(Player_health >= 0)      //Do this later
+        {
+            WelderControls();
+        }
+
     }
 
     private void WelderDetection()

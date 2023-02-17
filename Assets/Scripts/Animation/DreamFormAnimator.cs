@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class DreamFormAnimator : MonoBehaviour
 {
-    [SerializeField] private Controll_Script CS;
+    [SerializeField] private Controll_Script SwitchControls;
     [SerializeField] private DreamForm_Movement DM;
     [SerializeField] private DreamForm_Punch DP;
+    [SerializeField] private HitPoints HP;
     [SerializeField] private Animator _anim;
 
     private float horizontal;
-    private bool isIdle;
-
 
     // Start is called before the first frame update
     void Start()
@@ -22,51 +21,71 @@ public class DreamFormAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(CS.isDreamWalker)    //Be Dreamform
+        WalkAnimation();
+
+        HurtAnimation();
+
+        DeadAnimation();
+
+        TransformAnimation();
+
+        AttackAnimation();
+    }
+    private void AttackAnimation()
+    {
+        if(Input.GetMouseButtonDown(0))
         {
-            //_anim.SetBool("IsActivateDreamForm", true); //
-            //_anim.SetBool("IsDisableDreamForm", false);
-            //_anim.SetTrigger("Appear");
-            //_anim.SetBool("IsDreamForm", false);
-
-
+            _anim.SetTrigger("Attack");
         }
-        if(!CS.isDreamWalker)   //Be player
-        {
-            //_anim.SetBool("IsActivateDreamForm", false); //
-            //_anim.SetBool("IsDisableDreamForm", true);
-            //_anim.SetTrigger("Disappear");
-            //_anim.SetBool("IsDreamForm", true);
-
-        }
-        
+    }
+    private void WalkAnimation()
+    {
         horizontal = Input.GetAxisRaw("Horizontal");
 
         _anim.SetFloat("Speed", Mathf.Abs(horizontal));
     }
-
-    void NotActivateDreamForm()
+    private void HurtAnimation()
     {
-        _anim.SetBool("IsActivateDreamForm", false);
+        if (HP._IsTakingDamage)
+        {
+            StartCoroutine(Hurt());
+        }
+    }
+    private IEnumerator Hurt()
+    {
+        _anim.SetBool("IsTakingDamage", true);
+        yield return new WaitForSeconds(0.25f);
+        _anim.SetBool("IsTakingDamage", false);
+        HP._IsTakingDamage = false;
+    }
+    private void DeadAnimation()
+    {
+        if (HP._CurrentHitPoints <= 0)
+        {
+            _anim.SetTrigger("Die");
+        }
+    }
+    private void TransformAnimation()
+    {
+        StartCoroutine(TransformDelay());
     }
 
-    void BeDreamForm()
+    private IEnumerator TransformDelay()
     {
-        _anim.SetBool("IsDreamForm", true);
-    }
+        if (SwitchControls.isDreamWalkerToDreamform)    //Player to Dream
+        {
+            _anim.SetBool("IsTransform", true);
+            _anim.SetBool("IsDreamform", true);
+            yield return new WaitForSeconds(0.5f);
+            _anim.SetBool("IsTransform", false);
+        }
 
-    void NotDreamForm()
-    {
-        _anim.SetBool("IsDreamForm", false);
-    }
-
-    void AnimationEndTrue()
-    {
-        _anim.SetBool("AnimationEnd", true);
-    }
-
-    void AnimationEndFalse()
-    {
-        _anim.SetBool("AnimationEnd", false);
+        if (SwitchControls.isDreamWalkerToPlayer)   //Dream to player
+        {
+            _anim.SetBool("IsTransform", true);
+            _anim.SetBool("IsDreamform", false);
+            yield return new WaitForSeconds(0.5f);
+            _anim.SetBool("IsTransform", false);
+        }
     }
 }

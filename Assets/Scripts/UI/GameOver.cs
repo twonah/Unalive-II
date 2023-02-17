@@ -11,7 +11,10 @@ public class GameOver : MonoBehaviour
     [SerializeField] private HitPoints _dreamFormHitpoints;
     [SerializeField] private HitPoints _physicalFormHitpoints;
 
+    [SerializeField] private float _gameOverDelay = 0f;
+
     private bool _IsGamePaused = false;
+    private bool _isGameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +25,14 @@ public class GameOver : MonoBehaviour
     {
         if (_dreamFormHitpoints._CurrentHitPoints <= 0 || _physicalFormHitpoints._CurrentHitPoints <= 0)
         {
-            GameOverMenu();
+            StartCoroutine(GameOverDelay());
         }
+    }
+    private IEnumerator GameOverDelay()
+    {
+        yield return new WaitForSeconds(_gameOverDelay);
+        _isGameOver = true;
+        GameOverMenu();
     }
 
     public void GameOverMenu()

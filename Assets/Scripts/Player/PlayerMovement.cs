@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Animator animator;
     private float horizontal;
     [SerializeField] float dashingTime = 0.2f;
     [SerializeField] float dashingCooldown = 1f;
     private bool isFacingRight = true;
     private bool canDash = true;
-    private bool isDashing;
+    public bool isDashing;
 
     [SerializeField] float dashingPower = 24f;
     [SerializeField] float speed = 8f;
@@ -22,35 +21,32 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private LayerMask groundLayer;
 
+    public bool isPressingJump;     //Use in PlayerAnimator
+
     // Update is called once per frame
     private void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+
     }
     void Update()
     {
-        if (isDashing)
-        {
-            animator.SetBool("IsDash", false);
-            return;
-        }
-
         horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        bool isGrounded = IsGrounded();
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            isPressingJump = true;  
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            if(rb.velocity.y > 0f)rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            isPressingJump = false;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash || Input.GetButtonDown("Fire1") && canDash)
         {
             StartCoroutine(Dash());
-            animator.SetBool("IsDash", true);
         }
 
         Flip();
@@ -79,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);  
     }
 
     private IEnumerator Dash()

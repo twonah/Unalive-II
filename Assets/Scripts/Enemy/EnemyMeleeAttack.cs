@@ -85,7 +85,6 @@ public class EnemyMeleeAttack : MonoBehaviour
 
         foreach (Collider2D player in hitPlayer)
         {
-
             player.GetComponent<HitPoints>().TakeDamage(_attackDamage);
         }
     }
