@@ -10,12 +10,12 @@ public class DreamForm_Movement : MonoBehaviour
     private float dashingCooldown = 1f;
     private bool isFacingRight = true;
     private bool canDash = true;
-    private bool isDashing;
+    public bool isDashingg;
 
 
-    public float dashingPower = 24f;
-    public float speed = 4f;
-    public float jumpingPower = 14f;
+    [SerializeField] private float dashingPower = 24f;
+    [SerializeField] private float speed = 4f;
+    [SerializeField] private float jumpingPower = 14f;
 
     //private bool canSpirit = true; // detects if Dreamform can use spirit form or not
 
@@ -38,7 +38,7 @@ public class DreamForm_Movement : MonoBehaviour
     {
         bool changingElevation = false;
 
-        if (isDashing)
+        if (isDashingg)
         {
             return;
         }
@@ -75,9 +75,10 @@ public class DreamForm_Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
         {
             StartCoroutine(Dash());
+            Debug.Log("Dashing");
         }
 
         if (!changingElevation)
@@ -91,6 +92,10 @@ public class DreamForm_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // allows walking for dreamform
+        if (isDashingg)
+        {
+            return;
+        }
     }
 
     private void Flip()
@@ -108,13 +113,13 @@ public class DreamForm_Movement : MonoBehaviour
     private IEnumerator Dash()
     {
         canDash = false;
-        isDashing = true;
-        float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0f;
+        isDashingg = true;
+        //float originalGravity = rb.gravityScale;
+        //rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
-        rb.gravityScale = originalGravity;
-        isDashing = false;
+        //rb.gravityScale = originalGravity;
+        isDashingg = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
