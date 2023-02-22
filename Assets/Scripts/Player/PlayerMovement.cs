@@ -6,10 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
     [SerializeField] float dashingTime = 0.2f;
-    [SerializeField] float dashingCooldown = 1f;
+    [SerializeField] public float DashingCooldown = 1f;
     private bool isFacingRight = true;
     private bool canDash = true;
     public bool isDashing;
+    public bool IsCooldown = false;
 
     [SerializeField] float dashingPower = 24f;
     [SerializeField] float speed = 8f;
@@ -78,8 +79,9 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);  
     }
 
-    private IEnumerator Dash()
+    public IEnumerator Dash()
     {
+        IsCooldown = true;
         canDash = false;
         isDashing = true;
 
@@ -92,7 +94,8 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = originalGravity;
         isDashing = false;
 
-        yield return new WaitForSeconds(dashingCooldown);
+        yield return new WaitForSeconds(DashingCooldown);
+        IsCooldown = false;
         canDash = true;
     }
 }

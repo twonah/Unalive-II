@@ -30,6 +30,8 @@ public class DreamFormAnimator : MonoBehaviour
         TransformAnimation();
 
         AttackAnimation();
+
+        PhaseDashAnimation();
     }
     private void AttackAnimation()
     {
@@ -58,11 +60,24 @@ public class DreamFormAnimator : MonoBehaviour
         _anim.SetBool("IsTakingDamage", false);
         HP._IsTakingDamage = false;
     }
-    private void DeadAnimation()
+    private void DeadAnimation()    //Done?
     {
         if (HP._CurrentHitPoints <= 0)
         {
             _anim.SetTrigger("Die");
+        }
+    }
+
+    private void PhaseDashAnimation()
+    {
+        if (DM.isDashingg)
+        {
+            _anim.SetBool("IsDash", true);
+        }
+
+        if (!DM.isDashingg)
+        {
+            _anim.SetBool("IsDash", false);
         }
     }
     private void TransformAnimation()

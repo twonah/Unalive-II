@@ -6,11 +6,12 @@ public class DreamForm_Movement : MonoBehaviour
 {
 
     private float horizontal;
-    private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    [SerializeField] private float dashingTime = 0.2f;
+    [SerializeField] public float DashingCooldown = 1f;
     private bool isFacingRight = true;
     private bool canDash = true;
     public bool isDashingg;
+    public bool IsCooldown = false;
 
 
     [SerializeField] private float dashingPower = 24f;
@@ -21,10 +22,14 @@ public class DreamForm_Movement : MonoBehaviour
 
 
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Collider2D dreamFormCollider;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform wallCheckPoint;
+    [SerializeField] private float wallCheckRange;
+    [SerializeField] private LayerMask wallLayer;
 
-
+    [SerializeField] private TrailRenderer tr;
 
     private void Awake()
     {
@@ -56,12 +61,12 @@ public class DreamForm_Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
 
-        /*
+
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
-        */
+
 
 
         if (Input.GetButton("Down"))
@@ -75,10 +80,9 @@ public class DreamForm_Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)        //Dashhhh
         {
             StartCoroutine(Dash());
-            Debug.Log("Dashing");
         }
 
         if (!changingElevation)
@@ -87,15 +91,18 @@ public class DreamForm_Movement : MonoBehaviour
         }
 
         Flip();
+
+        WallCheck();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // allows walking for dreamform
-        if (isDashingg)
+        if (isDashingg) 
         {
             return;
         }
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // allows walking for dreamform
+        
     }
 
     private void Flip()
@@ -108,19 +115,23 @@ public class DreamForm_Movement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-
-
     private IEnumerator Dash()
     {
+        IsCooldown = true;
         canDash = false;
         isDashingg = true;
-        //float originalGravity = rb.gravityScale;
-        //rb.gravityScale = 0f;
+        dreamFormCollider.enabled = false;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+        tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         //rb.gravityScale = originalGravity;
+        dreamFormCollider.enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        tr.emitting = false;
         isDashingg = false;
-        yield return new WaitForSeconds(dashingCooldown);
+        yield return new WaitForSeconds(DashingCooldown);
+        IsCooldown = false;
         canDash = true;
     }
 
@@ -129,9 +140,16 @@ public class DreamForm_Movement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void SpiritForm()
+    private void WallCheck()
     {
-
+        if (Physics2D.OverlapCircle(wallCheckPoint.position, wallCheckRange, wallLayer))
+        {
+            dreamFormCollider.enabled = true;
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(wallCheckPoint.position, wallCheckRange);
     }
 
 
