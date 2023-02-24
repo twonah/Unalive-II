@@ -9,6 +9,7 @@ public class Controll_Script : MonoBehaviour
     [SerializeField] private DreamForm_Movement DM; //DreamForm_Movement script
     [SerializeField] private DreamForm_Punch DP; //DreamForm_Movement script
     [SerializeField] private GameObject _DreamWalk;
+    [SerializeField] private GameObject _player;
     [SerializeField] private Transform _parent; // Players location
 
     [SerializeField] private CinemachineVirtualCamera _dreamVirtualCam;
@@ -18,7 +19,8 @@ public class Controll_Script : MonoBehaviour
     public bool isDreamWalkerToDreamform = false;
     public bool isDreamWalkerToPlayer = false;
     public bool isDreamform = false;
-    public bool isDreamWalker = false;      //Might not use but later
+
+    public bool _IsDreamformDead;
 
     void Start()
     {
@@ -26,11 +28,25 @@ public class Controll_Script : MonoBehaviour
         DM.enabled = DM.enabled;
 
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
+        Collider2D _playerCollider = _player.GetComponent<Collider2D>();
 
         _dreamFormCollider.enabled = false;
 
         isDreamWalkerToDreamform = false;
         isDreamWalkerToPlayer = false;
+    }
+
+    private void Update()
+    {   
+        if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0)     //Force to turn to the player
+        {
+            _IsDreamformDead = true;
+            StartCoroutine(ForceToTransformToDreamform());
+        }
+        else
+        {
+            _IsDreamformDead = false;
+        }
     }
 
 
@@ -112,6 +128,27 @@ public class Controll_Script : MonoBehaviour
         isDreamform = false;
         isDreamWalkerToPlayer = false;
         SetActive(0);
+    }
+
+    private IEnumerator ForceToTransformToDreamform()   //Not done
+    {
+        PM.enabled = true;
+        //PM.enabled = !PM.enabled; // switch to Dreamwalk
+        DP.enabled = !DP.enabled;
+
+        DM.enabled = !DM.enabled; // switch to Player
+
+        Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
+
+        isDreamWalkerToPlayer = true;
+        yield return new WaitForSeconds(1f);
+        isDreamform = false;
+        isDreamWalkerToPlayer = false;
+        SetActive(0);
+
+        _dreamFormCollider.enabled = false;
+
+        CameraPlay("Base Layer.PlayerCam");
     }
 
     private void CameraPlay(string CamName)

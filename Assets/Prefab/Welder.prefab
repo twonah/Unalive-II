@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5686052888756790720}
   - component: {fileID: 5686052888756790721}
-  - component: {fileID: 5686052888756790726}
+  - component: {fileID: 3680295241657991887}
   - component: {fileID: 5686052888756790727}
   - component: {fileID: 5686052888756790735}
   - component: {fileID: 5686052888756790733}
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 5686052888756790722}
   - component: {fileID: 5686052888756790732}
   - component: {fileID: 5686052888756790734}
+  - component: {fileID: 398448084806123094}
   m_Layer: 8
   m_Name: Welder
   m_TagString: Untagged
@@ -221,8 +222,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5686052888756790726
-BoxCollider2D:
+--- !u!70 &3680295241657991887
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -234,19 +235,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.037521005, y: -0.13850835}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.3333334}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64089847, y: 0.83460516}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.019343734, y: -0.17962164}
+  m_Size: {x: 0.7751248, y: 0.8525003}
+  m_Direction: 0
 --- !u!50 &5686052888756790727
 Rigidbody2D:
   serializedVersion: 4
@@ -302,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHitPoints: 3
   _CurrentHitPoints: 0
-  _anim: {fileID: 5686052888756790735}
+  _IsTakingDamage: 0
 --- !u!114 &5686052888756790723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,15 +306,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1473dfdbc17c5904495361b43db3d20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _patrolWalkSpeed: 1
+  _moveToTargetWalkSpeed: 2
+  _attackRange: 1
+  _attackDamage: 1
+  _durationBeforeAttack: 0.3
+  _durationAfterAttack: 1
   _eyeRange: 2.3
   E_Patrol: {fileID: 5686052888756790724}
   E_Attack: {fileID: 5686052888756790732}
   E_MoveTo: {fileID: 5686052888756790722}
   Self_FC: {fileID: 5686052888756790734}
+  HP: {fileID: 5686052888756790733}
+  _attackPoint: {fileID: 5686052888729243549}
   _eyePoint: {fileID: 5686052888713086723}
-  _targetLayer:
+  _playerAndDreamformLayer:
+    serializedVersion: 2
+    m_Bits: 640
+  _playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  _dreamformLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _targetHealth: 0
+  _IsDead: 0
 --- !u!114 &5686052888756790724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,12 +344,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _WalkSpeed: 1
-  _rb: {fileID: 5686052888756790727}
+  _enemyRigidBody: {fileID: 5686052888756790727}
   _groundCheckPos: {fileID: 5686052888543952194}
   _wallCheckPos: {fileID: 5686052887329398103}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _wallLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -358,19 +368,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb331e420b0cdcb468e92eebc9777faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 1.2
-  _distance: 0
+  _MoveToSpeed: 0
+  _Distance: 0
   Self_FC: {fileID: 5686052888756790734}
-  CS: {fileID: 0}
-  _rb: {fileID: 5686052888756790727}
+  _enemyRigidBody: {fileID: 5686052888756790727}
   _groundCheckPos: {fileID: 5686052888543952194}
   _wallCheckPos: {fileID: 5686052887329398103}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _target: {fileID: 0}
-  _physicalForm: {fileID: 0}
-  _dreamForm: {fileID: 0}
+  _wallLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _Target: {fileID: 0}
 --- !u!114 &5686052888756790732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,17 +393,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53544de89cd31d4781d81bbaac59229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackRange: 0.8
-  _attackDamage: 1
-  _durationBeforeAttack: 1
-  _durationAfterAttack: 1
-  _anim: {fileID: 5686052888756790735}
+  _AttackRange: 0
+  _AttackDamage: 0
+  _DurationBeforeAttack: 0
+  _DurationAfterAttack: 0
   _attackPoint: {fileID: 5686052888729243549}
-  _targetLayer:
+  _TargetLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   _PlayerEnterAttackRange: 0
   _ChargeOn: 0
+  IsCharging: 0
+  IsAttacking: 0
+  IsCooldown: 0
 --- !u!114 &5686052888756790734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,3 +420,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _FacingRight: 0
   _FacingLeft: 0
+--- !u!114 &398448084806123094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5686052888756790725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94db31f7f02d224409658369e2d98755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  E_MA: {fileID: 5686052888756790732}
+  E_P: {fileID: 5686052888756790724}
+  E_MT: {fileID: 5686052888756790722}
+  E_WC: {fileID: 5686052888756790723}
+  HP: {fileID: 5686052888756790733}
+  _anim: {fileID: 5686052888756790735}

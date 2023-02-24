@@ -23,7 +23,7 @@ public class GameOver : MonoBehaviour
     }
     void Update()
     {
-        if (_dreamFormHitpoints._CurrentHitPoints <= 0 || _physicalFormHitpoints._CurrentHitPoints <= 0)
+        if (_dreamFormHitpoints._CurrentHitPoints <= 0 && _physicalFormHitpoints._CurrentHitPoints <= 0)
         {
             StartCoroutine(GameOverDelay());
         }

@@ -11,6 +11,7 @@ public class DreamFormAnimator : MonoBehaviour
     [SerializeField] private Animator _anim;
 
     private float horizontal;
+    private bool _isDead;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,8 @@ public class DreamFormAnimator : MonoBehaviour
         AttackAnimation();
 
         PhaseDashAnimation();
+
+        Die();
     }
     private void AttackAnimation()
     {
@@ -87,7 +90,7 @@ public class DreamFormAnimator : MonoBehaviour
 
     private IEnumerator TransformDelay()
     {
-        if (SwitchControls.isDreamWalkerToDreamform)    //Player to Dream
+        if (SwitchControls.isDreamWalkerToDreamform )    //Player to Dream
         {
             _anim.SetBool("IsTransform", true);
             _anim.SetBool("IsDreamform", true);
@@ -95,7 +98,7 @@ public class DreamFormAnimator : MonoBehaviour
             _anim.SetBool("IsTransform", false);
         }
 
-        if (SwitchControls.isDreamWalkerToPlayer)   //Dream to player
+        if (SwitchControls.isDreamWalkerToPlayer && !SwitchControls._IsDreamformDead)   //Dream to player
         {
             _anim.SetBool("IsTransform", true);
             _anim.SetBool("IsDreamform", false);
@@ -103,4 +106,18 @@ public class DreamFormAnimator : MonoBehaviour
             _anim.SetBool("IsTransform", false);
         }
     }
+
+    private void Die()
+    {
+        if(HP._CurrentHitPoints <= 0)
+        {
+            _isDead = true;
+        }
+
+        if(_isDead)
+        {
+            _anim.SetTrigger("Die");
+        }
+    }
+
 }

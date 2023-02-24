@@ -34,8 +34,5 @@ public class HitPoints : MonoBehaviour
  
     }
 
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
+    
 }

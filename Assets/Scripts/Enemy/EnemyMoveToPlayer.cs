@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class EnemyMoveToPlayer : MonoBehaviour
 {
-    [SerializeField] private float _walkSpeed;
-    [SerializeField] private float _distance;
+    [HideInInspector] public float _MoveToSpeed;
+    [HideInInspector] public float _Distance;
 
+    [Header("Set up")]
     [SerializeField] private FaceDirectionCheck Self_FC;
-
-    [SerializeField] private Controll_Script CS;
-
-    private bool _onGround;
-    private bool _isHitWall;
-
-    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private Rigidbody2D _enemyRigidBody;
     [SerializeField] private Transform _groundCheckPos;
     [SerializeField] private Transform _wallCheckPos;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private LayerMask _wallLayer;
 
-    [SerializeField] private Transform _target;
+    [HideInInspector] public Transform _Target;
 
-    [SerializeField] private Transform _physicalForm;
-    [SerializeField] private Transform _dreamForm;
+    private bool _onGround;
+    private bool _isHitWall;
 
     // Start is called before the first frame update
     void Start()
@@ -33,22 +29,21 @@ public class EnemyMoveToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TargetSelect();
 
         MoveToPlayer();
 
-        _distance = _target.transform.position.x - _rb.transform.position.x;
-        //Not Done yet
-        if(_distance == 0)
+        _Distance = _Target.transform.position.x - _enemyRigidBody.transform.position.x;
+        //Not Done yet??
+        if(_Distance == 0)
         {
             return;
         }
 
-        if (_distance >= 0 && Self_FC._FacingLeft)
+        if (_Distance >= 0 && Self_FC._FacingLeft)
         {
             Flip();
         }
-        if(_distance <= 0 && Self_FC._FacingRight)
+        if(_Distance <= 0 && Self_FC._FacingRight)
         {
             Flip();
         }
@@ -57,27 +52,18 @@ public class EnemyMoveToPlayer : MonoBehaviour
     private void FixedUpdate()
     {
         _onGround = Physics2D.OverlapCircle(_groundCheckPos.position, 0.1f, _groundLayer); //Check is a ground circle is overlap with ground
-        _isHitWall = Physics2D.OverlapCircle(_wallCheckPos.position, 0.1f, _groundLayer);   //Check is a wall circle hit ground layer
-
+        _isHitWall = Physics2D.OverlapCircle(_wallCheckPos.position, 0.1f, _wallLayer);   //Check is a wall circle hit ground layer
     }
 
     private void MoveToPlayer()
     {
         if (_onGround == true)
         {
-            _rb.transform.position = Vector2.MoveTowards(_rb.transform.position, new Vector2(_target.position.x, transform.position.y), _walkSpeed * Time.deltaTime);
+            _enemyRigidBody.transform.position = Vector2.MoveTowards(_enemyRigidBody.transform.position, new Vector2(_Target.position.x, transform.position.y), _MoveToSpeed * Time.deltaTime);
         }
-    }
-
-    private void TargetSelect()
-    {
-        if(CS.isDreamWalker)
+        else if(_isHitWall)
         {
-            _target = _dreamForm.transform;
-        }
-        if(!CS.isDreamWalker)
-        {
-            _target = _physicalForm.transform;
+            //Done, just not move if hit wall even chase a target
         }
     }
 

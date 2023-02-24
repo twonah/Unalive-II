@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1861104506730971833}
   - component: {fileID: 1861104506730971838}
   - component: {fileID: 1861104506730971832}
+  - component: {fileID: 804798267}
+  - component: {fileID: 804798269}
   m_Layer: 0
   m_Name: UI Controllor
   m_TagString: Untagged
@@ -47,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dreamFormHitPoints: {fileID: 0}
   _PhysicalFormHitPoints: {fileID: 0}
-  _numOfHeartsDreamForm: 10
-  _numOfHeartsPhysicalForm: 5
+  _numOfHeartsDreamForm: 8
+  _numOfHeartsPhysicalForm: 4
   _dreamFormHearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -61,12 +63,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _physicalFormHeart:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -86,3 +82,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenuUI: {fileID: 0}
+--- !u!114 &804798267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861104506730971839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9897509c247b82a44a88bd2bcdf57b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverUI: {fileID: 0}
+  _dreamFormHitpoints: {fileID: 0}
+  _physicalFormHitpoints: {fileID: 0}
+  _gameOverDelay: 2.5
+--- !u!114 &804798269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861104506730971839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e3613ea63330a489fbe1cc76095720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dreamwalkCooldownImage: {fileID: 0}
+  _playerCooldownImage: {fileID: 0}
+  _dreamformCooldownImage: {fileID: 0}
+  _dreamwalkSkillCooldownText: {fileID: 0}
+  _playerDashCooldownText: {fileID: 0}
+  _dreamformDashCooldownText: {fileID: 0}
+  _playerDashIcon: {fileID: 0}
+  _dreamformDashIcon: {fileID: 0}
+  PM: {fileID: 0}
+  DM: {fileID: 0}
+  CS: {fileID: 0}
+  _playerDashCooldownTimer: 0
+  _dreamformDashCooldownTimer: 0

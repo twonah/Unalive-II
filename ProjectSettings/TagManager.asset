@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DreamForm
   - Wall
+  - SwitchControl
   layers:
   - Default
   - TransparentFX
@@ -66,4 +67,7 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 1584992115
+    locked: 0
+  - name: BG-Decorate-Front
+    uniqueID: 3399730375
     locked: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5947376463822426670}
   - component: {fileID: 5947376463822426656}
   - component: {fileID: 5947376463822426671}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: BaseCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 5947376464752060494}
   - component: {fileID: 5947376464752060492}
   - component: {fileID: 5947376464752060491}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class EnemyExplode : MonoBehaviour
 {
-    [SerializeField] private float _attackRange;
-    [SerializeField] private float _attackDamage;
-    [SerializeField] private float _durationBeforeAttack;
-    [SerializeField] private float _durationAfterAttack;
+    [HideInInspector] public float _AttackRange;
+    [HideInInspector] public float _AttackDamage;
+    [HideInInspector] public float _DurationBeforeAttack;
+    [HideInInspector] public float _DurationAfterAttack;
 
     private float _beforeAttackTime;
     private float _afterAttackTime;
 
     private float _currentTime;
 
-    [SerializeField] private Animator _anim;
-
+    [Header("Set up")]
     [SerializeField] private Transform _attackPoint;
-    [SerializeField] private LayerMask _targetLayer;
 
-    public bool _PlayerEnterAttackRange;
-    public bool _ChargeOn;
+    [HideInInspector] public LayerMask _TargetLayer;
+
+    [HideInInspector] public bool _PlayerEnterAttackRange;
+    [HideInInspector] public bool _ChargeOn;
+
+    public bool IsCharging;
+    public bool IsAttacking;
+    public bool IsCooldown;
     public bool _IsDie;
 
     // Start is called before the first frame update
@@ -38,11 +42,11 @@ public class EnemyExplode : MonoBehaviour
 
         if (_PlayerEnterAttackRange == true)
         {
-            if (_currentTime >= _afterAttackTime + _durationAfterAttack && !_ChargeOn)
+            if (_currentTime >= _afterAttackTime + _DurationAfterAttack && !_ChargeOn)
             {
-                _anim.SetTrigger("ChargeAttack");
+                //_anim.SetTrigger("ChargeAttack");
                 _ChargeOn = true;
-                _beforeAttackTime = _durationBeforeAttack;
+                _beforeAttackTime = _DurationBeforeAttack;
             }
         }
 
@@ -61,15 +65,16 @@ public class EnemyExplode : MonoBehaviour
         if (_beforeAttackTime > 0)
         {
             _beforeAttackTime -= Time.deltaTime;
+            IsCharging = true;
         }
         else
         {
-            Explode();
-
+            //Explode();
+            StartCoroutine(NewExplode());
             _afterAttackTime = _currentTime;
             _ChargeOn = false;
 
-            _anim.SetTrigger("Attack");
+            //_anim.SetTrigger("Attack");
 
             _IsDie = true;
         }
@@ -77,17 +82,35 @@ public class EnemyExplode : MonoBehaviour
 
     private void PlayerEnterAttackRange()
     {
-        _PlayerEnterAttackRange = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _targetLayer);
+        _PlayerEnterAttackRange = Physics2D.OverlapCircle(_attackPoint.position, _AttackRange, _TargetLayer);
     }
 
     private void Explode()
     {
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _targetLayer);
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(_attackPoint.position, _AttackRange, _TargetLayer);
 
         foreach (Collider2D player in hitPlayer)
         {
-            player.GetComponent<HitPoints>().TakeDamage(_attackDamage);
+            player.GetComponent<HitPoints>().TakeDamage(_AttackDamage);
         }
+    }
+
+    private IEnumerator NewExplode()
+    {
+
+        yield return new WaitForSeconds(_DurationBeforeAttack);
+
+        IsCharging = false;
+        IsAttacking = true;
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(_attackPoint.position, _AttackRange, _TargetLayer);
+        foreach (Collider2D player in hitPlayer)
+        {
+            player.GetComponent<HitPoints>().TakeDamage(_AttackDamage);
+        }
+        IsCooldown = true;
+        yield return new WaitForSeconds(_DurationAfterAttack);
+        IsAttacking = false;
+        IsCooldown = false;
     }
 
     private void OnDrawGizmosSelected()
@@ -97,6 +120,6 @@ public class EnemyExplode : MonoBehaviour
             return;
         }
 
-        Gizmos.DrawWireSphere(_attackPoint.position, _attackRange);
+        Gizmos.DrawWireSphere(_attackPoint.position, _AttackRange);
     }
 }

@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class EnemyMeleeAttack : MonoBehaviour
 {
-    [SerializeField] private float _attackRange;
-    [SerializeField] private float _attackDamage;
-    [SerializeField] private float _durationBeforeAttack;
-    [SerializeField] private float _durationAfterAttack;
+    [HideInInspector] public float _AttackRange;
+    [HideInInspector] public float _AttackDamage;
+    [HideInInspector] public float _DurationBeforeAttack;
+    [HideInInspector] public float _DurationAfterAttack;
    
     private float _beforeAttackTime;
     private float _afterAttackTime;
 
     private float _currentTime;
 
-    [SerializeField] private Animator _anim;
-
+    [Header("Set up")]
     [SerializeField] private Transform _attackPoint;
-    [SerializeField] private LayerMask _targetLayer;
 
-    public bool _PlayerEnterAttackRange;
-    public bool _ChargeOn;
+    [HideInInspector] public LayerMask _TargetLayer;
+
+    [HideInInspector] public bool _PlayerEnterAttackRange;
+    [HideInInspector] public bool _ChargeOn;
+
+    public bool IsCharging;
+    public bool IsAttacking;
+    public bool IsCooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -37,13 +41,13 @@ public class EnemyMeleeAttack : MonoBehaviour
 
         if (_PlayerEnterAttackRange == true)
         {
-            if (_currentTime >= _afterAttackTime + _durationAfterAttack && !_ChargeOn)
+            if (_currentTime >= _afterAttackTime + _DurationAfterAttack && !_ChargeOn)
             {
-                _anim.SetTrigger("ChargeAttack");
+                //_anim.SetTrigger("ChargeAttack");
                 _ChargeOn = true;
-                _beforeAttackTime = _durationBeforeAttack;
+                _beforeAttackTime = _DurationBeforeAttack;
 
-                _anim.SetBool("AttackCooldown", true);
+                //_anim.SetBool("AttackCooldown", true);
             }
         }
 
@@ -65,28 +69,47 @@ public class EnemyMeleeAttack : MonoBehaviour
         }
         else
         {
-            MeleeAttack();
+            StartCoroutine(NewMeleeAttack());
+            //MeleeAttack();
 
             _afterAttackTime = _currentTime;
             _ChargeOn = false;
 
-            _anim.SetTrigger("Attack");
+            //_anim.SetTrigger("Attack");
         }
     }
 
     private void PlayerEnterAttackRange()
     {
-        _PlayerEnterAttackRange = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _targetLayer);
+        _PlayerEnterAttackRange = Physics2D.OverlapCircle(_attackPoint.position, _AttackRange, _TargetLayer);
     }
 
     private void MeleeAttack()
     {
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _targetLayer);
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(_attackPoint.position, _AttackRange, _TargetLayer);
 
         foreach (Collider2D player in hitPlayer)
         {
-            player.GetComponent<HitPoints>().TakeDamage(_attackDamage);
+            player.GetComponent<HitPoints>().TakeDamage(_AttackDamage);
         }
+    }
+
+    private IEnumerator NewMeleeAttack()
+    {
+        IsCharging = true;
+        yield return new WaitForSeconds(_DurationBeforeAttack);
+
+        IsCharging = false;
+        IsAttacking = true;
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(_attackPoint.position, _AttackRange, _TargetLayer);
+        foreach (Collider2D player in hitPlayer)
+        {
+            player.GetComponent<HitPoints>().TakeDamage(_AttackDamage);
+        }
+        IsCooldown = true;
+        yield return new WaitForSeconds(_DurationAfterAttack);
+        IsAttacking = false;
+        IsCooldown = false;
     }
 
     private void OnDrawGizmosSelected()
@@ -96,6 +119,6 @@ public class EnemyMeleeAttack : MonoBehaviour
             return;
         }
 
-        Gizmos.DrawWireSphere(_attackPoint.position, _attackRange);
+        Gizmos.DrawWireSphere(_attackPoint.position, _AttackRange);
     }
 }
