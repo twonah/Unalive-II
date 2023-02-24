@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3599698976438131868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.519, y: -0.098, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63,8 +63,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8437296160184279249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.41, y: 2.15, z: 0}
-  m_LocalScale: {x: 2.5062, y: 2.4898, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8437296160951549077}
@@ -203,7 +203,7 @@ TrailRenderer:
   m_SortingLayerID: 1584992115
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -212,7 +212,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 0.3
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -220,7 +220,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9931741
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -234,8 +234,8 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.4522526, g: 0.6607107, b: 0.8628397, a: 1}
-      key1: {r: 0.45098042, g: 0.6666667, b: 0.8705883, a: 1}
-      key2: {r: 0.5372549, g: 0.2627451, b: 0.34509805, a: 0}
+      key1: {r: 0.45098042, g: 0.6666667, b: 0.8705883, a: 0.21568628}
+      key2: {r: 0.8313726, g: 0.5058824, b: 0.2627451, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -285,7 +285,7 @@ MonoBehaviour:
   DashingCooldown: 1
   isDashing: 0
   IsCooldown: 0
-  dashingPower: 9
+  dashingPower: 7
   speed: 6.5
   jumpingPower: 15
   rb: {fileID: 8437296160184279259}
@@ -384,7 +384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8437296160699794355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.658, y: 0.106, z: 0}
+  m_LocalPosition: {x: -0.4, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -525,7 +525,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -534,7 +534,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 0.2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -542,8 +542,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9931741
-        value: 0
+        time: 1
+        value: 0.2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -555,33 +555,33 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.5137255, b: 0.8784314, a: 1}
-      key1: {r: 0.003921569, g: 1, b: 0.47843137, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.7058824, g: 1, b: 1, a: 1}
+      key1: {r: 0.78823537, g: 0.30980393, b: 0.2509804, a: 1}
+      key2: {r: 0.5372549, g: 0.2627451, b: 0.34509805, a: 0.21568628}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 193
-      ctime1: 65535
-      ctime2: 0
+      ctime0: 0
+      ctime1: 32768
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime1: 26214
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumColorKeys: 3
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -603,13 +603,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee7295e953988549b12169ffc574382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashingTime: 0.2
+  dashingTime: 0.1
   DashingCooldown: 1
   isDashingg: 0
   IsCooldown: 0
   dashingPower: 10
-  speed: 8
-  jumpingPower: 5
+  speed: 4
+  jumpingPower: 4
   rb: {fileID: 8437296160699794367}
   dreamFormCollider: {fileID: 8437296160699794366}
   groundCheck: {fileID: 8437296160967899755}
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 8437296161309652349}
-  attackRange: 0.59
+  attackRange: 1
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -728,8 +728,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8437296160951549098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.003, y: -0.259, z: 0}
-  m_LocalScale: {x: 0.2831378, y: 0.26046273, z: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8437296160184279236}
@@ -759,8 +759,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8437296160967899752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.003, y: -0.259, z: 0}
-  m_LocalScale: {x: 0.2831378, y: 0.26046273, z: 1}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8437296160699794360}
@@ -778,7 +778,7 @@ GameObject:
   m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -790,7 +790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8437296161309652338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.258, y: -0.077, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
