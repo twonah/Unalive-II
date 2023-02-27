@@ -84,6 +84,8 @@ public class Controll_Script : MonoBehaviour
 
             if (!PM.enabled) // switch to Dreamwalk
             {
+                PM.StopWalking();
+
                 StartCoroutine(TransformToDreamform());
 
                 _dreamFormCollider.enabled = true;

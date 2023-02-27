@@ -63,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
+    public void StopWalking()
+    {
+        rb.velocity = new Vector2(0, rb.velocity.y);
+    }
+
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
