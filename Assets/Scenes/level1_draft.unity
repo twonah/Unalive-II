@@ -10858,7 +10858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250598515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.72404146, y: 0, z: -10}
+  m_LocalPosition: {x: 2.0253391, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13940,6 +13940,10 @@ PrefabInstance:
       propertyPath: _maxHitPoints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8437296160184279248, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+      propertyPath: DashingCooldown
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8437296160184279249, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: m_Name
       value: Player
@@ -13952,6 +13956,10 @@ PrefabInstance:
       propertyPath: SwitchControls
       value: 
       objectReference: {fileID: 1829520744}
+    - target: {fileID: 8437296160699794365, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+      propertyPath: DashingCooldown
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
 --- !u!1 &352282226
@@ -74499,6 +74507,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1430018645, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430018645, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 38165076004197507, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
       propertyPath: m_Name
       value: UI
