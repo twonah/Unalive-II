@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isPressingJump;     //Use in PlayerAnimator
 
-    // Update is called once per frame
+    PostProcessVolume m_Volume;
+    Vignette m_Vignette;
+
+
     private void Start()
     {
 
@@ -48,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash || Input.GetButtonDown("Fire1") && canDash)
         {
             StartCoroutine(Dash());
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            PostEffect();
+            
         }
 
         Flip();
@@ -102,5 +111,13 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(DashingCooldown);
         IsCooldown = false;
         canDash = true;
+    }
+    public void PostEffect()
+    {
+        m_Vignette = ScriptableObject.CreateInstance<Vignette>();
+        m_Vignette.enabled.Override(true);
+        m_Vignette.intensity.Override(1f);
+        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, m_Vignette);
+        m_Vignette.intensity.value = Mathf.Sin(Time.realtimeSinceStartup);
     }
 }
