@@ -17,7 +17,7 @@ public class UI_Cooldown : MonoBehaviour
 
     public void Start()
     {
-        _CurrentEnergy = _MaxEnergy; // makes the current energy start with full energy
+        //_CurrentEnergy = _MaxEnergy; // makes the current energy start with full energy
     }
 
 
