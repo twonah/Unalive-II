@@ -9,6 +9,7 @@ TagManager:
   - SwitchControl
   - PKey
   - DKey
+  - EnergyBall
   layers:
   - Default
   - TransparentFX

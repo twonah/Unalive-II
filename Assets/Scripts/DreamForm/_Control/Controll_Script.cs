@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class Controll_Script : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class Controll_Script : MonoBehaviour
     [SerializeField] private GameObject _DreamWalk;
     [SerializeField] private GameObject _player;
     [SerializeField] private Transform _parent; // Players location
-
     [SerializeField] private CinemachineVirtualCamera _dreamVirtualCam;
+    [SerializeField] public UI_Cooldown _Cooldown; // Cooldown script
+
+    public int CoolCheck; // checks to activate cooldown 
 
     private Animator _camera;
     private PlayersControlls _control;
@@ -21,6 +24,8 @@ public class Controll_Script : MonoBehaviour
     public bool isDreamform = false;
 
     public bool _IsDreamformDead;
+
+
 
     void Start()
     {
@@ -50,6 +55,7 @@ public class Controll_Script : MonoBehaviour
     }
 
 
+
     private void Awake()
     {
         _control = new PlayersControlls();
@@ -68,6 +74,7 @@ public class Controll_Script : MonoBehaviour
     private void FixedUpdate()
     {
         _control.Main.Switch.performed += Context => Switch();
+
     }
 
 
@@ -77,30 +84,42 @@ public class Controll_Script : MonoBehaviour
 
         if (_control.Main.Switch.triggered) //E
         {
-            PM.enabled = !PM.enabled; // switch to Dreamwalk
-            DP.enabled = !DP.enabled;
-
-            DM.enabled = !DM.enabled; // switch to Player
-
-            if (!PM.enabled) // switch to Dreamwalk
+            if (_Cooldown._CurrentEnergy > 0)
             {
-                PM.StopWalking();
-
-                StartCoroutine(TransformToDreamform());
-
-                _dreamFormCollider.enabled = true;
-
-                CameraPlay("Base Layer.DreamWalkCam");
-
-                Vector3 oldPos = _DreamWalk.transform.position;
-                DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
-                Vector3 newPos = _DreamWalk.transform.position;
-                _dreamVirtualCam.OnTargetObjectWarped(_DreamWalk.transform, newPos - oldPos);
-
-                SetActive(1);
-
-                print("YOU ARE PLAYING AS DREAMWALKER");
+                PM.enabled = !PM.enabled; // switch to Dreamwalk 
+                DM.enabled = !DM.enabled; // switch to Player
             }
+            else
+            {
+                DM.enabled = !DM.enabled; // switch to Player
+                PM.enabled = enabled;
+            }
+
+            
+
+
+                if (!PM.enabled) // switch to Dreamwalk
+                {
+                    PM.StopWalking();
+
+                    StartCoroutine(TransformToDreamform());
+
+
+                    _dreamFormCollider.enabled = true;
+
+                    CameraPlay("Base Layer.DreamWalkCam");
+
+                    Vector3 oldPos = _DreamWalk.transform.position;
+                    DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
+                    Vector3 newPos = _DreamWalk.transform.position;
+                    _dreamVirtualCam.OnTargetObjectWarped(_DreamWalk.transform, newPos - oldPos);
+
+                    SetActive(1);
+                    print("YOU ARE PLAYING AS DREAMWALKER");
+
+                    CoolCheck = 1;
+                    _Cooldown.IfDreamForm(CoolCheck); // drains energy
+                }
 
 
             if (!DM.enabled) // switch to Player
@@ -112,6 +131,9 @@ public class Controll_Script : MonoBehaviour
                 CameraPlay("Base Layer.PlayerCam");
 
                 print("YOU ARE PLAYING AS PLAYER");
+
+                CoolCheck = 2;
+                _Cooldown.IfDreamForm(CoolCheck); // stops drain
             }
         }
     }
