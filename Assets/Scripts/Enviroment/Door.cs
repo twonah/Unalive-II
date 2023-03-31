@@ -13,13 +13,13 @@ public class Door : MonoBehaviour
     private GameObject _pKey;
     private GameObject _dKey;
 
-    [SerializeField] private bool _isLocked;
+    [SerializeField] public bool _IsLocked; //Check in UI Key check
     [SerializeField] private GameObject _portal;
 
     // Start is called before the first frame update
     void Start()
     {
-        _isLocked = true;
+        _IsLocked = true;
 
         _player = GameObject.FindGameObjectWithTag("Player");
         _dreamform = GameObject.FindGameObjectWithTag("DreamForm");
@@ -34,7 +34,7 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_isLocked)
+        if(_IsLocked)
         {
             _portal.SetActive(false);
         }
@@ -44,15 +44,13 @@ public class Door : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
             if(_playerCollected._IsCollectedPKey && _dreamformCollected._IsCollectedDKey)
             {
-                _isLocked = false;
-                _pKey.SetActive(false);
-                _dKey.SetActive(false);
+                _IsLocked = false;
             }
         }
     }

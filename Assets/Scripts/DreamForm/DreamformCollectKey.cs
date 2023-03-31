@@ -5,16 +5,12 @@ using UnityEngine;
 public class DreamformCollectKey : MonoBehaviour
 {
     [SerializeField] public bool _IsCollectedDKey;
-    private GameObject _player;
-    private GameObject _dKey;
-    [HideInInspector] public Transform _DKeyPos;
+    [SerializeField] private GameObject _dKey;
 
     // Start is called before the first frame update
     void Start()
     {
         _dKey = GameObject.FindGameObjectWithTag("DKey");
-        _player = GameObject.FindGameObjectWithTag("Player");
-        _DKeyPos = _dKey.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -28,10 +24,7 @@ public class DreamformCollectKey : MonoBehaviour
         if (collision.gameObject.CompareTag("DKey"))
         {
             _IsCollectedDKey = true;
-            _DKeyPos.transform.SetParent(_player.transform);
-
-            Collider2D dKeyCollider = _dKey.GetComponent<Collider2D>();
-            dKeyCollider.enabled = false;
+            _dKey.SetActive(false);
         }
     }
 }

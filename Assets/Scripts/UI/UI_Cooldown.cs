@@ -9,8 +9,8 @@ public class UI_Cooldown : MonoBehaviour
      Controll_Script _Controll;
 
     public float _CurrentEnergy;
-    public float _MaxEnergy = 150;
-    public float dValue = 5; //deduction value
+    public float _MaxEnergy = 150f;
+    public float dValue = 5f; //deduction value
     private int energy;
    
 

@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerCollectKey : MonoBehaviour
+public class Portal : MonoBehaviour
 {
-    [SerializeField] public bool _IsCollectedPKey;
-    [SerializeField] private GameObject _pKey;
+    [SerializeField] private int _sceneNumber;
 
     // Start is called before the first frame update
     void Start()
     {
-        _pKey = GameObject.FindGameObjectWithTag("PKey");
+        
     }
 
     // Update is called once per frame
@@ -21,10 +21,9 @@ public class PlayerCollectKey : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("PKey"))
+        if(collision.gameObject.CompareTag("Player"))
         {
-            _IsCollectedPKey = true;
-            _pKey.SetActive(false);
+            SceneManager.LoadScene("level" + _sceneNumber);
         }
     }
 }

@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - DreamForm
-  - Wall
-  - SwitchControl
-  - PKey
-  - DKey
-  - EnergyBall
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -17,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Player
-  - Enemy
-  - Dreamform
-  - Saw
-  - Wall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -44,33 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Effect
-    uniqueID: 2922521207
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BG-Wallpaper
-    uniqueID: 1114248029
-    locked: 0
-  - name: BG-Decorate
-    uniqueID: 1187324345
-    locked: 0
-  - name: BG-Platform
-    uniqueID: 960113467
-    locked: 0
-  - name: Wall
-    uniqueID: 1648345485
-    locked: 0
-  - name: Ground
-    uniqueID: 988292587
-    locked: 0
-  - name: Object
-    uniqueID: 4097233971
-    locked: 0
-  - name: Character
-    uniqueID: 1584992115
-    locked: 0
-  - name: BG-Decorate-Front
-    uniqueID: 3399730375
     locked: 0
