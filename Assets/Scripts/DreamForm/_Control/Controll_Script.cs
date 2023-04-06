@@ -88,6 +88,7 @@ public class Controll_Script : MonoBehaviour
             {
                 PM.enabled = !PM.enabled; // switch to Dreamwalk 
                 DM.enabled = !DM.enabled; // switch to Player
+                DP.enabled = !DP.enabled;
             }
             else
             {
@@ -124,6 +125,8 @@ public class Controll_Script : MonoBehaviour
 
             if (!DM.enabled) // switch to Player
             {
+                DP.enabled = false;
+
                 StartCoroutine(TransformToPlayer());
 
                 _dreamFormCollider.enabled = false;

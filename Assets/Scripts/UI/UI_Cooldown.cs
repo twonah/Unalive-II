@@ -27,7 +27,7 @@ public class UI_Cooldown : MonoBehaviour
         if (energy == 1)
         {
             DecreseEnergy();
-            print(_CurrentEnergy);
+            //print(_CurrentEnergy);
         }
         
     }
@@ -38,7 +38,7 @@ public class UI_Cooldown : MonoBehaviour
         {
 
                 _CurrentEnergy -= dValue * Time.deltaTime;
-                print(_CurrentEnergy);
+                //print(_CurrentEnergy);
                 Console.Clear();
                 
         }
