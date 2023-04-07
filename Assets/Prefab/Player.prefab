@@ -249,8 +249,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0035648628, y: -0.0713049}
-  m_Size: {x: 0.22674347, y: 0.33780104}
+  m_Offset: {x: 0, y: -0.07}
+  m_Size: {x: 0.22, y: 0.33}
   m_Direction: 0
 --- !u!50 &8437296160184279259
 Rigidbody2D:
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashingTime: 0.3
-  DashingCooldown: 8
+  DashingCooldown: 1
   isDashing: 0
   IsCooldown: 0
   dashingPower: 7
@@ -762,7 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashingTime: 0.1
-  DashingCooldown: 8
+  DashingCooldown: 4
   isDashingg: 0
   IsCooldown: 0
   dashingPower: 10
