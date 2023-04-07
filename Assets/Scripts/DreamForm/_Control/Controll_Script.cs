@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
+
 
 public class Controll_Script : MonoBehaviour
 {
@@ -25,7 +27,8 @@ public class Controll_Script : MonoBehaviour
 
     public bool _IsDreamformDead;
 
-
+    PostProcessVolume m_Volume;
+    Vignette m_Vignette;
 
     void Start()
     {
@@ -39,6 +42,8 @@ public class Controll_Script : MonoBehaviour
 
         isDreamWalkerToDreamform = false;
         isDreamWalkerToPlayer = false;
+
+        m_Vignette = ScriptableObject.CreateInstance<Vignette>();
     }
 
     private void Update()
@@ -143,6 +148,10 @@ public class Controll_Script : MonoBehaviour
     private IEnumerator TransformToDreamform()
     {
         isDreamWalkerToDreamform = true;
+        m_Vignette.enabled.Override(true);
+        m_Vignette.intensity.Override(0.587f);
+        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 20f, m_Vignette);
+        Debug.Log("Post effect : On");
         yield return new WaitForSeconds(1f);
         isDreamform = true;
         isDreamWalkerToDreamform = false;
@@ -151,6 +160,10 @@ public class Controll_Script : MonoBehaviour
     private IEnumerator TransformToPlayer()
     {
         isDreamWalkerToPlayer = true;
+        m_Vignette.enabled.Override(false);
+        m_Vignette.intensity.Override(0f);
+        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 0f, m_Vignette);
+        Debug.Log("Post effect : Off");
         yield return new WaitForSeconds(1f);
         isDreamform = false;
         isDreamWalkerToPlayer = false;

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8007531105604180774
+--- !u!114 &-750307564148981069
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21,19 +21,19 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 1, g: 0, b: 0, a: 1}
+    value: {r: 0, g: 0, b: 0, a: 1}
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0
+    value: 0.759
   smoothness:
     overrideState: 1
-    value: 0.954
+    value: 0.2
   roundness:
-    overrideState: 1
-    value: 0.449
+    overrideState: 0
+    value: 1
   rounded:
     overrideState: 0
     value: 0
@@ -57,4 +57,4 @@ MonoBehaviour:
   m_Name: Main Camera Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -8007531105604180774}
+  - {fileID: -750307564148981069}
