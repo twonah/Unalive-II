@@ -66,8 +66,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6698630479256995119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.969, y: -2.717, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6698630479488823548}
@@ -213,11 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d59e5abef049bf41ac981bd5b67599d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolWalkSpeed: 1
-  _moveToTargetWalkSpeed: 2
+  _patrolWalkSpeed: 2
+  _moveToTargetWalkSpeed: 4
   _attackRange: 1
   _attackDamage: 2
-  _durationBeforeAttack: 1
+  _durationBeforeAttack: 0.4
   _durationAfterAttack: 1
   _eyeRange: 2.5
   E_Patrol: {fileID: 6698630479256995115}
