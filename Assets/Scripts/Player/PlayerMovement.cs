@@ -53,11 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            PostEffect();
-            
-        }
+
 
         Flip();
     }
@@ -112,12 +108,5 @@ public class PlayerMovement : MonoBehaviour
         IsCooldown = false;
         canDash = true;
     }
-    public void PostEffect()
-    {
-        m_Vignette = ScriptableObject.CreateInstance<Vignette>();
-        m_Vignette.enabled.Override(true);
-        m_Vignette.intensity.Override(1f);
-        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, m_Vignette);
-        m_Vignette.intensity.value = Mathf.Sin(Time.realtimeSinceStartup);
-    }
+
 }
