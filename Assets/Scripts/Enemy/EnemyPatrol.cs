@@ -15,9 +15,9 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private LayerMask _wallLayer;
     [SerializeField] private LayerMask _enemyLayer;
 
-    private bool _onGround;
-    private bool _isHitWall;
-    private bool _isHitEnemy;
+    [SerializeField] private bool _onGround;
+    [SerializeField] private bool _isHitWall;
+    [SerializeField] private bool _isHitEnemy;
     // Start is called before the first frame update
     void Start()
     {

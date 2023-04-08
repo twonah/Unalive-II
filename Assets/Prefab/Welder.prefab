@@ -215,7 +215,7 @@ Transform:
   m_GameObject: {fileID: 5686052888756790725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5686052888543952194}
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a61280ca511f24f913ffc05539fbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHitPoints: 3
+  _maxHitPoints: 2
   _CurrentHitPoints: 0
   _IsTakingDamage: 0
 --- !u!114 &5686052888756790723
@@ -412,6 +412,9 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  _onGround: 0
+  _isHitWall: 0
+  _isHitEnemy: 0
 --- !u!114 &5686052888756790722
 MonoBehaviour:
   m_ObjectHideFlags: 0

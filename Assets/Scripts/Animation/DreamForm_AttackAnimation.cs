@@ -59,7 +59,7 @@ public class DreamForm_AttackAnimation : MonoBehaviour
 
         GameObject bullet = Instantiate(attackPrefab, transform.position, Quaternion.identity);
 
-        bullet.transform.localScale = new Vector3(Mathf.Sign(playerTransform.localScale.x), 1, 1);
+        bullet.transform.localScale = new Vector3(Mathf.Sign(playerTransform.localScale.x), 1.3f, 1);
 
         bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * speed * Mathf.Sign(playerTransform.localScale.x);
 
