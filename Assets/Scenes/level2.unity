@@ -81920,6 +81920,10 @@ PrefabInstance:
       propertyPath: attackPrefab
       value: 
       objectReference: {fileID: 239579220705373694, guid: ed4d116c59b747c4b95d174fb024d060, type: 3}
+    - target: {fileID: 556336436, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 814667497, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: attackPrefab
       value: 

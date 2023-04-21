@@ -104,6 +104,7 @@ public class EnemyMeleeAttack : MonoBehaviour
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(_attackPoint.position, _AttackRange, _TargetLayer);
         foreach (Collider2D player in hitPlayer)
         {
+            //Debug.Log(player.gameObject.name);
             player.GetComponent<HitPoints>().TakeDamage(_AttackDamage);
         }
         IsCooldown = true;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollectKey : MonoBehaviour
 {
     [SerializeField] public bool _IsCollectedPKey;
-    [SerializeField] private GameObject _pKey;
+    private GameObject _pKey;
 
     // Start is called before the first frame update
     void Start()

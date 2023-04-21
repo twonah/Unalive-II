@@ -38,9 +38,20 @@ public class DreamFormAnimator : MonoBehaviour
     }
     private void AttackAnimation()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(SwitchControls.isDreamform == true || SwitchControls.isDreamWalkerToPlayer == false)
         {
-            _anim.SetTrigger("Attack");
+            if(Input.GetMouseButtonDown(0))
+            {
+                int randomAnimation = Random.Range(1,3);
+                if(randomAnimation == 1)
+                {
+                    _anim.SetTrigger("Attack");
+                }
+                else
+                {
+                    _anim.SetTrigger("Attack2");
+                }            
+            }
         }
     }
     private void WalkAnimation()

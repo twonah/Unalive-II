@@ -5,7 +5,7 @@ using UnityEngine;
 public class DreamformCollectKey : MonoBehaviour
 {
     [SerializeField] public bool _IsCollectedDKey;
-    [SerializeField] private GameObject _dKey;
+     private GameObject _dKey;
 
     // Start is called before the first frame update
     void Start()
