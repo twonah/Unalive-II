@@ -15,9 +15,9 @@ public class DreamForm_Punch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Checks the left mouse button
+        if (Input.GetMouseButton(0)) // Checks the left mouse button
         {
-            Attack();
+            StartCoroutine(attackDelay());
         }
 
     }
@@ -51,4 +51,9 @@ public class DreamForm_Punch : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
+    IEnumerator attackDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        Attack();
+    }
 }

@@ -6,10 +6,9 @@ public class DreamForm_AttackAnimation : MonoBehaviour
 {
     [SerializeField] GameObject attackPrefab;
     [SerializeField] float speed = 10f;
-    [SerializeField] float Timer = 0f;
+    [SerializeField] float delayTime;
     [SerializeField] float DestroyTimer = 0;
-    bool isShooting = false;
-    private Vector2 target;
+    [SerializeField] bool isShooting;
     public Transform playerTransform;
     public float xOffset;
 
@@ -32,20 +31,17 @@ public class DreamForm_AttackAnimation : MonoBehaviour
         {
             transform.position = new Vector2(playerTransform.position.x - xOffset, transform.position.y);
         }
-
         if (Input.GetMouseButtonDown(0) && isShooting == false && controlSwitch.isDreamform)
         {
-            //StartCoroutine(potato());
-            Shoot();
+            StartCoroutine(shootDelay());
+            //Shoot();
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Check if the mouse button is pressed
-
-
+        
     }
 
     void Shoot()
@@ -66,11 +62,13 @@ public class DreamForm_AttackAnimation : MonoBehaviour
         Destroy(bullet, DestroyTimer);
     }
 
-    private IEnumerator potato()
+    private IEnumerator shootDelay()
     {
         isShooting = true;
-        //Shoot();
-        yield return new WaitForSeconds(Timer);
+        yield return new WaitForSeconds(delayTime);
+
+        Shoot();
+
         isShooting = false;
     }
 }
