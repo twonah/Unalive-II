@@ -28,11 +28,7 @@ public class PlayerMovement : MonoBehaviour
     PostProcessVolume m_Volume;
     Vignette m_Vignette;
 
-
-    private void Start()
-    {
-
-    }
+    [SerializeField] private AudioSource jumpsound;
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -40,13 +36,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            isPressingJump = true;  
+            isPressingJump = true;
+            jumpsound.Play();
         }
 
         if (Input.GetButtonUp("Jump"))
         {
             if(rb.velocity.y > 0f)rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             isPressingJump = false;
+            
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash || Input.GetButtonDown("Fire1") && canDash)
