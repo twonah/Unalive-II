@@ -12,6 +12,7 @@ public class Controll_Script : MonoBehaviour
     [SerializeField] private DreamForm_Movement DM; //DreamForm_Movement script
     [SerializeField] private DreamForm_Punch DP; //DreamForm_Movement script
     [SerializeField] private GameObject _DreamWalk;
+    [SerializeField] private Rigidbody2D _DW_rb; // DreamFors_Rigid Body
     [SerializeField] private GameObject _player;
     [SerializeField] private Transform _parent; // Players location
     [SerializeField] private CinemachineVirtualCamera _dreamVirtualCam;
@@ -131,6 +132,8 @@ public class Controll_Script : MonoBehaviour
             if (!DM.enabled) // switch to Player
             {
                 DP.enabled = false;
+
+                _DW_rb.velocity = new Vector2(0, 0);
 
                 StartCoroutine(TransformToPlayer());
 
