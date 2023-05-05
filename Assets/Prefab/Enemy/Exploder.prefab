@@ -218,7 +218,7 @@ MonoBehaviour:
   _attackRange: 1
   _attackDamage: 2
   _durationBeforeAttack: 0.4
-  _durationAfterAttack: 1
+  _durationAfterAttack: 3
   _eyeRange: 2.5
   E_Patrol: {fileID: 6698630479256995115}
   E_Explode: {fileID: 6698630479256995106}

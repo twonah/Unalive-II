@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e105a6e199f660459666060074b17d3
+guid: ec8a0a39d7ba37d40a4318b5716d203b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 36
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_0
+      name: eneGunner_Dead_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7790216c74aa1d049b80fce0667024ca
-      internalID: 1350922567
+      spriteID: ed29b1bc6f58e0d438584558cf8ebbbb
+      internalID: -1558552405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_1
+      name: eneGunner_Dead_1
       rect:
         serializedVersion: 2
         x: 48
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5937e3cd2eadbcb4db6e655cf2385797
-      internalID: 2101282125
+      spriteID: 58dd1e50074b9fb4e84c5cdbea4a150b
+      internalID: 1629127929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_2
+      name: eneGunner_Dead_2
       rect:
         serializedVersion: 2
         x: 96
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6309518adca107143bc6fafefebd3061
-      internalID: 376798075
+      spriteID: 015fe74979be7434a9377c82808564df
+      internalID: -1529905403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_3
+      name: eneGunner_Dead_3
       rect:
         serializedVersion: 2
         x: 144
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12ff60994f407d74288dcb3795092671
-      internalID: 676832386
+      spriteID: 09422f50887a26d42a93b8ae68e9b23d
+      internalID: 748610580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_4
+      name: eneGunner_Dead_4
       rect:
         serializedVersion: 2
         x: 192
@@ -202,56 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 030e7169c91b579409d7e6e2fbf8841e
-      internalID: -1593824317
+      spriteID: 3d399c90b3f963b45a4f5797e6b7fd6a
+      internalID: -856957941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 48
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4417a68422210f489e613766bb5f16b
-      internalID: -851515722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 48
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1dc3998b1e07b61438327760841ce665
-      internalID: -1775568181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_7
+      name: eneGunner_Dead_5
       rect:
         serializedVersion: 2
         x: 0
@@ -265,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21df6f0f23dee0b47b7f3c25125338ae
-      internalID: 1412414370
+      spriteID: 3734d108a6042e745a48116260a3fd30
+      internalID: -2062474742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_8
+      name: eneGunner_Dead_6
       rect:
         serializedVersion: 2
         x: 48
@@ -286,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b11b2df8937abfb428d0d8607fa4b439
-      internalID: -979608885
+      spriteID: 896e4968d388dee4f9b25f6c3af22314
+      internalID: -952010779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_9
+      name: eneGunner_Dead_7
       rect:
         serializedVersion: 2
         x: 96
@@ -307,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 740797d00be23fc4c9f5637e0d1ba687
-      internalID: 169849415
+      spriteID: cdb40f370103aa14ea351037bea5b4ad
+      internalID: -807313455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_10
+      name: eneGunner_Dead_8
       rect:
         serializedVersion: 2
         x: 144
@@ -328,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3fd255b1582db54fb25c1a64d823253
-      internalID: 963353804
+      spriteID: 318b2bf69a23ceb4baed0e8064f354ef
+      internalID: -719943729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_11
+      name: eneGunner_Dead_9
       rect:
         serializedVersion: 2
         x: 192
@@ -349,29 +307,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38abc807a702a0041bf6efc8aa5bd393
-      internalID: -1995557566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BD18774B-75B2-48E2-9DEC-51139EE93C6C_12
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25a33b828f8f5ae468d587fcf7f41327
-      internalID: -85839805
+      spriteID: bd21f3837e3068f4c84b976006e7a3e9
+      internalID: -400271388
       vertices: []
       indices: 
       edges: []
@@ -387,19 +324,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_0: 1350922567
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_8: -979608885
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_11: -1995557566
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_12: -85839805
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_6: -1775568181
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_2: 376798075
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_3: 676832386
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_10: 963353804
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_4: -1593824317
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_9: 169849415
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_7: 1412414370
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_5: -851515722
-      BD18774B-75B2-48E2-9DEC-51139EE93C6C_1: 2101282125
+      eneGunner_Dead_9: -400271388
+      eneGunner_Dead_6: -952010779
+      eneGunner_Dead_2: -1529905403
+      eneGunner_Dead_0: -1558552405
+      eneGunner_Dead_8: -719943729
+      eneGunner_Dead_4: -856957941
+      eneGunner_Dead_1: 1629127929
+      eneGunner_Dead_7: -807313455
+      eneGunner_Dead_3: 748610580
+      eneGunner_Dead_5: -2062474742
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

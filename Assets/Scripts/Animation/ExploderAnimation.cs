@@ -58,7 +58,11 @@ public class ExploderAnimation : MonoBehaviour
     {
         if (HP._IsTakingDamage)
         {
-            StartCoroutine(Hurt());
+            if(!E_E.IsCharging && !E_E.IsAttacking && !E_E.IsAttacking)
+            {
+                StartCoroutine(Hurt());
+            }
+
         }
     }
     private IEnumerator Hurt()

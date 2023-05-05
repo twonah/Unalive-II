@@ -61,7 +61,7 @@ GameObject:
   m_Component:
   - component: {fileID: 556336437}
   - component: {fileID: 556336438}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TriggerBox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -408,6 +408,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isPressingJump: 0
+  jumpsound: {fileID: 0}
 --- !u!95 &8437296160184279262
 Animator:
   serializedVersion: 4

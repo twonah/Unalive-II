@@ -107,10 +107,10 @@ TextureImporter:
       name: TransformIcon_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 116
-        width: 48
-        height: 48
+        x: 0
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67d0694fdeac66c4ab7f5c9b0b1aac2a
-      internalID: 1383261017
+      spriteID: 82e9ec031555972419043f8718c5102e
+      internalID: -468730875
       vertices: []
       indices: 
       edges: []
@@ -128,10 +128,10 @@ TextureImporter:
       name: TransformIcon_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 116
-        width: 48
-        height: 48
+        x: 56
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e80219b335d74f1488b5d7c42b47085b
-      internalID: -163742425
+      spriteID: ba139274579d0044890e5157b42b37c3
+      internalID: 1073743817
       vertices: []
       indices: 
       edges: []
@@ -149,10 +149,10 @@ TextureImporter:
       name: TransformIcon_2
       rect:
         serializedVersion: 2
-        x: 116
-        y: 116
-        width: 48
-        height: 48
+        x: 112
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3664979543ed5d14c971a9a63a45b313
-      internalID: -909996372
+      spriteID: 3b651bda4ed6e5541b3d4c67e4567b95
+      internalID: 178173664
       vertices: []
       indices: 
       edges: []
@@ -170,10 +170,10 @@ TextureImporter:
       name: TransformIcon_3
       rect:
         serializedVersion: 2
-        x: 172
-        y: 116
-        width: 48
-        height: 48
+        x: 168
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c54ddac39fcd9474fa9c1a593150cf01
-      internalID: 87848565
+      spriteID: cb0a81f93d29ad64da877729720abdce
+      internalID: 401609153
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
       name: TransformIcon_4
       rect:
         serializedVersion: 2
-        x: 228
-        y: 116
-        width: 48
-        height: 48
+        x: 224
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,8 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a862c47748185241ace22c132fd55b5
-      internalID: -700379367
+      spriteID: a30fb7d52bd73ef4d994fb3d535b9d5b
+      internalID: 56048012
       vertices: []
       indices: 
       edges: []
@@ -212,10 +212,10 @@ TextureImporter:
       name: TransformIcon_5
       rect:
         serializedVersion: 2
-        x: 284
-        y: 116
-        width: 48
-        height: 48
+        x: 280
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5137967a6b365144b06d48d00794f34
-      internalID: -556603363
+      spriteID: abb20bc66e4f3194c993c4f5b062d70c
+      internalID: -2080540621
       vertices: []
       indices: 
       edges: []
@@ -233,10 +233,10 @@ TextureImporter:
       name: TransformIcon_6
       rect:
         serializedVersion: 2
-        x: 340
-        y: 116
-        width: 48
-        height: 48
+        x: 336
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23c73f15af947174893b0505c6d565e5
-      internalID: -695916188
+      spriteID: ff2cfc5ac4823ef41b3c6cf08c8b589f
+      internalID: -1228062510
       vertices: []
       indices: 
       edges: []
@@ -254,10 +254,10 @@ TextureImporter:
       name: TransformIcon_7
       rect:
         serializedVersion: 2
-        x: 396
-        y: 116
-        width: 48
-        height: 48
+        x: 392
+        y: 112
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d19aabb6032c9ca4f8031acf23d05d2e
-      internalID: -1884822848
+      spriteID: ff46052a64ad30243ad34e3edf8476a5
+      internalID: -878038889
       vertices: []
       indices: 
       edges: []
@@ -275,10 +275,10 @@ TextureImporter:
       name: TransformIcon_8
       rect:
         serializedVersion: 2
-        x: 4
-        y: 60
-        width: 48
-        height: 48
+        x: 0
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,8 +286,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f039a86779e30dd44af0c526c91914e3
-      internalID: -39006596
+      spriteID: 21a7bcfdc161af248983a9e9d2135826
+      internalID: 781748611
       vertices: []
       indices: 
       edges: []
@@ -296,10 +296,10 @@ TextureImporter:
       name: TransformIcon_9
       rect:
         serializedVersion: 2
-        x: 60
-        y: 60
-        width: 48
-        height: 48
+        x: 56
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,8 +307,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccc9554dc192b3e47acfbc4a9c2e2f8c
-      internalID: -910827278
+      spriteID: e5487f3658c602c479be87c7d421ea52
+      internalID: 271141629
       vertices: []
       indices: 
       edges: []
@@ -317,10 +317,10 @@ TextureImporter:
       name: TransformIcon_10
       rect:
         serializedVersion: 2
-        x: 116
-        y: 60
-        width: 48
-        height: 48
+        x: 112
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,8 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9d0ff0ba67d76746a6d1d5841f428a9
-      internalID: 1498568755
+      spriteID: e578e1bdba85d52458d13aeaa260f5d7
+      internalID: -2006290634
       vertices: []
       indices: 
       edges: []
@@ -338,10 +338,10 @@ TextureImporter:
       name: TransformIcon_11
       rect:
         serializedVersion: 2
-        x: 172
-        y: 60
-        width: 48
-        height: 48
+        x: 168
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,8 +349,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9fb45ec11bd19045b164fa9e4a30e41
-      internalID: 38536626
+      spriteID: 77aa8c8e473399f4f9baf33d063227ef
+      internalID: -864542820
       vertices: []
       indices: 
       edges: []
@@ -359,10 +359,10 @@ TextureImporter:
       name: TransformIcon_12
       rect:
         serializedVersion: 2
-        x: 228
-        y: 60
-        width: 48
-        height: 48
+        x: 224
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,8 +370,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3067d7bde084815478ae4f8b37d31da0
-      internalID: 675914009
+      spriteID: c5b829be7c2202a489980a5d194695fa
+      internalID: -431378150
       vertices: []
       indices: 
       edges: []
@@ -380,10 +380,10 @@ TextureImporter:
       name: TransformIcon_13
       rect:
         serializedVersion: 2
-        x: 284
-        y: 60
-        width: 48
-        height: 48
+        x: 280
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,8 +391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1f052e66c206404f91bf2426dd07f41
-      internalID: 1919990084
+      spriteID: 20d5e07da427c6e4ea8f96c2eef6f667
+      internalID: -1236383928
       vertices: []
       indices: 
       edges: []
@@ -401,10 +401,10 @@ TextureImporter:
       name: TransformIcon_14
       rect:
         serializedVersion: 2
-        x: 340
-        y: 60
-        width: 48
-        height: 48
+        x: 336
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,8 +412,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 057fce3da0952614ba3114e0563ca42a
-      internalID: 975542336
+      spriteID: 7458704d632032a4fa234d68e475c8af
+      internalID: -1548059296
       vertices: []
       indices: 
       edges: []
@@ -422,10 +422,10 @@ TextureImporter:
       name: TransformIcon_15
       rect:
         serializedVersion: 2
-        x: 396
-        y: 60
-        width: 48
-        height: 48
+        x: 392
+        y: 56
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,8 +433,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e17c58abf491d2d41b8b1c032a52f3a6
-      internalID: 617208982
+      spriteID: 188a87ce9c68f194db7815bf3e5b46c1
+      internalID: -1376729386
       vertices: []
       indices: 
       edges: []
@@ -443,10 +443,10 @@ TextureImporter:
       name: TransformIcon_16
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 48
-        height: 48
+        x: 0
+        y: 0
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,8 +454,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4de21fab6f25e5247b08605676df8e58
-      internalID: -460321026
+      spriteID: a6ab5413824e2db4e95bdf6c46ddc6b7
+      internalID: -1681105208
       vertices: []
       indices: 
       edges: []
@@ -464,10 +464,10 @@ TextureImporter:
       name: TransformIcon_17
       rect:
         serializedVersion: 2
-        x: 60
-        y: 4
-        width: 48
-        height: 48
+        x: 56
+        y: 0
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,8 +475,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3843dd1a7e4b0b04786db3c60261455e
-      internalID: 1221845563
+      spriteID: a628bcebbb1ef54408a6ed8b93b5c9da
+      internalID: -929011720
       vertices: []
       indices: 
       edges: []
@@ -485,10 +485,10 @@ TextureImporter:
       name: TransformIcon_18
       rect:
         serializedVersion: 2
-        x: 116
-        y: 4
-        width: 48
-        height: 48
+        x: 112
+        y: 0
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,8 +496,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84539ccaba0720647886b08a1d60d51c
-      internalID: -843842703
+      spriteID: 896485632172870448fff87111bd7e2b
+      internalID: 753278975
       vertices: []
       indices: 
       edges: []
@@ -506,10 +506,10 @@ TextureImporter:
       name: TransformIcon_19
       rect:
         serializedVersion: 2
-        x: 172
-        y: 4
-        width: 48
-        height: 48
+        x: 168
+        y: 0
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,8 +517,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeda8ce4737467245921612a928f5f3b
-      internalID: -1586570383
+      spriteID: 59e51c445f94d8545aac659752b5802c
+      internalID: 58435032
       vertices: []
       indices: 
       edges: []
@@ -527,10 +527,10 @@ TextureImporter:
       name: TransformIcon_20
       rect:
         serializedVersion: 2
-        x: 228
-        y: 4
-        width: 48
-        height: 48
+        x: 224
+        y: 0
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,8 +538,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf7ccaffceb08cb4cbc79aebaede4d72
-      internalID: 68564069
+      spriteID: abdf4e9c1bbd7864286774a6b1e745ad
+      internalID: 2112919354
       vertices: []
       indices: 
       edges: []
@@ -548,10 +548,10 @@ TextureImporter:
       name: TransformIcon_21
       rect:
         serializedVersion: 2
-        x: 284
-        y: 4
-        width: 48
-        height: 48
+        x: 280
+        y: 0
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,8 +559,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b52ba28c7aea1143acac2f8daf9671a
-      internalID: 2110109435
+      spriteID: e69913f6f000e6a4bac8a0f1cef4ec13
+      internalID: -2076470534
       vertices: []
       indices: 
       edges: []
@@ -569,10 +569,10 @@ TextureImporter:
       name: TransformIcon_22
       rect:
         serializedVersion: 2
-        x: 340
-        y: 4
-        width: 48
-        height: 48
+        x: 336
+        y: 0
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,8 +580,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fe6703359ea9514e9bae0146858e386
-      internalID: 1257167221
+      spriteID: 735f7a794837c4e4f80f9c3609a227f5
+      internalID: 115038604
       vertices: []
       indices: 
       edges: []
@@ -597,29 +597,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TransformIcon_5: -556603363
-      TransformIcon_4: -700379367
-      TransformIcon_2: -909996372
-      TransformIcon_20: 68564069
-      TransformIcon_11: 38536626
-      TransformIcon_8: -39006596
-      TransformIcon_12: 675914009
-      TransformIcon_3: 87848565
-      TransformIcon_22: 1257167221
-      TransformIcon_13: 1919990084
-      TransformIcon_10: 1498568755
-      TransformIcon_16: -460321026
-      TransformIcon_17: 1221845563
-      TransformIcon_14: 975542336
-      TransformIcon_19: -1586570383
-      TransformIcon_7: -1884822848
-      TransformIcon_0: 1383261017
-      TransformIcon_1: -163742425
-      TransformIcon_15: 617208982
-      TransformIcon_18: -843842703
-      TransformIcon_21: 2110109435
-      TransformIcon_6: -695916188
-      TransformIcon_9: -910827278
+      TransformIcon_5: -2080540621
+      TransformIcon_4: 56048012
+      TransformIcon_2: 178173664
+      TransformIcon_20: 2112919354
+      TransformIcon_11: -864542820
+      TransformIcon_8: 781748611
+      TransformIcon_12: -431378150
+      TransformIcon_3: 401609153
+      TransformIcon_22: 115038604
+      TransformIcon_13: -1236383928
+      TransformIcon_10: -2006290634
+      TransformIcon_16: -1681105208
+      TransformIcon_17: -929011720
+      TransformIcon_14: -1548059296
+      TransformIcon_19: 58435032
+      TransformIcon_7: -878038889
+      TransformIcon_0: -468730875
+      TransformIcon_1: 1073743817
+      TransformIcon_15: -1376729386
+      TransformIcon_18: 753278975
+      TransformIcon_21: -2076470534
+      TransformIcon_6: -1228062510
+      TransformIcon_9: 271141629
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

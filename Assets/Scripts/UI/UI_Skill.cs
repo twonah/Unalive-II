@@ -7,11 +7,11 @@ using TMPro;
 public class UI_Skill : MonoBehaviour
 {
     [Header("Set up")]
-    [SerializeField] private Image _dreamwalkCooldownImage;
+    [SerializeField] private Image _dreamwalkBarImage;
     [SerializeField] private Image _playerCooldownImage;
     [SerializeField] private Image _dreamformCooldownImage;
 
-    [SerializeField] private TMP_Text _dreamwalkSkillCooldownText;
+    //[SerializeField] private TMP_Text _dreamwalkSkillCooldownText;
     [SerializeField] private TMP_Text _playerDashCooldownText;
     [SerializeField] private TMP_Text _dreamformDashCooldownText;
 
@@ -20,24 +20,28 @@ public class UI_Skill : MonoBehaviour
 
     [SerializeField] private PlayerMovement PM;
     [SerializeField] private DreamForm_Movement DM;
+    [SerializeField] private UI_Cooldown DC;
     [SerializeField] private Controll_Script CS;
 
-    private float _dreamwalkCooldown;
+    [SerializeField] private Animator _anim;
+
     private float _playerDashCooldown;
     private float _dreamformDashCooldown;
 
     public float _playerDashCooldownTimer;
     public float _dreamformDashCooldownTimer;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        _dreamwalkSkillCooldownText.gameObject.SetActive(false);
         _playerDashCooldownText.gameObject.SetActive(false);
         _dreamformDashCooldownText.gameObject.SetActive(false);
 
         _playerCooldownImage.fillAmount = 0.0f;
         _dreamformCooldownImage.fillAmount = 0.0f;
+        _dreamwalkBarImage.fillAmount = 0.0f;
 
         _playerDashCooldown = PM.DashingCooldown;
         _dreamformDashCooldown = DM.DashingCooldown;
@@ -76,10 +80,25 @@ public class UI_Skill : MonoBehaviour
             DreamformDashIcon();
         }
 
+        DreamwalkSkillIcon();
+
     }
 
     private void DreamwalkSkillIcon()
     {
+        // Update the energy bar
+        _dreamwalkBarImage.fillAmount = DC._CurrentEnergy / DC._MaxEnergy;
+
+        //Animation
+        if(CS.isDreamWalkerToDreamform)
+        {
+            _anim.SetBool("DToP", false);
+        }
+        else if(CS.isDreamWalkerToPlayer)
+        {
+            _anim.SetBool("DToP", true);
+        }
+
 
     }
     private void PlayerDashIcon()

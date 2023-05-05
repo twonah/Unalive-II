@@ -6,6 +6,7 @@ public class EnemyMoveToPlayer : MonoBehaviour
 {
     [HideInInspector] public float _MoveToSpeed;
     [HideInInspector] public float _Distance;
+    [HideInInspector] public float _DistanceY;
 
     [Header("Set up")]
     [SerializeField] private FaceDirectionCheck Self_FC;
@@ -33,8 +34,10 @@ public class EnemyMoveToPlayer : MonoBehaviour
         MoveToPlayer();
 
         _Distance = _Target.transform.position.x - _enemyRigidBody.transform.position.x;
+        _DistanceY = _Target.transform.position.y - _enemyRigidBody.transform.position.y;
+
         //Not Done yet??
-        if(_Distance == 0)
+        if (_Distance == 0)
         {
             return;
         }

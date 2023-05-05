@@ -62,7 +62,7 @@ public class WelderAnimation : MonoBehaviour
     }
     private void HurtAnimation()
     {
-        if (HP._IsTakingDamage)
+        if (HP._IsTakingDamage && !E_WC._IsDead)
         {
             StartCoroutine(Hurt());
         }
