@@ -198,9 +198,12 @@ MonoBehaviour:
   DM: {fileID: 0}
   DP: {fileID: 0}
   _DreamWalk: {fileID: 0}
+  _DW_rb: {fileID: 0}
   _player: {fileID: 0}
   _parent: {fileID: 0}
   _dreamVirtualCam: {fileID: 2541717744621141409}
+  _Cooldown: {fileID: 0}
+  CoolCheck: 0
   isDreamWalkerToDreamform: 0
   isDreamWalkerToPlayer: 0
   isDreamform: 0

@@ -26,12 +26,12 @@ public class EnemyShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        
     }
 
     private void FixedUpdate()
     {
-
+        Shoot();
     }
 
     private void Shoot()

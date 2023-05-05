@@ -37,7 +37,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             isPressingJump = true;
-            jumpsound.Play();
+            if(jumpsound != null)
+            {
+                jumpsound.Play();
+            }
         }
 
         if (Input.GetButtonUp("Jump"))
