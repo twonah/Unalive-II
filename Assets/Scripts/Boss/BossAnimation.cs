@@ -58,12 +58,12 @@ public class BossAnimation : MonoBehaviour
         if(B_ShootFireball.enabled)
         {
             _anim.SetBool("IsCall", true);
-            prop.SetActive(false);
+            //prop.SetActive(false);
         }
         else
         {
             _anim.SetBool("IsCall", false);
-            prop.SetActive(true);
+            //prop.SetActive(true);
         }
     }
 

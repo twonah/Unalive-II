@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossFireBall : MonoBehaviour
 {
     [SerializeField] public GameObject fireBall;
+    [SerializeField] private Transform HandPos;
     [SerializeField] public float spawnDelay;
     //[SerializeField] public bool FireBallSpawn;
     Vector3 randomRange;
@@ -34,8 +35,8 @@ public class BossFireBall : MonoBehaviour
         if(Time.time >= nextSpawn)
         {
             //FireBallSpawn = true;
-            randomRange = (Vector2)transform.position + new Vector2((Random.Range(-3f, 3f)), (Random.Range(-3f, 3f)));
-            Instantiate(fireBall, randomRange, Quaternion.identity);
+            //randomRange = (Vector2)transform.position + new Vector2((Random.Range(-3f, 3f)), (Random.Range(-3f, 3f)));
+            Instantiate(fireBall, HandPos.position, Quaternion.identity);
             nextSpawn = Time.time + spawnDelay;
             setFalse = nextSpawn - 0.5f;
         }
