@@ -119,18 +119,22 @@ public class MageControl : MonoBehaviour
         if (!_see)  //Player not enter eye range
         {
             E_AreaCheck.enabled = true;
-            E_Summon.enabled = false;
+            //E_Summon.enabled = false;
         }
         else if (_see && _targetHealth > 0)  //Player enter eye range 
         {
-            E_Summon.enabled = true;
+            //E_Summon.enabled = true;
             E_AreaCheck.enabled = false;
+            if(Time.time > E_Summon.nextSummon)
+            {
+                E_Summon.isSummon = true;
+            }
         }
 
         if (_see && _targetHealth <= 0)
         {
             E_AreaCheck.enabled = true;
-            E_Summon.enabled = false;
+            E_Summon.isSummon = false;
         }
 
         if (_IsDead)
@@ -148,6 +152,13 @@ public class MageControl : MonoBehaviour
         //}
 
         //StartCoroutine(TargetHealthCheck());
+    }
+
+    private IEnumerator SummonControl()
+    {
+        E_Summon.isSummon = true;
+        yield return new WaitForSeconds(0.2f);
+        E_Summon.isSummon = false;
     }
 
     private IEnumerator TargetHealthCheck()

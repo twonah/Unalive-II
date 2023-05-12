@@ -17,9 +17,7 @@ public class EnemySummon : MonoBehaviour
 
     public int index;
 
-    private float beforeSpawn = 0f;
-    private float nextSpawn = 0f;
-    private float setFalse = 0f;
+    public float nextSummon = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +38,7 @@ public class EnemySummon : MonoBehaviour
 
     private void RandomObject()
     {
-        if(Time.time > nextSpawn || isSummon == false )
+        if(/*Time.time > nextSummon || */isSummon == true)
         {
             if(!RandomSummon)
             {
@@ -56,18 +54,12 @@ public class EnemySummon : MonoBehaviour
     public void Summon()   //Use in animation
     {
         GameObject bullet = Instantiate(SummonObject, SummonSpawnpoint.position, SummonSpawnpoint.rotation);
+    }
 
-        nextSpawn = Time.time + SummonDelay;
-
-        isSummon = true;
-
-        setFalse = nextSpawn - 2f;
-
-        if (setFalse <= Time.time)
-        {
-            isSummon = false;
-            RandomSummon = false;
-        }
-
+    public void DoneSummon()
+    {
+        isSummon = false;
+        RandomSummon = false;
+        nextSummon = Time.time + SummonDelay;
     }
 }

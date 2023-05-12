@@ -21,8 +21,6 @@ public class PopupImage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("TEst");
-
         if(collision.gameObject.CompareTag("Player") && _portal._IsLocked)
         {
             _iconPopUp.SetActive(true);

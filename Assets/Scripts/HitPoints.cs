@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitPoints : MonoBehaviour
 {
-    [SerializeField] private float _maxHitPoints;
+    [SerializeField] public float _maxHitPoints;
     [SerializeField] public float _CurrentHitPoints;
 
     [SerializeField] public bool _IsTakingDamage;

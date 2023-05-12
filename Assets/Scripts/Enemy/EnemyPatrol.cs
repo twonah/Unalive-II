@@ -28,6 +28,7 @@ public class EnemyPatrol : MonoBehaviour
     void Update()
     {
         Patrol();
+        //Debug.Log(_WalkSpeed);
     }
 
     private void FixedUpdate()

@@ -16,6 +16,8 @@ public class Door : MonoBehaviour
     [SerializeField] public bool _IsLocked; //Check in UI Key check
     [SerializeField] private GameObject _portal;
 
+    [SerializeField] private Animator _anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,10 +39,13 @@ public class Door : MonoBehaviour
         if(_IsLocked)
         {
             _portal.SetActive(false);
+            Debug.Log("Close");
         }
         else
         {
             _portal.SetActive(true);
+            _anim.SetBool("Open", true);
+            Debug.Log("Open");
         }
     }
 
