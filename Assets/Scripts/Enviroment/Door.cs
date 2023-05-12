@@ -39,13 +39,13 @@ public class Door : MonoBehaviour
         if(_IsLocked)
         {
             _portal.SetActive(false);
-            Debug.Log("Close");
+            //Debug.Log("Close");
         }
         else
         {
             _portal.SetActive(true);
             _anim.SetBool("Open", true);
-            Debug.Log("Open");
+            //Debug.Log("Open");
         }
     }
 
