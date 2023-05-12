@@ -7076,6 +7076,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 519762031}
+    - target: {fileID: 2541717744621141409, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2541717743933570232, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
     - {fileID: 2541717742846368636, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
@@ -12996,7 +13000,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6246554776903528769, guid: f3540f2b6c7fe7348ac5e9db6975fc29, type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6246554776903528770, guid: f3540f2b6c7fe7348ac5e9db6975fc29, type: 3}
       propertyPath: m_RootOrder
@@ -14157,11 +14161,11 @@ Transform:
   - {fileID: 754808053}
   - {fileID: 194418070}
   - {fileID: 372843205}
-  - {fileID: 1981915982}
   - {fileID: 1189935459}
   - {fileID: 2091719463}
   - {fileID: 1299109657}
   - {fileID: 863189144}
+  - {fileID: 1981915982}
   - {fileID: 803039805}
   - {fileID: 2134039574}
   - {fileID: 40831006}

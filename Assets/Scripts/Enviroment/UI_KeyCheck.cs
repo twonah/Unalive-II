@@ -21,14 +21,31 @@ public class UI_KeyCheck : MonoBehaviour
         _pKey.SetActive(false);
         _dKey.SetActive(false);
 
-        _player = GameObject.FindGameObjectWithTag("Player");
-        _dreamform = GameObject.FindGameObjectWithTag("DreamForm");
-        _portal = GameObject.FindGameObjectWithTag("Portal");
+        if(_player != null)
+        {
+            _player = GameObject.FindGameObjectWithTag("Player");
+        }
+        if (_dreamform != null)
+        {
+            _dreamform = GameObject.FindGameObjectWithTag("DreamForm");
+        }
+        if (_portal != null)
+        {
+            _portal = GameObject.FindGameObjectWithTag("Portal");
+        }
 
-        _playerCollected = _player.GetComponent<PlayerCollectKey>();
-        _dreamformCollected = _dreamform.GetComponent<DreamformCollectKey>();
-        _door = _portal.GetComponent<Door>();
-
+        if(_playerCollected != null)
+        {
+            _playerCollected = _player.GetComponent<PlayerCollectKey>();
+        }
+        if (_dreamformCollected != null)
+        {
+            _dreamformCollected = _dreamform.GetComponent<DreamformCollectKey>();
+        }
+        if (_door != null)
+        {
+            _door = _portal.GetComponent<Door>();
+        }
     }
 
     // Update is called once per frame
