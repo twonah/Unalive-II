@@ -25,8 +25,10 @@ public class Controll_Script : MonoBehaviour
     public bool isDreamWalkerToDreamform = false;
     public bool isDreamWalkerToPlayer = false;
     public bool isDreamform = false;
+    public bool isPlayer = false;
 
     public bool _IsDreamformDead;
+    public bool _IsPlayerDead;
 
     PostProcessVolume m_Volume;
     Vignette m_Vignette;
@@ -37,7 +39,7 @@ public class Controll_Script : MonoBehaviour
         DM.enabled = DM.enabled;
 
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
-        Collider2D _playerCollider = _player.GetComponent<Collider2D>();
+
 
         _dreamFormCollider.enabled = false;
 
@@ -58,6 +60,22 @@ public class Controll_Script : MonoBehaviour
         {
             _IsDreamformDead = false;
         }
+
+        if (_player.GetComponent<HitPoints>()._CurrentHitPoints <=0 ) //Force to turn to Dreamform
+        {
+            _IsPlayerDead = true;
+            StartCoroutine(ForceToTransformToPlayer());  
+        }
+        else
+        {
+            _IsPlayerDead = false;
+        }
+
+        if (_IsPlayerDead == false && DM.enabled == !DM.enabled) // dreamform follows player when deactivated
+        {
+            DreamWalkerPosition(0.5f, 0.1f, 0f); // follows the player while deactivated
+        }
+
     }
 
 
@@ -88,9 +106,11 @@ public class Controll_Script : MonoBehaviour
     {
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
+
+
         if (_control.Main.Switch.triggered) //E
         {
-            if (_Cooldown._CurrentEnergy > 0)
+            if (_Cooldown._CurrentEnergy > 0) // checks if cooldown is bigger 0 before switching
             {
                 PM.enabled = !PM.enabled; // switch to Dreamwalk 
                 DM.enabled = !DM.enabled; // switch to Player
@@ -192,6 +212,31 @@ public class Controll_Script : MonoBehaviour
         _dreamFormCollider.enabled = false;
 
         CameraPlay("Base Layer.PlayerCam");
+    }
+
+    private IEnumerator ForceToTransformToPlayer() // force switch to Dreamform when player hp is zero
+    {
+
+
+        PM.enabled = !PM.enabled; // switch to dreamwalk
+
+        DP.enabled = true;
+        DM.enabled = true;
+
+        StartCoroutine(TransformToDreamform());
+
+        Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
+
+        
+        yield return new WaitForSeconds(1f);
+        CameraPlay("Base Layer.DreamWalkCam");
+      
+
+        SetActive(1);
+        print("YOU ARE PLAYING AS DREAMWALKER");
+        _dreamFormCollider.enabled = true;
+        CoolCheck = 1;
+        _Cooldown.IfDreamForm(CoolCheck); // drains energy
     }
 
     private void CameraPlay(string CamName)
