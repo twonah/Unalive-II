@@ -16,14 +16,22 @@ public class GameOver : MonoBehaviour
     private bool _IsGamePaused = false;
     private bool _isGameOver = false;
 
+    [SerializeField] UI_Cooldown uc;
+
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1f;
+        uc = FindObjectOfType<UI_Cooldown>();
     }
     void Update()
     {
         if (_dreamFormHitpoints._CurrentHitPoints <= 0 && _physicalFormHitpoints._CurrentHitPoints <= 0)
+        {
+            StartCoroutine(GameOverDelay());
+        }
+
+        if(_physicalFormHitpoints._CurrentHitPoints <= 0 && uc._CurrentEnergy <= 0)
         {
             StartCoroutine(GameOverDelay());
         }

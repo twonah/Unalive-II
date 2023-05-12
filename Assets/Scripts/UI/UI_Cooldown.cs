@@ -6,7 +6,7 @@ using System;
 
 public class UI_Cooldown : MonoBehaviour
 {
-     Controll_Script _Controll;
+    public Controll_Script _Controll;
 
     public float _CurrentEnergy;
     public float _MaxEnergy = 150f;
@@ -18,12 +18,12 @@ public class UI_Cooldown : MonoBehaviour
     public void Start()
     {
         _CurrentEnergy = _MaxEnergy; // makes the current energy start with full energy
+        _Controll = FindObjectOfType<Controll_Script>();
     }
 
 
      void Update() // Test the energy decreaseing is working
     {
-
         if (energy == 1)
         {
             DecreseEnergy();
@@ -34,15 +34,13 @@ public class UI_Cooldown : MonoBehaviour
 
     public void DecreseEnergy()
     {
-        if (_CurrentEnergy > 0)
+        if (_CurrentEnergy > 0 && _Controll.isDreamform)
         {
-
-                _CurrentEnergy -= dValue * Time.deltaTime;
-                //print(_CurrentEnergy);
-                Console.Clear();
-                
+            _CurrentEnergy -= dValue * Time.deltaTime;
+            //Debug.Log("Draining Energy");
+            //print(_CurrentEnergy);
+            Console.Clear();
         }
-
         else if (_CurrentEnergy < 0)
         {
             _CurrentEnergy = 0;

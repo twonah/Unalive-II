@@ -51,7 +51,7 @@ public class Controll_Script : MonoBehaviour
 
     private void Update()
     {   
-        if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0)     //Force to turn to the player
+        if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0) //Force to turn to the player
         {
             _IsDreamformDead = true;
             StartCoroutine(ForceToTransformToDreamform());
@@ -59,6 +59,11 @@ public class Controll_Script : MonoBehaviour
         else
         {
             _IsDreamformDead = false;
+        }
+
+        if(isDreamform && _Cooldown._CurrentEnergy <= 0)
+        {
+            StartCoroutine(ForceToTransformToPlayer());
         }
 
         if (_player.GetComponent<HitPoints>()._CurrentHitPoints <=0 ) //Force to turn to Dreamform
@@ -106,48 +111,43 @@ public class Controll_Script : MonoBehaviour
     {
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
-
-
         if (_control.Main.Switch.triggered) //E
         {
             if (_Cooldown._CurrentEnergy > 0) // checks if cooldown is bigger 0 before switching
             {
-                PM.enabled = !PM.enabled; // switch to Dreamwalk 
+                PM.enabled = !PM.enabled; // switch to Dreamwalk
+                //Debug.Log("Dreamwalk");
                 DM.enabled = !DM.enabled; // switch to Player
                 DP.enabled = !DP.enabled;
             }
-            else
+            else if (_Cooldown._CurrentEnergy <= 0)
             {
                 DM.enabled = !DM.enabled; // switch to Player
                 PM.enabled = enabled;
             }
 
-            
+            if (!PM.enabled) // switch to Dreamwalk
+            {
+                PM.StopWalking();
+
+                StartCoroutine(TransformToDreamform());
 
 
-                if (!PM.enabled) // switch to Dreamwalk
-                {
-                    PM.StopWalking();
+                _dreamFormCollider.enabled = true;
 
-                    StartCoroutine(TransformToDreamform());
+                CameraPlay("Base Layer.DreamWalkCam");
 
+                Vector3 oldPos = _DreamWalk.transform.position;
+                DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
+                Vector3 newPos = _DreamWalk.transform.position;
+                _dreamVirtualCam.OnTargetObjectWarped(_DreamWalk.transform, newPos - oldPos);
 
-                    _dreamFormCollider.enabled = true;
+                SetActive(1);
+                print("YOU ARE PLAYING AS DREAMWALKER");
 
-                    CameraPlay("Base Layer.DreamWalkCam");
-
-                    Vector3 oldPos = _DreamWalk.transform.position;
-                    DreamWalkerPosition(0.5f, 0.1f, 0f); // spawns next to the player
-                    Vector3 newPos = _DreamWalk.transform.position;
-                    _dreamVirtualCam.OnTargetObjectWarped(_DreamWalk.transform, newPos - oldPos);
-
-                    SetActive(1);
-                    print("YOU ARE PLAYING AS DREAMWALKER");
-
-                    CoolCheck = 1;
-                    _Cooldown.IfDreamForm(CoolCheck); // drains energy
-                }
-
+                CoolCheck = 1;
+                _Cooldown.IfDreamForm(CoolCheck); // drains energy
+            }
 
             if (!DM.enabled) // switch to Player
             {
@@ -168,6 +168,7 @@ public class Controll_Script : MonoBehaviour
             }
         }
     }
+
     private IEnumerator TransformToDreamform()
     {
         isDreamWalkerToDreamform = true;
@@ -195,11 +196,14 @@ public class Controll_Script : MonoBehaviour
 
     private IEnumerator ForceToTransformToDreamform()   //Not done
     {
+        StartCoroutine(TransformToDreamform());
+
         PM.enabled = true;
         //PM.enabled = !PM.enabled; // switch to Dreamwalk
         DP.enabled = !DP.enabled;
 
         DM.enabled = !DM.enabled; // switch to Player
+
 
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
@@ -216,22 +220,16 @@ public class Controll_Script : MonoBehaviour
 
     private IEnumerator ForceToTransformToPlayer() // force switch to Dreamform when player hp is zero
     {
-
-
         PM.enabled = !PM.enabled; // switch to dreamwalk
 
         DP.enabled = true;
         DM.enabled = true;
 
-        StartCoroutine(TransformToDreamform());
-
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
-        
         yield return new WaitForSeconds(1f);
         CameraPlay("Base Layer.DreamWalkCam");
-      
-
+        StartCoroutine(TransformToPlayer());
         SetActive(1);
         print("YOU ARE PLAYING AS DREAMWALKER");
         _dreamFormCollider.enabled = true;

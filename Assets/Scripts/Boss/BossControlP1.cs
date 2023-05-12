@@ -171,7 +171,7 @@ public class BossControlP1 : MonoBehaviour
             B_WarpPlayer.IsWarp = false;
         }
 
-        if (HP_Boss._CurrentHitPoints <= 0)  //Enter Phase 2
+        if (HP_Boss._CurrentHitPoints <= 0 || HP_Core._CurrentHitPoints <= 0)  //Enter Phase 2
         {
             IsStun = false;
             B_SpawnEnemy.enabled = false;
@@ -180,8 +180,6 @@ public class BossControlP1 : MonoBehaviour
             B_CoreReview.IsReviewCore = false;
             //Debug.Log("Enter P2");
         }
-
-
 
     }
 

@@ -11,6 +11,7 @@ public class PlayerCollectKey : MonoBehaviour
     void Start()
     {
         _pKey = GameObject.FindGameObjectWithTag("PKey");
+
     }
 
     // Update is called once per frame
