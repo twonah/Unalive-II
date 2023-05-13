@@ -176,7 +176,7 @@ public class Controll_Script : MonoBehaviour
         m_Vignette.intensity.Override(0.587f);
         m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 20f, m_Vignette);
         Debug.Log("Post effect : On");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         isDreamform = true;
         isDreamWalkerToDreamform = false;
     }
@@ -188,7 +188,7 @@ public class Controll_Script : MonoBehaviour
         m_Vignette.intensity.Override(0f);
         m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 0f, m_Vignette);
         Debug.Log("Post effect : Off");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         isDreamform = false;
         isDreamWalkerToPlayer = false;
         SetActive(0);
@@ -203,7 +203,6 @@ public class Controll_Script : MonoBehaviour
         DP.enabled = !DP.enabled;
 
         DM.enabled = !DM.enabled; // switch to Player
-
 
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
