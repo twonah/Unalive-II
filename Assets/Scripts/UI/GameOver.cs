@@ -53,7 +53,7 @@ public class GameOver : MonoBehaviour
     public void BackToMainMenu()
     {
         _gameOverUI.SetActive(false);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("level0");
         Time.timeScale = 1f;
         _IsGamePaused = false;
     }
@@ -61,7 +61,7 @@ public class GameOver : MonoBehaviour
     public void Restart()
     {
         _gameOverUI.SetActive(false);
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
         _IsGamePaused = false;
     }

@@ -194,9 +194,9 @@ public class Controll_Script : MonoBehaviour
         SetActive(0);
     }
 
-    private IEnumerator ForceToTransformToDreamform()   //Not done
+    private IEnumerator ForceToTransformToDreamform()   //Not done      //This one is trans to player
     {
-        StartCoroutine(TransformToDreamform());
+        //StartCoroutine(TransformToPlayer());
 
         PM.enabled = true;
         //PM.enabled = !PM.enabled; // switch to Dreamwalk
@@ -218,7 +218,7 @@ public class Controll_Script : MonoBehaviour
         CameraPlay("Base Layer.PlayerCam");
     }
 
-    private IEnumerator ForceToTransformToPlayer() // force switch to Dreamform when player hp is zero
+    private IEnumerator ForceToTransformToPlayer() // force switch to Dreamform when player hp is zero //This one is trans to dreamform
     {
         PM.enabled = !PM.enabled; // switch to dreamwalk
 
@@ -229,7 +229,7 @@ public class Controll_Script : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         CameraPlay("Base Layer.DreamWalkCam");
-        StartCoroutine(TransformToPlayer());
+        //StartCoroutine(TransformToDreamform());
         SetActive(1);
         print("YOU ARE PLAYING AS DREAMWALKER");
         _dreamFormCollider.enabled = true;

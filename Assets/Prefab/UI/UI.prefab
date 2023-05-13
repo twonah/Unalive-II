@@ -1264,6 +1264,7 @@ MonoBehaviour:
   _dreamFormHitpoints: {fileID: 0}
   _physicalFormHitpoints: {fileID: 0}
   _gameOverDelay: 2.5
+  uc: {fileID: 0}
 --- !u!114 &373336874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,7 +1606,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 373336873}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -5445,7 +5446,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 373336873}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
