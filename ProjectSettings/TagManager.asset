@@ -11,6 +11,7 @@ TagManager:
   - DKey
   - EnergyBall
   - Portal
+  - Audio
   layers:
   - Default
   - TransparentFX

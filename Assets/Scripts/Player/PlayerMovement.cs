@@ -28,7 +28,13 @@ public class PlayerMovement : MonoBehaviour
     PostProcessVolume m_Volume;
     Vignette m_Vignette;
 
-    [SerializeField] private AudioSource jumpsound;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -37,10 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             isPressingJump = true;
-            if(jumpsound != null)
-            {
-                jumpsound.Play();
-            }
+            audioManager.PlaySFX(audioManager.playerJump);
         }
 
         if (Input.GetButtonUp("Jump"))
