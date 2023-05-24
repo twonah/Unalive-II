@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Test : MonoBehaviour
+public class LoadScene : MonoBehaviour
 {
-    public void PlayGame()
+    public void LoadSceneNumber(int sceneNum)
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(sceneNum);
     }
 }

@@ -351,12 +351,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 669
-        y: 0
+        y: 56
         width: 252
-        height: 101
+        height: 36
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 19, z: 0, w: 9}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -472,6 +472,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ServerRoomBG_17
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 92
+        width: 252
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef443a79cab30b479c0a80f414849e6
+      internalID: 1886892019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomBG_18
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 20
+        width: 252
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd8442ee5e26c048916fb87f2fa1ed1
+      internalID: 1105402426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomBG_19
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 0
+        width: 252
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfd0ec2f17d0414a98e2e5820f003aa
+      internalID: -1221674391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -485,15 +548,19 @@ TextureImporter:
     nameFileIdTable:
       ServerRoomBG_1: -940180285
       ServerRoomBG_8: 742447088
+      ServerRoomBG_17: 1886892019
       ServerRoomBG_6: 667107252
       ServerRoomBG_0: -161667642
       ServerRoomBG_13: 628832554
       ServerRoomBG_7: -2086445963
+      ServerRoomBG_19: -1221674391
       ServerRoomBG_11: 751750775
+      ServerRoomBG_20: 798496840
       ServerRoomBG_15: 1874785798
       ServerRoomBG_2: 974320263
       ServerRoomBG_3: 1663904783
       ServerRoomBG_4: -315914305
+      ServerRoomBG_18: 1105402426
       ServerRoomBG_12: -651416335
       ServerRoomBG_16: -1219920033
       ServerRoomBG_5: 811887363

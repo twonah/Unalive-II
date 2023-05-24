@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +31,10 @@ public class MainMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void LoadScene(int sceneNum)
+    {
+        SceneManager.LoadScene(sceneNum);
     }
 }
