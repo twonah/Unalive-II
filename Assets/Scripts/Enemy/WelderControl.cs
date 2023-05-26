@@ -114,7 +114,7 @@ public class WelderControl : MonoBehaviour
 
     private void WelderControls()
     {
-        if (!_see && E_Attack._ChargeOn == false)  //Player not enter eye range
+        if (!_see && E_Attack._ChargeOn == false && !E_Attack.IsCharging && !E_Attack.IsAttacking)  //Player not enter eye range
         {
             E_Patrol.enabled = true;
             E_MoveTo.enabled = false;
@@ -124,16 +124,24 @@ public class WelderControl : MonoBehaviour
         {
             E_MoveTo.enabled = true;
             E_Patrol.enabled = false;
+            if(E_Attack.IsCharging || E_Attack.IsAttacking)
+            {
+                E_MoveTo.enabled = false;
+                E_Patrol.enabled = false;
+            }
         }
 
         if (E_Attack._PlayerEnterAttackRange == true || E_Attack._ChargeOn == true)    //Player enter attack range
         {
             E_MoveTo.enabled = false;
+            E_Patrol.enabled = false;
         }
 
         if(_IsDead)
         {
             E_Attack.enabled = false;
+            E_Patrol.enabled = false;
+            E_MoveTo.enabled = false;
         }
 
         StartCoroutine(TargetHealthCheck());

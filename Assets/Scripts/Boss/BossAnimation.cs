@@ -45,14 +45,19 @@ public class BossAnimation : MonoBehaviour
         {
             _anim.SetBool("IsFall", true);
             prop.SetActive(false);
-            //Debug.Log("TEst");
         }
         else
-        {
-            _anim.SetBool("IsFall", false);
-            prop.SetActive(true);
+        {           
+            if (!B_CoreReview.IsCoreOut)
+            {
+                _anim.SetBool("IsFall", false);
+            }
+
         }
+
+
     }
+
     private void CallAnimation()
     {
         if(B_ShootFireball.enabled)
@@ -126,5 +131,10 @@ public class BossAnimation : MonoBehaviour
     private void Die()  //Use in animation
     {
         Destroy(gameObject);
+    }
+
+    public void ActiveProp()
+    {
+        prop.SetActive(true);
     }
 }

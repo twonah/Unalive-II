@@ -13,6 +13,7 @@ public class BossCoreReview : MonoBehaviour
     [SerializeField] private Vector3 CoreOriginalScale;
 
     [SerializeField] public bool IsReviewCore = true;
+    [SerializeField] public bool IsCoreOut = false;
 
     private float currentScale = 0f;
 
@@ -41,6 +42,8 @@ public class BossCoreReview : MonoBehaviour
 
             BossCore.transform.position = Vector2.MoveTowards(BossCore.transform.position, new Vector2(CoreReviewPos.position.x, CoreReviewPos.position.y), MoveSpeed * Time.deltaTime);
             BossCore.transform.localScale = Vector3.Lerp(BossCore.transform.localScale, CoreMaximumScale, currentScale);
+
+            IsCoreOut = true;
         }
         else
         {
@@ -53,6 +56,7 @@ public class BossCoreReview : MonoBehaviour
             if(BossCore.transform.position == Boss.position)
             {
                 BossCore.SetActive(false);
+                IsCoreOut = false;
             }
         }
 

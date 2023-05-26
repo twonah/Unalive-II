@@ -6,11 +6,14 @@ public class Fireball : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _damage;
+    [SerializeField] private float _moveDelay;
 
     private GameObject _SwitchControl;
     private GameObject _player;
     private GameObject _dreamform;
     private GameObject _targetOb;
+
+    private float _waitTime;
 
     private Transform _playerPosition;
     private Transform _dreamformPosition;
@@ -22,6 +25,8 @@ public class Fireball : MonoBehaviour
     [SerializeField] private float rotateSpeed;
 
     [SerializeField] private float rotationModifier;
+
+    [SerializeField] Animator _anim;
 
     private bool _isDreamform;
 
@@ -38,7 +43,7 @@ public class Fireball : MonoBehaviour
 
         TargetSelect();
 
-        
+        _waitTime = _moveDelay + Time.time;
     }
 
     // Update is called once per frame
@@ -48,7 +53,7 @@ public class Fireball : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (_targetOb != null)
+        if (Time.time >= _waitTime && _targetOb != null)
         {
             Vector3 vectorToTarget = _targetOb.transform.position - transform.position;
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
@@ -74,7 +79,11 @@ public class Fireball : MonoBehaviour
 
     private void MoveTo()
     {
-        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(_targetPos.position.x, _targetPos.position.y), _moveSpeed * Time.deltaTime);
+        if (Time.time >= _waitTime)
+        {
+            _anim.SetBool("Move", true);
+            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, new Vector2(_targetPos.position.x, _targetPos.position.y), _moveSpeed * Time.deltaTime);
+        } 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

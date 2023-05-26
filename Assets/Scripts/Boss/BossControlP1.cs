@@ -124,7 +124,7 @@ public class BossControlP1 : MonoBehaviour
             CountdownStart = false;
             IsStun = false;
 
-            if (!_see)
+            if (!_see || EnterP2)
             {
                 B_ShootFireball.enabled = false;
             }
@@ -136,6 +136,7 @@ public class BossControlP1 : MonoBehaviour
 
         if(B_CoreReviewArea.IsEnterArea && HP_Boss._CurrentHitPoints > 0)
         {
+            B_ShootFireball.enabled = false;
             B_CoreReview.enabled = true;
             B_CoreReview.IsReviewCore = true;
             B_DropEnergy.enabled = true;

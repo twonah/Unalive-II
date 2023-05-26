@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy_MeleeEffectHit
+  m_Name: Boss_Stand
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,21 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1672572962, guid: c61c3da151b7a3d49a1102b51d3714ed, type: 3}
+      value: {fileID: 2115166625, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
     - time: 0.1
-      value: {fileID: -1356207462, guid: c61c3da151b7a3d49a1102b51d3714ed, type: 3}
+      value: {fileID: -314720921, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - time: 0.2
+      value: {fileID: -2030257330, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - time: 0.3
+      value: {fileID: -928649912, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - time: 0.4
+      value: {fileID: 1719651049, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - time: 0.5
+      value: {fileID: -136328896, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - time: 0.6
+      value: {fileID: -764900016, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - time: 0.7
+      value: {fileID: -1393055480, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,14 +54,20 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1672572962, guid: c61c3da151b7a3d49a1102b51d3714ed, type: 3}
-    - {fileID: -1356207462, guid: c61c3da151b7a3d49a1102b51d3714ed, type: 3}
+    - {fileID: 2115166625, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - {fileID: -314720921, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - {fileID: -2030257330, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - {fileID: -928649912, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - {fileID: 1719651049, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - {fileID: -136328896, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - {fileID: -764900016, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
+    - {fileID: -1393055480, guid: ce7f31bb0b6b1f2428edfef87d3ed1c3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.2
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -69,8 +87,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.2
-    functionName: DestroyWhenHit
+  - time: 0.8
+    functionName: ActiveProp
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
