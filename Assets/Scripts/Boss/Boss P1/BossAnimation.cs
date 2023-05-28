@@ -128,13 +128,20 @@ public class BossAnimation : MonoBehaviour
         //}
     }
 
-    private void Die()  //Use in animation
+    private void DisableBoss()  //Use in animation
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void ActiveProp()
     {
         prop.SetActive(true);
+        //Debug.Log("Active Prop");
+    }
+
+    public void DisableProp()
+    {
+        prop.SetActive(false);
+        //Debug.Log("Dis Prop");
     }
 }

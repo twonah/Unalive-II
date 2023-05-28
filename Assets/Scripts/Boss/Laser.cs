@@ -17,42 +17,60 @@ public class Laser : MonoBehaviour
     private string playerTag = "Player";
     private string dreamformTag = "DreamForm";
 
+    private float chargeTime;
+    private float disableTime;
+    private float closeTime;
+
     // Start is called before the first frame update
     void Start()
     {
         _isCharge = true;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        chargeTime = _chargeDuration + Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        laserControl();
     }
 
     private void FixedUpdate()
     {
-        StartCoroutine(LaserControl());
+        //StartCoroutine(LaserControl());
     }
 
-    private IEnumerator LaserControl()
-    {   
-        yield return new WaitForSeconds(_chargeDuration);
+    private void OnEnable()
+    {
+        chargeTime = _chargeDuration + Time.time;
+        disableTime = chargeTime + _activeDuration;
+        closeTime = disableTime + _disableDuration;
+    }
 
-        _anim.SetBool("Active", true);
-        _isCharge = false;
-        _isActive = true;
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
-
-        yield return new WaitForSeconds(_activeDuration);
-
-        _anim.SetBool("Active", false);
-        _isActive = false;
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
-
-        yield return new WaitForSeconds(_disableDuration);
-
-        gameObject.SetActive(false);
+    private void laserControl()
+    {
+        if(Time.time >= chargeTime && Time.time < disableTime)
+        {
+            _anim.SetBool("Active", true);
+            _isActive = true;
+            _isCharge = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
+        else if(Time.time < chargeTime)
+        {
+            _anim.SetBool("Active", false);
+            _isCharge = true;
+        }
+        else if(Time.time >= disableTime && Time.time < closeTime)
+        {
+            _anim.SetBool("Active", false);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else if(Time.time >= closeTime)
+        {
+            _isActive = false;
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -77,4 +95,5 @@ public class Laser : MonoBehaviour
             }
         }
     }
+
 }

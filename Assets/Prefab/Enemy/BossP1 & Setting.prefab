@@ -786,7 +786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3341862957902938780}
   m_Layer: 0
-  m_Name: Boss & Setting
+  m_Name: BossP1 & Setting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,6 +1138,7 @@ MonoBehaviour:
   CoreMaximumScale: {x: 1, y: 1, z: 0}
   CoreOriginalScale: {x: 0.1, y: 0.1, z: 0}
   IsReviewCore: 0
+  IsCoreOut: 0
 --- !u!114 &6955884798933800500
 MonoBehaviour:
   m_ObjectHideFlags: 0

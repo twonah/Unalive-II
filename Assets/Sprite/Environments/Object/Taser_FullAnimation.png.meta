@@ -597,7 +597,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Taser_FullAnimation_19: 5538613
       Taser_FullAnimation_5: 1385519379
       Taser_FullAnimation_9: -365395544
       Taser_FullAnimation_16: 544905225
@@ -614,6 +613,7 @@ TextureImporter:
       Taser_FullAnimation_11: 438030535
       Taser_FullAnimation_12: -1694881806
       Taser_FullAnimation_22: 981644020
+      Taser_FullAnimation_19: 5538613
       Taser_FullAnimation_17: 1563892182
       Taser_FullAnimation_2: -1866350366
       Taser_FullAnimation_18: 261505005
