@@ -27,6 +27,12 @@ public class EnemyExplode : MonoBehaviour
     public bool IsCooldown;
     public bool _IsDie;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +77,7 @@ public class EnemyExplode : MonoBehaviour
         {
             //Explode();
             StartCoroutine(NewExplode());
+            audioManager.PlaySFX(audioManager.explosion);
             _afterAttackTime = _currentTime;
             _ChargeOn = false;
 

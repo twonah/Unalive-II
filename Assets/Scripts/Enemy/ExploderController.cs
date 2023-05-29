@@ -43,6 +43,12 @@ public class ExploderController : MonoBehaviour
 
     public bool _IsDead;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +80,7 @@ public class ExploderController : MonoBehaviour
 
         if (_enemyHP <= 0)   //Dead
         {
+            audioManager.PlaySFX(audioManager.enemydeath);
             _IsDead = true;
         }
 
@@ -86,6 +93,7 @@ public class ExploderController : MonoBehaviour
 
 
         TargetSelect();
+
     }
 
     private void TargetSelect()

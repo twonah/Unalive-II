@@ -83,6 +83,7 @@ public class WelderControl : MonoBehaviour
 
         if(_enemyHP <= 0)   //Dead
         {
+            //audioManager.PlaySFX(audioManager.enemydeath);
             _IsDead = true;
         }
 
@@ -94,7 +95,10 @@ public class WelderControl : MonoBehaviour
         
 
         TargetSelect();
-
+        if (HP._IsTakingDamage)
+        {
+            audioManager.PlaySFX(audioManager.enemyhurt);
+        }
     }
 
     private void TargetSelect()
