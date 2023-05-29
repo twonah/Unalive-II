@@ -9,22 +9,41 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("---------- Audio Clip ----------")]
-    public AudioClip background;
+    public AudioClip labbackground;
+    public AudioClip neoncitybackground;
     public AudioClip playerJump;
-
+    public AudioClip playerhurt;
+    public AudioClip playerdash;
+    public AudioClip spirithurt;
+    public AudioClip spiritdash;
+    public AudioClip enemydeath;
+    public AudioClip enemyhurt;
+    public AudioClip explosion;
+    public AudioClip tankhurt;
+    public AudioClip bosshurt;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
-    {
-        musicSource.clip = background;
-        musicSource.Play();
-    }
+    //private void Start()
+    //{
+    //    musicSource.clip = labbackground;
+    //    musicSource.Play();
+    //}
 
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+    public void StopBGM1(AudioClip clip)
+    {
+        musicSource.clip = labbackground;
+        musicSource.Stop();
+    }
+    public void StopBGM2(AudioClip clip)
+    {
+        musicSource.clip = neoncitybackground;
+        musicSource.Stop();
     }
 }
