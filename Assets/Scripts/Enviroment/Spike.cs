@@ -33,6 +33,8 @@ public class Spike : MonoBehaviour
 
     private void Knockback()
     {
-        _player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * _knockback, ForceMode2D.Impulse);
+        //_player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * _knockback, ForceMode2D.Impulse);
+        _player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,_knockback);
+        
     }
 }
