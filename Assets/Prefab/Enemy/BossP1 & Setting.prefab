@@ -513,6 +513,8 @@ GameObject:
   - component: {fileID: 3341862957779975178}
   - component: {fileID: 3341862957779975177}
   - component: {fileID: 3341862957779975180}
+  - component: {fileID: 6727290008916667928}
+  - component: {fileID: 5957047651925675563}
   m_Layer: 15
   m_Name: Core
   m_TagString: Untagged
@@ -576,7 +578,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -1256937528, guid: 58136c6775f16fe4290bcb1257ebc075, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -639,6 +641,41 @@ MonoBehaviour:
   _maxHitPoints: 10
   _CurrentHitPoints: 0
   _IsTakingDamage: 0
+--- !u!95 &6727290008916667928
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341862957779975175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb0dab6f78c15d64fb554ed8872748b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5957047651925675563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341862957779975175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383726614a6017d4e96cdc11fe4abd42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bossCoreAnim: {fileID: 6727290008916667928}
+  B_CoreReview: {fileID: 6955884798933800499}
+  B_HP: {fileID: 3341862957779975180}
 --- !u!1 &3341862957784322068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1173,7 @@ MonoBehaviour:
   MoveSpeed: 2
   ScaleSpeed: 0.1
   CoreMaximumScale: {x: 1, y: 1, z: 0}
-  CoreOriginalScale: {x: 0.1, y: 0.1, z: 0}
+  CoreOriginalScale: {x: 0.3, y: 0.3, z: 0}
   IsReviewCore: 0
   IsCoreOut: 0
 --- !u!114 &6955884798933800500
