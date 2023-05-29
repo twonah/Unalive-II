@@ -3393,15 +3393,15 @@ MonoBehaviour:
   musicSource: {fileID: 1879305147}
   SFXSource: {fileID: 1625690515}
   labbackground: {fileID: 8300000, guid: 577e1a0817ebe354d852e1df9a460312, type: 3}
-  neoncitybackground: {fileID: 0}
+  neoncitybackground: {fileID: 8300000, guid: 6549a7e8946dccd4ab92349cafbbe229, type: 3}
   playerJump: {fileID: 8300000, guid: 3dd72fac14d335642a599c3a6a869670, type: 3}
-  playerhurt: {fileID: 0}
-  playerdash: {fileID: 0}
-  spirithurt: {fileID: 0}
-  spiritdash: {fileID: 0}
-  enemydeath: {fileID: 0}
-  enemyhurt: {fileID: 0}
-  explosion: {fileID: 0}
+  playerhurt: {fileID: 8300000, guid: 994877d5d23096147a6db33354fc0603, type: 3}
+  playerdash: {fileID: 8300000, guid: 1d2def861038c714d87353c768ac2f9b, type: 3}
+  spirithurt: {fileID: 8300000, guid: dd35b0e3cb896794380e8a1a5a9e13d5, type: 3}
+  spiritdash: {fileID: 8300000, guid: 02c260f6c4c692a42a3bdcf0a2ec965e, type: 3}
+  enemydeath: {fileID: 8300000, guid: 9270b55f6133852429281c8c501449bc, type: 3}
+  enemyhurt: {fileID: 8300000, guid: c94b83beda9d0ac40922e95734b6d37f, type: 3}
+  explosion: {fileID: 8300000, guid: 6ff1c19e5a57cf042a15b23026cf9828, type: 3}
   tankhurt: {fileID: 0}
   bosshurt: {fileID: 0}
 --- !u!4 &1519713731
@@ -4323,7 +4323,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 132435221990948261, guid: ae508dbd83b8e2243a383bfa68a610a7, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
