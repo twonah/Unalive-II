@@ -125,6 +125,11 @@ public class GunnerControl : MonoBehaviour
             E_Patrol.enabled = true;
             E_MoveTo.enabled = false;
             E_MoveTo._MoveToSpeed = _moveToTargetWalkSpeed;
+            E_Shoot.enabled = false;
+            if(E_Shoot.isShoot)
+            {
+                E_Shoot.isShoot = false;
+            }
         }
         else if(_see && _targetHealth > 0)  //Player enter eye range 
         {

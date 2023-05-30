@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash || Input.GetButtonDown("Fire1") && canDash)
         {
+            audioManager.PlaySFX(audioManager.playerdash);
             StartCoroutine(Dash());
         }
 

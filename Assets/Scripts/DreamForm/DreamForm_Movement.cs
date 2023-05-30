@@ -31,9 +31,12 @@ public class DreamForm_Movement : MonoBehaviour
 
     [SerializeField] private TrailRenderer tr;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         rb.velocity = new Vector2(0,0);
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
 
@@ -82,6 +85,7 @@ public class DreamForm_Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)        //Dashhhh
         {
+            audioManager.PlaySFX(audioManager.spiritdash);
             StartCoroutine(Dash());
         }
 
