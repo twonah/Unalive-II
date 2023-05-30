@@ -39,8 +39,8 @@ public class EnemyShoot : MonoBehaviour
         if (Time.time > nextSpawn)
         {
             //Shoot & Direction
-            GameObject bullet = Instantiate(BulletPrefab, BulletSpawnpoint.position, BulletSpawnpoint.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * BulletSpeed * Mathf.Sign(gunnerTransform.localScale.x);
+            //GameObject bullet = Instantiate(BulletPrefab, BulletSpawnpoint.position, BulletSpawnpoint.rotation);
+            //bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * BulletSpeed * Mathf.Sign(gunnerTransform.localScale.x);
 
             nextSpawn = Time.time + SpawnDelay;
 
@@ -55,5 +55,11 @@ public class EnemyShoot : MonoBehaviour
             //Debug.Log("TEst");
         }
 
+    }
+
+    public void BulletOut()
+    {
+        GameObject bullet = Instantiate(BulletPrefab, BulletSpawnpoint.position, BulletSpawnpoint.rotation);
+        bullet.GetComponent<Rigidbody2D>().velocity = Vector3.right * BulletSpeed * Mathf.Sign(gunnerTransform.localScale.x);
     }
 }

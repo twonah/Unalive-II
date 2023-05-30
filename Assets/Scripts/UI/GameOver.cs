@@ -7,9 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] private GameObject _gameOverUI;
+    [SerializeField] private GameObject _pauseUI;
+    [SerializeField] private GameObject _inGameUI;
 
     [SerializeField] private HitPoints _dreamFormHitpoints;
     [SerializeField] private HitPoints _physicalFormHitpoints;
+
+    [SerializeField] private PauseMenu _pauseMenu;
 
     [SerializeField] private float _gameOverDelay = 0f;
 
@@ -48,12 +52,17 @@ public class GameOver : MonoBehaviour
         _gameOverUI.SetActive(true);
         Time.timeScale = 0f;
         _IsGamePaused = true;
+        _pauseMenu._IsGamePaused = false;
+        _pauseMenu.enabled = false;
+        _pauseUI.SetActive(false);
+        _inGameUI.SetActive(false);
+
     }
 
-    public void BackToMainMenu()
+    public void BackToMainMenu(string SceneName)
     {
         _gameOverUI.SetActive(false);
-        SceneManager.LoadScene("level0");
+        SceneManager.LoadScene(SceneName);
         Time.timeScale = 1f;
         _IsGamePaused = false;
     }
