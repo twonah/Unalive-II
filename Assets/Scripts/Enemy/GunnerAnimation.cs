@@ -10,6 +10,7 @@ public class GunnerAnimation : MonoBehaviour
     [SerializeField] private GunnerControl E_GC;
     [SerializeField] private HitPoints HP;
     [SerializeField] private Animator _anim;
+    [SerializeField] private Animator _shootAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,10 +46,12 @@ public class GunnerAnimation : MonoBehaviour
         if (E_S.isShoot)
         {
             _anim.SetBool("IsAttack", true);
+            _shootAnim.SetBool("EffectStart", true);
         }
         else
         {
             _anim.SetBool("IsAttack", false);
+            _shootAnim.SetBool("EffectStart", false);
         }
 
     }
@@ -79,5 +82,10 @@ public class GunnerAnimation : MonoBehaviour
     private void Die()  //Use in animation
     {
         Destroy(gameObject);
+    }
+
+    public void GunnerEffect()
+    {
+        _shootAnim.SetBool("EffectStart", false);
     }
 }
