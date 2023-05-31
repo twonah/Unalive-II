@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip playerJump;
     public AudioClip playerhurt;
     public AudioClip playerdash;
+    public AudioClip playerfootstep;
     public AudioClip spirithurt;
     public AudioClip spiritdash;
     public AudioClip enemydeath;
@@ -26,11 +27,11 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    //private void Start()
-    //{
-    //    musicSource.clip = labbackground;
-    //    musicSource.Play();
-    //}
+    private void Start()
+    {
+        //musicSource.clip = labbackground;
+        //musicSource.Play();
+    }
 
     public void PlaySFX(AudioClip clip)
     {
@@ -38,12 +39,10 @@ public class AudioManager : MonoBehaviour
     }
     public void StopBGM1(AudioClip clip)
     {
-        musicSource.clip = labbackground;
-        musicSource.Stop();
+        musicSource.GetComponent<AudioSource>().Stop();
     }
     public void StopBGM2(AudioClip clip)
     {
-        musicSource.clip = neoncitybackground;
-        musicSource.Stop();
+        musicSource.GetComponent<AudioSource>().Stop();
     }
 }

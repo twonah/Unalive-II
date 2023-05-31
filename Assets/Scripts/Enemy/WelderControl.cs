@@ -83,7 +83,7 @@ public class WelderControl : MonoBehaviour
 
         if(_enemyHP <= 0)   //Dead
         {
-            //audioManager.PlaySFX(audioManager.enemydeath);
+            audioManager.PlaySFX(audioManager.enemydeath);
             _IsDead = true;
         }
 

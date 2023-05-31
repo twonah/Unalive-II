@@ -10,7 +10,7 @@ public class Background_level_1 : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         audioManager.PlaySFX(audioManager.labbackground);
-        audioManager.StopBGM1(audioManager.labbackground);
+        //audioManager.StopBGM1(audioManager.labbackground);
 
     }
 }

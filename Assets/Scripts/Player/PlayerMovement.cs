@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            audioManager.PlaySFX(audioManager.playerfootstep);
+        }
         bool isGrounded = IsGrounded();
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
