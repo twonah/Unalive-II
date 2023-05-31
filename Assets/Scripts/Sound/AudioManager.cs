@@ -37,12 +37,23 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(clip);
     }
-    public void StopBGM1(AudioClip clip)
+    public void StopBGM(AudioClip clip)
     {
         musicSource.GetComponent<AudioSource>().Stop();
     }
-    public void StopBGM2(AudioClip clip)
+    //public void PlayBGM(AudioClip clip)
+    //{
+    //    musicSource.GetComponent<AudioSource>().Play();
+    //    musicSource.Play();
+    //}
+    public void PlayBGM1(AudioClip clip)
     {
-        musicSource.GetComponent<AudioSource>().Stop();
+        musicSource.clip = labbackground;
+        musicSource.Play();
+    }
+    public void PlayBGM2(AudioClip clip)
+    {
+        musicSource.clip = neoncitybackground;
+        musicSource.Play();
     }
 }
