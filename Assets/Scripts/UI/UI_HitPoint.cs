@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UI_HitPoint : MonoBehaviour
 {
 
-    [SerializeField] private HitPoints _dreamFormHitPoints;
-    [SerializeField] private HitPoints _PhysicalFormHitPoints;
+    private HitPoints _dreamFormHitPoints;
+    private HitPoints _PhysicalFormHitPoints;
 
     [SerializeField] private int _numOfHeartsDreamForm;
     [SerializeField] private int _numOfHeartsPhysicalForm;
@@ -17,10 +17,17 @@ public class UI_HitPoint : MonoBehaviour
     [SerializeField] private Sprite _fullHeart;
     [SerializeField] private Sprite _emptyHeart;
 
+    private GameObject dreamform;
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        dreamform = GameObject.FindGameObjectWithTag("DreamForm");
+        player = GameObject.FindGameObjectWithTag("Player");
 
+        _dreamFormHitPoints = dreamform.GetComponent<HitPoints>();
+        _PhysicalFormHitPoints = player.GetComponent<HitPoints>();
     }
 
     //Update is called once per frame

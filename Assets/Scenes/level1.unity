@@ -8839,7 +8839,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 373336873, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
   m_PrefabInstance: {fileID: 1527608839}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 605695844}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9897509c247b82a44a88bd2bcdf57b6e, type: 3}
@@ -13557,6 +13557,10 @@ PrefabInstance:
     - target: {fileID: 8437296160184279248, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: jumpsound
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8437296160184279248, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8437296160184279248, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: DashingCooldown
@@ -23014,50 +23018,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &580379752
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 580379754}
-  - component: {fileID: 580379753}
-  m_Layer: 0
-  m_Name: RestartLevel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &580379753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580379752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a398252d50fe8642ab45a423bf0fa2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &580379754
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580379752}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.957523, y: -0.8780898, z: 0.7670927}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585820633
 GameObject:
   m_ObjectHideFlags: 0
@@ -23712,6 +23672,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &605695844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 38165076004197507, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+  m_PrefabInstance: {fileID: 1527608839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &607122741
 GameObject:
   m_ObjectHideFlags: 0
@@ -57108,7 +57073,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1389260307
 GameObject:
@@ -62987,7 +62952,7 @@ PrefabInstance:
     - target: {fileID: 373336872, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
       propertyPath: PM
       value: 
-      objectReference: {fileID: 797084706}
+      objectReference: {fileID: 0}
     - target: {fileID: 373336873, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
       propertyPath: uc
       value: 
@@ -62995,7 +62960,7 @@ PrefabInstance:
     - target: {fileID: 373336873, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
       propertyPath: _dreamFormHitpoints
       value: 
-      objectReference: {fileID: 2134027309}
+      objectReference: {fileID: 0}
     - target: {fileID: 373336873, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
       propertyPath: _physicalFormHitpoints
       value: 
@@ -63063,6 +63028,30 @@ PrefabInstance:
     - target: {fileID: 5475108028026852867, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500751004130902026, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970034499670502122, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970034499670502122, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970034499670502122, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 605695844}
+    - target: {fileID: 5970034499670502122, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970034499670502122, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02c20d0c60b23b64ab1eb847a43a5fc0, type: 3}

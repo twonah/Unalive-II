@@ -10,69 +10,126 @@ public class GameOver : MonoBehaviour
     [SerializeField] private GameObject _pauseUI;
     [SerializeField] private GameObject _inGameUI;
 
-    [SerializeField] private HitPoints _dreamFormHitpoints;
-    [SerializeField] private HitPoints _physicalFormHitpoints;
+    private HitPoints _dreamFormHitpoints;
+    private HitPoints _physicalFormHitpoints;
 
     [SerializeField] private PauseMenu _pauseMenu;
 
     [SerializeField] private float _gameOverDelay = 0f;
 
-    private bool _IsGamePaused = false;
-    private bool _isGameOver = false;
+    public bool _IsGamePaused = false;
+    public bool _isGameOver = false;
 
-    [SerializeField] UI_Cooldown uc;
+    private GameObject levelLoader;
+    private GameObject dreamform;
+    private GameObject player;
+
+    //[SerializeField] UI_Cooldown uc;
+
+    private bool isRestart;
+    private float showTime;
+    private bool isLoadScene;
+    private string loadsceneName;
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1f;
-        uc = FindObjectOfType<UI_Cooldown>();
+        //uc = FindObjectOfType<UI_Cooldown>();
+        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
+        dreamform = GameObject.FindGameObjectWithTag("DreamForm");
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        _dreamFormHitpoints = dreamform.GetComponent<HitPoints>();
+        _physicalFormHitpoints = player.GetComponent<HitPoints>();
     }
     void Update()
     {
-        if (_dreamFormHitpoints._CurrentHitPoints <= 0 && _physicalFormHitpoints._CurrentHitPoints <= 0)
+        //Debug.Log(Time.timeScale);
+
+        if(_physicalFormHitpoints._CurrentHitPoints <= 0)
         {
-            StartCoroutine(GameOverDelay());
+            if(!_IsGamePaused)
+            {
+                //StartCoroutine(GameOverDelay());
+                GameOverMenu();
+                //Debug.Log("TEst");
+            }
         }
 
-        if(_physicalFormHitpoints._CurrentHitPoints <= 0 && uc._CurrentEnergy <= 0)
+        if(isRestart)
         {
-            StartCoroutine(GameOverDelay());
+            if (levelLoader.GetComponent<SceneTransition>()._TransitionEnd)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                _gameOverUI.SetActive(false);
+                isRestart = false;
+                _IsGamePaused = false;
+            }
         }
+
+        if (isLoadScene)
+        {
+            if (levelLoader.GetComponent<SceneTransition>()._TransitionEnd)
+            {
+                SceneManager.LoadScene(loadsceneName);
+                _gameOverUI.SetActive(false);
+                isRestart = false;
+                _IsGamePaused = false;
+                isLoadScene = false;
+            }
+        }
+
     }
     private IEnumerator GameOverDelay()
     {
         yield return new WaitForSeconds(_gameOverDelay);
         _isGameOver = true;
-        GameOverMenu();
-    }
-
-    public void GameOverMenu()
-    {
+        //GameOverMenu();
         _gameOverUI.SetActive(true);
-        Time.timeScale = 0f;
         _IsGamePaused = true;
         _pauseMenu._IsGamePaused = false;
         _pauseMenu.enabled = false;
         _pauseUI.SetActive(false);
         _inGameUI.SetActive(false);
+        Time.timeScale = 0f;
 
+    }
+
+    private void GameOverMenu()
+    {
+        if(!_isGameOver)
+        {
+            showTime = Time.time + _gameOverDelay;
+            _isGameOver = true;
+        }
+
+        if(Time.time >= showTime && !_IsGamePaused)
+        {
+            _gameOverUI.SetActive(true);
+            Time.timeScale = 0f;
+            _IsGamePaused = true;
+            _pauseMenu._IsGamePaused = false;
+            _pauseMenu.enabled = false;
+            _pauseUI.SetActive(false);
+            _inGameUI.SetActive(false);
+            //Debug.Log("DEad");
+        }
     }
 
     public void BackToMainMenu(string SceneName)
     {
-        _gameOverUI.SetActive(false);
-        SceneManager.LoadScene(SceneName);
+        levelLoader.GetComponent<Animator>().SetTrigger("LoadTransition");
+        loadsceneName = SceneName;
         Time.timeScale = 1f;
-        _IsGamePaused = false;
+        isLoadScene = true;
     }
 
     public void Restart()
     {
-        _gameOverUI.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        levelLoader.GetComponent<Animator>().SetTrigger("LoadTransition");
         Time.timeScale = 1f;
-        _IsGamePaused = false;
+        isRestart = true;
     }
 
 }

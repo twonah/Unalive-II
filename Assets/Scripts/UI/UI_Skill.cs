@@ -50,6 +50,11 @@ public class UI_Skill : MonoBehaviour
         _dreamformDashCooldownTimer = _dreamformDashCooldown;
 
         _dreamformDashIcon.SetActive(false);
+
+        PM = FindObjectOfType<PlayerMovement>();
+        DM = FindObjectOfType<DreamForm_Movement>();
+        DC = FindObjectOfType<UI_Cooldown>();
+        CS = FindObjectOfType<Controll_Script>();
     }
 
     // Update is called once per frame
@@ -128,7 +133,7 @@ public class UI_Skill : MonoBehaviour
             DM.IsCooldown = false;
             _dreamformDashCooldownText.gameObject.SetActive(false);
             _dreamformCooldownImage.fillAmount = 0.0f;
-            _dreamformDashCooldownTimer = _playerDashCooldown;
+            _dreamformDashCooldownTimer = _dreamformDashCooldown;
         }
         else
         {

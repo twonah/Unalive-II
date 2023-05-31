@@ -12,6 +12,7 @@ TagManager:
   - EnergyBall
   - Portal
   - Audio
+  - LevelLoader
   layers:
   - Default
   - TransparentFX

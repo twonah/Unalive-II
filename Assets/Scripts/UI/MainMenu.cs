@@ -6,26 +6,36 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    [SerializeField] private GameObject levelLoader;
+
+    public string loadsceneName;
+    public bool loadTransition;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if(loadTransition)
+        {
+            if (levelLoader.GetComponent<SceneTransition>()._TransitionEnd)
+            {
+                SceneManager.LoadScene(loadsceneName);
+            }
+        }
+        else
+        {
+            if(loadsceneName != "")
+            {
+                SceneManager.LoadScene(loadsceneName);
+            }
 
-    public void Play()
-    {
-        SceneManager.LoadScene("level1");
-    }
+        }
 
-    public void Setting()
-    {
-        SceneManager.LoadScene("Setting");
     }
 
     public void Exit()
@@ -33,8 +43,17 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadScene(int sceneNum)
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneNum);
+        loadsceneName = sceneName;
+    }
+
+    public void LoadTransition(bool haveTransion)
+    {
+        if(haveTransion)
+        {
+            levelLoader.GetComponent<Animator>().SetTrigger("LoadTransition");
+            loadTransition = true;
+        }
     }
 }
