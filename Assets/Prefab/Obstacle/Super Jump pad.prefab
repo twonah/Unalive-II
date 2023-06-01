@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf459e19610b2047942b91480f1a5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounce: 15
+  bounce: 30
   _anim: {fileID: 2729494593277364283}
 --- !u!95 &2729494593277364283
 Animator:
