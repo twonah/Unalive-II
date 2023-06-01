@@ -15,6 +15,6 @@ public class Background_level_2 : MonoBehaviour
     }
     void Start()
     {
-        audioManager.PlayBGM2(audioManager.neoncitybackground);
+        //audioManager.PlayBGM2(audioManager.neoncitybackground);
     }
 }

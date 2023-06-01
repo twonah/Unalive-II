@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
     public bool isDashing;
     public bool IsCooldown = false;
+    public bool Move = false;
 
     [SerializeField] float dashingPower = 24f;
     [SerializeField] float speed = 8f;
@@ -40,8 +41,19 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Horizontal"))
         {
-            audioManager.PlaySFX(audioManager.playerfootstep);
+            Move = true;
+            
         }
+        if (Input.GetButtonDown("Horizontal") && Move == true)
+        {
+            audioManager.Footstep(audioManager.playerfootstep);
+        }
+        else if(Input.GetButtonUp("Horizontal"))
+        {
+            Move = false;
+            audioManager.StopFootstep(audioManager.playerfootstep);
+        }
+
         bool isGrounded = IsGrounded();
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -54,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if(rb.velocity.y > 0f)rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             isPressingJump = false;
-            
+            Move = false;
+            audioManager.StopFootstep(audioManager.playerfootstep);
+
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash || Input.GetButtonDown("Fire1") && canDash)

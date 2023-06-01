@@ -46,6 +46,16 @@ public class AudioManager : MonoBehaviour
     //    musicSource.GetComponent<AudioSource>().Play();
     //    musicSource.Play();
     //}
+    public void Footstep(AudioClip clip)
+    {
+        SFXSource.clip = playerfootstep;
+        SFXSource.Play();
+    }
+    public void StopFootstep(AudioClip clip)
+    {
+        SFXSource.clip = playerfootstep;
+        SFXSource.Stop();
+    }
     public void PlayBGM1(AudioClip clip)
     {
         musicSource.clip = labbackground;
