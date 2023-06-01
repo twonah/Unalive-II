@@ -1050,14 +1050,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 625250544}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadSceneNumber
-        m_Mode: 3
+        m_MethodName: LoadSceneName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: level0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1059555341
