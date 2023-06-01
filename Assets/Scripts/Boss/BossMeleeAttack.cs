@@ -5,16 +5,16 @@ using UnityEngine;
 public class BossMeleeAttack : MonoBehaviour
 {
     [Header("Set up")]
-    [HideInInspector] public float _AttackRange;
+    [SerializeField] public float _AttackRange;
     [SerializeField] public float _AttackDamage;
     [SerializeField] public float _DurationBeforeAttack;
     [SerializeField] public float _DurationAfterAttack;
     [SerializeField] private Transform _attackPoint;
 
-    [HideInInspector] public LayerMask _TargetLayer;
+    [SerializeField] public LayerMask _TargetLayer;
 
-    [HideInInspector] public bool _PlayerEnterAttackRange;
-    [HideInInspector] public bool _ChargeOn;
+    [SerializeField] public bool _PlayerEnterAttackRange;
+    [SerializeField] public bool _ChargeOn;
 
     private float _beforeAttackTime;
     private float _afterAttackTime;
@@ -108,13 +108,13 @@ public class BossMeleeAttack : MonoBehaviour
         AttackDone = true;
     }
 
-    //private void OnDrawGizmosSelected()
-    //{
-    //    if (_attackPoint == null)
-    //    {
-    //        return;
-    //    }
+    private void OnDrawGizmosSelected()
+    {
+        if (_attackPoint == null)
+        {
+            return;
+        }
 
-    //    Gizmos.DrawWireSphere(_attackPoint.position, _AttackRange);
-    //}
+        Gizmos.DrawWireSphere(_attackPoint.position, _AttackRange);
+    }
 }
