@@ -39,10 +39,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
         if (Input.GetButtonDown("Horizontal"))
         {
             Move = true;
-            
         }
         if (Input.GetButtonDown("Horizontal") && Move == true)
         {

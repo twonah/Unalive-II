@@ -80,7 +80,6 @@ public class ExploderController : MonoBehaviour
 
         if (_enemyHP <= 0)   //Dead
         {
-            audioManager.PlaySFX(audioManager.enemydeath);
             _IsDead = true;
         }
 
@@ -89,8 +88,6 @@ public class ExploderController : MonoBehaviour
             ExploderControls();
         }
         ExploderDetection();
-
-
 
         TargetSelect();
 
