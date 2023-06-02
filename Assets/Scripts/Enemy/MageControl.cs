@@ -45,7 +45,11 @@ public class MageControl : MonoBehaviour
 
     public bool _IsDead;
 
-
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +88,10 @@ public class MageControl : MonoBehaviour
 
         TargetSelect();
 
+        if (HP._IsTakingDamage)
+        {
+            audioManager.PlaySFX(audioManager.enemyhurt);
+        }
         //Debug.Log("Distance x" + E_MoveTo._Distance + "Distance y "+ E_MoveTo._DistanceY);
 
     }

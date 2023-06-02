@@ -24,6 +24,9 @@ public class GameOver : MonoBehaviour
     private GameObject dreamform;
     private GameObject player;
 
+    private Controll_Script control;
+    private PauseMenu pauseScript;
+
     //[SerializeField] UI_Cooldown uc;
 
     private bool isRestart;
@@ -34,11 +37,13 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         //uc = FindObjectOfType<UI_Cooldown>();
         levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
         dreamform = GameObject.FindGameObjectWithTag("DreamForm");
         player = GameObject.FindGameObjectWithTag("Player");
+        control = FindObjectOfType<Controll_Script>();
+        pauseScript = FindObjectOfType<PauseMenu>();
 
         _dreamFormHitpoints = dreamform.GetComponent<HitPoints>();
         _physicalFormHitpoints = player.GetComponent<HitPoints>();
@@ -55,6 +60,12 @@ public class GameOver : MonoBehaviour
                 GameOverMenu();
                 //Debug.Log("TEst");
             }
+        }
+
+        if(control._IsPlayerDead)
+        {
+            player.GetComponent<PlayerMovement>().enabled = false;
+            pauseScript.enabled = false;
         }
 
         if(isRestart)

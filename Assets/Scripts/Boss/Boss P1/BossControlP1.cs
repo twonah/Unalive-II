@@ -50,6 +50,11 @@ public class BossControlP1 : MonoBehaviour
 
     private float countdownTimer;
 
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +77,7 @@ public class BossControlP1 : MonoBehaviour
         TargetSelect();
 
         BossPhase1();
+
     }
 
     private void BossHPUpdate()
@@ -87,6 +93,11 @@ public class BossControlP1 : MonoBehaviour
             HP_Core._maxHitPoints = HP_Boss._maxHitPoints;
             HP_Core._CurrentHitPoints = HP_Boss._CurrentHitPoints;
             HP_Boss.enabled = true;
+        }
+
+        if (HP_Boss._IsTakingDamage || HP_Core._IsTakingDamage)
+        {
+            audioManager.PlaySFX(audioManager.bosshurt);
         }
     }
 

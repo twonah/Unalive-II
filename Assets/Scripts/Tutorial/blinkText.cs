@@ -33,7 +33,7 @@ public class blinkText : MonoBehaviour
     {
         while (true)
         {
-            alpha = Mathf.PingPong(Time.unscaledTime, interval); ;
+            alpha = Mathf.PingPong(Time.unscaledTime, interval);
             text.alpha = alpha;
             yield return null;
         }
