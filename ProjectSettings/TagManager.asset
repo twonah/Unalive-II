@@ -13,6 +13,7 @@ TagManager:
   - Portal
   - Audio
   - LevelLoader
+  - DreamFormATK
   layers:
   - Default
   - TransparentFX
