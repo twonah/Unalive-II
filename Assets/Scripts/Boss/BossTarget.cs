@@ -15,13 +15,13 @@ public class BossTarget : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(cs.isDreamform)
         {
             destinationAI.target = GameObject.FindGameObjectWithTag("DreamForm").transform;
         }
-        if (cs.isPlayer)
+        else
         {
             destinationAI.target = GameObject.FindGameObjectWithTag("Player").transform;
         }
