@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
 
     private GameObject levelLoader;
 
+    private GameOver gameoverScript;
+
     private bool loadTransition;
     private bool isRestart;
     private bool isLoadScene;
@@ -21,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
+        gameoverScript = FindObjectOfType<GameOver>();
     }
 
     // Update is called once per frame
@@ -43,6 +46,7 @@ public class PauseMenu : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.R))
             {
                 Restart();
+                gameoverScript.enabled = false;
             }
         }
 
