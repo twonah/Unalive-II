@@ -37,7 +37,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         //uc = FindObjectOfType<UI_Cooldown>();
         levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
         dreamform = GameObject.FindGameObjectWithTag("DreamForm");

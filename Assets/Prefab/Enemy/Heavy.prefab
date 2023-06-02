@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a61280ca511f24f913ffc05539fbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHitPoints: 10
+  _maxHitPoints: 200
   _CurrentHitPoints: 0
   _IsTakingDamage: 0
 --- !u!114 &2584781454375231466

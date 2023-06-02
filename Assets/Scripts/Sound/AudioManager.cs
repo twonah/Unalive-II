@@ -61,6 +61,16 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = labbackground;
         musicSource.Play();
     }
+    public void pauseBGM1(AudioClip clip)
+    {
+        musicSource.clip = labbackground;
+        musicSource.Pause();
+    }
+    public void resumeBGM1(AudioClip clip)
+    {
+        musicSource.clip = labbackground;
+        musicSource.UnPause();
+    }
     public void PlayBGM2(AudioClip clip)
     {
         musicSource.clip = neoncitybackground;

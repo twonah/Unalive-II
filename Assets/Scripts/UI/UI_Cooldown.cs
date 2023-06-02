@@ -59,7 +59,7 @@ public class UI_Cooldown : MonoBehaviour
             energy = 1;
         }
 
-         if (check == 2)
+        if (check == 2)
         {
             energy = 2;
         }
