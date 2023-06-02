@@ -526,11 +526,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437296160184279236, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.99
+      value: -30.52
       objectReference: {fileID: 0}
     - target: {fileID: 8437296160184279236, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.96
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: 8437296160184279236, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2480,7 +2480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324408660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.99, y: -8.96, z: -10}
+  m_LocalPosition: {x: -30.52, y: -2.07, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2815,19 +2815,19 @@ PrefabInstance:
       objectReference: {fileID: 1872710911}
     - target: {fileID: 2541717744034006651, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.99
+      value: -30.52
       objectReference: {fileID: 0}
     - target: {fileID: 2541717744034006651, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.96
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: 2541717744621141408, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.78999996
+      value: -31.720001
       objectReference: {fileID: 0}
     - target: {fileID: 2541717744621141408, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.36
+      value: -1.4699999
       objectReference: {fileID: 0}
     - target: {fileID: 2541717744621141409, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: m_Follow
@@ -3114,7 +3114,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573341192}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1573341194
 Camera:
   m_ObjectHideFlags: 0

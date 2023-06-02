@@ -105,9 +105,11 @@ public class BossPhaseController : MonoBehaviour
         //Phase 2
         if(_P1Done && !_P2Done) //Force to Dreamform
         {
-            _controlScript.isDreamWalkerToDreamform = true;
+            //_controlScript.isDreamWalkerToDreamform = true;
             StartCoroutine(_controlScript.ForceToTransformToDreamform());
             _player.GetComponent<UI_Cooldown>()._CurrentEnergy = _player.GetComponent<UI_Cooldown>()._MaxEnergy;
+            _player.GetComponent<PlayerMovement>().enabled = false;
+            //Debug.Log("Force to dreamform");
         }
 
 
