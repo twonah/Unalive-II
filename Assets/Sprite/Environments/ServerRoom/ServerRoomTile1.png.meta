@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,6 +69,30 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +102,658 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ServerRoomTile1_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 149
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51540ac161ad2f41a6127128f60620c
+      internalID: 1012793936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 149
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3015fb8f5083ab94cba72e1eb39e9bf7
+      internalID: -1988286219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 149
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b75fd5f0553c743b70e9d752235a61
+      internalID: 2016448888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 149
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1616a4f8c35cb49b1a6a12b7811c33
+      internalID: 1314608320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_4
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 149
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df043d6d1f45c048b5bf698d93c4afd
+      internalID: 1606178245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_5
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 112
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20df346b5a0afc4980fa7b7edd984cd
+      internalID: 2146434265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_6
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 112
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad00e5047b90ff4c88c77e6ff32b588
+      internalID: -1476014226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d129353e2ce880e4b95f3e1083e3ddb7
+      internalID: 139571628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 75
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd0a9813429e7c40945cb6b212af6f4
+      internalID: -1827004403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_9
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 75
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e19833aee988aa44967741165638cb1
+      internalID: 122641435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_10
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 75
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8986f4dfb19ed9440ba47a45a1ebb52a
+      internalID: -1487039855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_11
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 38
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d57a2a8aef0e845ab135246cbc7d7e
+      internalID: -1292971819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_12
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 38
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f994d5ce449c169429a51646734bd334
+      internalID: -1098297582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_13
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 38
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c33b12ea6c326a4e8bd4ddf7d71e245
+      internalID: -2056222401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 38
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d555e9e99dbfaa4e8ec2349c1b94477
+      internalID: -790202266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_15
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2694a8cbc0989b1428f41487e2dada30
+      internalID: 157101794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_16
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d14b18132ac6f54cbeb9155593d8440
+      internalID: 1769236551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_17
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44edb747f762f0340970304e72a97a96
+      internalID: 816552372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_18
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ae5c1508bf8aa45a17cf0142d9e1ac
+      internalID: 24975088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_19
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dc3e1fbe4b42341ae11897647079f3
+      internalID: -1167709023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_20
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 38
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f710668b44e119244b88d680e60fe53a
+      internalID: 712839837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_21
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 75
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37df8ba2ba09df347bb51c2e589f3d08
+      internalID: 1891671354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_22
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 112
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0e559316f77384b85382681be519bc
+      internalID: -475031553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3899f65b40c0b249b972449bee5eba1
+      internalID: -498575845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_24
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f49c24c27ab5d48a196d61e5f94ec5
+      internalID: -1163409192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46ae6d6cd4047341bde348f45e433c2
+      internalID: -355764705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_26
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719de04c3b7bd6844910c449f6d19065
+      internalID: 270103251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_27
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899a7875066fd6d4a997db3faff19c4b
+      internalID: 1957451520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_28
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9840c2e4a80c32e4cab4ae7dde8f8ccc
+      internalID: 504498494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_29
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652c15e82470bfe4da2016162a410816
+      internalID: -1810969361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ServerRoomTile1_30
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 186
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f143e6753d156344b17e2f45a1e08cf
+      internalID: 109335473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +764,38 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ServerRoomTile1_12: -1292971819
+      ServerRoomTile1_9: -1827004403
+      ServerRoomTile1_15: -2056222401
+      ServerRoomTile1_2: 2016448888
+      ServerRoomTile1_10: 122641435
+      ServerRoomTile1_20: 24975088
+      ServerRoomTile1_18: 1769236551
+      ServerRoomTile1_7: 139571628
+      ServerRoomTile1_11: -1487039855
+      ServerRoomTile1_23: 712839837
+      ServerRoomTile1_6: -1476014226
+      ServerRoomTile1_25: 1555347862
+      ServerRoomTile1_5: 2146434265
+      ServerRoomTile1_4: 1606178245
+      ServerRoomTile1_22: -527994318
+      ServerRoomTile1_26: -1709363946
+      ServerRoomTile1_29: -1163409192
+      ServerRoomTile1_0: 1012793936
+      ServerRoomTile1_1: -1988286219
+      ServerRoomTile1_13: 126822177
+      ServerRoomTile1_27: -475031553
+      ServerRoomTile1_21: -1167709023
+      ServerRoomTile1_14: -1098297582
+      ServerRoomTile1_3: 1314608320
+      ServerRoomTile1_8: -112607547
+      ServerRoomTile1_19: 816552372
+      ServerRoomTile1_28: -498575845
+      ServerRoomTile1_30: -355764705
+      ServerRoomTile1_24: 1891671354
+      ServerRoomTile1_16: -790202266
+      ServerRoomTile1_17: 157101794
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
