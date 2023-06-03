@@ -35314,6 +35314,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1783534918}
     m_Modifications:
     - target: {fileID: 133223035120156252, guid: 79034b15f7ed08b42ba2f2c7c7561301, type: 3}
+      propertyPath: _sceneName
+      value: level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 133223035120156252, guid: 79034b15f7ed08b42ba2f2c7c7561301, type: 3}
       propertyPath: _sceneNumber
       value: 6
       objectReference: {fileID: 0}
