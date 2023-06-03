@@ -5,11 +5,11 @@ using UnityEngine;
 public class BossHP_P3 : MonoBehaviour
 {
     [SerializeField] float maxHP;
-    [SerializeField] float currentHP;
+    [SerializeField] public float currentHP;
 
     [SerializeField] float dreamFormDMG;
     [SerializeField] GameObject core;
-    [SerializeField] bool isStunned;
+    [SerializeField] public bool isStunned;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
