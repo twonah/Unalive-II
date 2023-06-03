@@ -13,6 +13,7 @@ public class Controll_Script : MonoBehaviour
     [SerializeField] private DreamForm_Punch DP; //DreamForm_Movement script
     [SerializeField] private GameObject _DreamWalk;
     [SerializeField] private Rigidbody2D _DW_rb; // DreamFors_Rigid Body
+    [SerializeField] private Rigidbody2D _P_rb; // Players_Rigid Body
     [SerializeField] private GameObject _player;
     [SerializeField] private Transform _parent; // Players location
     [SerializeField] private CinemachineVirtualCamera _dreamVirtualCam;
@@ -36,7 +37,7 @@ public class Controll_Script : MonoBehaviour
     void Start()
     {
         _DreamWalk.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);// Change the opactiy to clear 
-        DM.enabled = DM.enabled;
+        DM.enabled = false;
 
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
@@ -49,11 +50,11 @@ public class Controll_Script : MonoBehaviour
         m_Vignette = ScriptableObject.CreateInstance<Vignette>();
     }
 
-    private void Update()
+    public void Update()
     {
         
 
-        if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0) //Force to turn to the player from lack of health
+        if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0 || isDreamform == true && _Cooldown._CurrentEnergy <= 0) //Force to turn to the player from lack of health and or energy
         {
             _IsDreamformDead = true;
             StartCoroutine(ForceToTransformToPlayer());
@@ -63,15 +64,6 @@ public class Controll_Script : MonoBehaviour
             _IsDreamformDead = false;
         }
 
-        if (isDreamform == true && _Cooldown._CurrentEnergy <= 0)   // force to turn back to player from lack of energy
-        {
-            _IsThereEnergy = false;
-            StartCoroutine(ForceToTransformToPlayer());
-        }
-        else
-        {
-            _IsThereEnergy = true;
-        }
 
         if (_IsPlayerDead == false && DM.enabled == !DM.enabled) // dreamform follows player when deactivated
         {
@@ -83,7 +75,7 @@ public class Controll_Script : MonoBehaviour
         if (_player.GetComponent<HitPoints>()._CurrentHitPoints <= 0) // makes the player stop moving after dying
         {
             _IsPlayerDead = true;
-            PM.enabled = !PM.enabled;
+            PM.enabled = false;
         }
 
     }
@@ -168,13 +160,14 @@ public class Controll_Script : MonoBehaviour
 
                 print("YOU ARE PLAYING AS PLAYER");
 
+                _P_rb.simulated = true;
                 CoolCheck = 2;
                 _Cooldown.IfDreamForm(CoolCheck); // stops drain
             }
         }
     }
 
-    public IEnumerator TransformToDreamform()
+    private IEnumerator TransformToDreamform()
     {
         isDreamWalkerToDreamform = true;
         m_Vignette.enabled.Override(true);
@@ -185,10 +178,11 @@ public class Controll_Script : MonoBehaviour
         isDreamform = true;
         isPlayer = false;
         isDreamWalkerToDreamform = false;
+        _P_rb.simulated = false;
         SetActive(1);
     }
 
-    public IEnumerator TransformToPlayer()
+    private IEnumerator TransformToPlayer()
     {
         isDreamWalkerToPlayer = true;
         m_Vignette.enabled.Override(false);
@@ -199,6 +193,7 @@ public class Controll_Script : MonoBehaviour
         isDreamform = false;
         isPlayer = true;
         isDreamWalkerToPlayer = false;
+        _P_rb.simulated = true;
         SetActive(0);
     }
 
@@ -206,7 +201,7 @@ public class Controll_Script : MonoBehaviour
     {
         //StartCoroutine(TransformToPlayer());
 
-        PM.enabled = PM.enabled;
+        PM.enabled = true;
   
         DP.enabled = !DP.enabled;
         DM.enabled = !DM.enabled; // switch to Player
@@ -224,6 +219,7 @@ public class Controll_Script : MonoBehaviour
         isPlayer = true;
         _dreamFormCollider.enabled = false;
         CameraPlay("Base Layer.PlayerCam");
+        _P_rb.simulated = true;
         SetActive(0);
     }
 
@@ -231,8 +227,8 @@ public class Controll_Script : MonoBehaviour
     {
         PM.enabled = !PM.enabled; // switch to dreamwalk
 
-        DP.enabled = true;
-        DM.enabled = true;
+        DP.enabled = !DP.enabled;
+        DM.enabled = !DM.enabled;
 
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
         isDreamWalkerToDreamform = true;
@@ -247,6 +243,7 @@ public class Controll_Script : MonoBehaviour
         //print("YOU ARE PLAYING AS DREAMWALKER");
         _dreamFormCollider.enabled = true;
         CoolCheck = 1;
+        _P_rb.simulated = false;
         _Cooldown.IfDreamForm(CoolCheck); // drains energy
     }
 
