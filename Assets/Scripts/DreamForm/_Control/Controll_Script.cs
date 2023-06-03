@@ -51,7 +51,7 @@ public class Controll_Script : MonoBehaviour
 
     private void Update()
     {   
-        if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0) //Force to turn to the player
+        if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0) //Force to turn to the player from lack of health
         {
             _IsDreamformDead = true;
             StartCoroutine(ForceToTransformToPlayer());
@@ -61,20 +61,11 @@ public class Controll_Script : MonoBehaviour
             _IsDreamformDead = false;
         }
 
-        if(isDreamform && _Cooldown._CurrentEnergy <= 0)
+        if (isDreamform == true && _Cooldown._CurrentEnergy <= 0)   // force to turn back to player from lack of energy
         {
-            StartCoroutine(ForceToTransformToDreamform());
+            StartCoroutine(ForceToTransformToPlayer());
         }
 
-        if (_player.GetComponent<HitPoints>()._CurrentHitPoints <=0 ) //Force to turn to Dreamform
-        {
-            _IsPlayerDead = true;
-            StartCoroutine(ForceToTransformToDreamform());  
-        }
-        else
-        {
-            _IsPlayerDead = false;
-        }
 
         if (_IsPlayerDead == false && DM.enabled == !DM.enabled) // dreamform follows player when deactivated
         {
@@ -116,9 +107,8 @@ public class Controll_Script : MonoBehaviour
             if (_Cooldown._CurrentEnergy > 0) // checks if cooldown is bigger 0 before switching
             {
                 PM.enabled = !PM.enabled; // switch to Dreamwalk
-                //Debug.Log("Dreamwalk");
                 DM.enabled = !DM.enabled; // switch to Player
-                DP.enabled = !DP.enabled;
+                DP.enabled = !DP.enabled; // disables dreamwalk punch
             }
             else if (_Cooldown._CurrentEnergy <= 0)
             {

@@ -36,7 +36,7 @@ public class DreamForm_Movement : MonoBehaviour
     private void Awake()
     {
         rb.velocity = new Vector2(0,0);
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); 
     }
 
 
@@ -85,7 +85,7 @@ public class DreamForm_Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)        //Dashhhh
         {
-            audioManager.PlaySFX(audioManager.spiritdash);
+            audioManager.PlaySFX(audioManager.spiritdash); 
             StartCoroutine(Dash());
         }
 
