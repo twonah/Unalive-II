@@ -49146,6 +49146,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2904380313967484482, guid: 139ff0c4859090c488a71ef118c9455d, type: 3}
   m_PrefabInstance: {fileID: 437010143}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1707610174 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8437296160184279259, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+  m_PrefabInstance: {fileID: 673932088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1711503305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2385797006557987772, guid: a1a30c15158fed94ba9c1430eb01d893, type: 3}
@@ -54392,6 +54397,10 @@ PrefabInstance:
       propertyPath: PM
       value: 
       objectReference: {fileID: 673932098}
+    - target: {fileID: 2541717743302499664, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
+      propertyPath: _P_rb
+      value: 
+      objectReference: {fileID: 1707610174}
     - target: {fileID: 2541717743302499664, guid: b76a746e04c06c54ba5d1646dfbc53c7, type: 3}
       propertyPath: _DW_rb
       value: 

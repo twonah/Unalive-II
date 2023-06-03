@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59d515f5a66adf4aa2194f6df8c0041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DreamForm_HitP: {fileID: 0}
+  _DreamForm_HitP: {fileID: 8437296160184279239}
   _CoolUP: {fileID: 797084718}
 --- !u!114 &814667504
 MonoBehaviour:
