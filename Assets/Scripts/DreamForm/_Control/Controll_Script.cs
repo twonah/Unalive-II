@@ -105,6 +105,7 @@ public class Controll_Script : MonoBehaviour
     {
         _control.Main.Switch.performed += Context => Switch();
 
+
     }
 
 
@@ -169,7 +170,7 @@ public class Controll_Script : MonoBehaviour
         }
     }
 
-    private IEnumerator TransformToDreamform()
+    public IEnumerator TransformToDreamform()
     {
         isDreamWalkerToDreamform = true;
         m_Vignette.enabled.Override(true);
@@ -182,7 +183,7 @@ public class Controll_Script : MonoBehaviour
         SetActive(1);
     }
 
-    private IEnumerator TransformToPlayer()
+    public IEnumerator TransformToPlayer()
     {
         isDreamWalkerToPlayer = true;
         m_Vignette.enabled.Override(false);
