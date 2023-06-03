@@ -142,7 +142,7 @@ public class Controll_Script : MonoBehaviour
                 Vector3 newPos = _DreamWalk.transform.position;
                 _dreamVirtualCam.OnTargetObjectWarped(_DreamWalk.transform, newPos - oldPos);
 
-                SetActive(1);
+                
                 print("YOU ARE PLAYING AS DREAMWALKER");
 
                 CoolCheck = 1;
@@ -179,6 +179,7 @@ public class Controll_Script : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         isDreamform = true;
         isDreamWalkerToDreamform = false;
+        SetActive(1);
     }
 
     private IEnumerator TransformToPlayer()
@@ -206,14 +207,17 @@ public class Controll_Script : MonoBehaviour
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
 
         isDreamWalkerToPlayer = true;
-        yield return new WaitForSeconds(1f);
+        m_Vignette.enabled.Override(false);
+        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 0f, m_Vignette);
+        m_Vignette.intensity.Override(0f);
+        Debug.Log("Post effect : Off");
+        yield return new WaitForSeconds(0.5f);
         isDreamform = false;
         isDreamWalkerToPlayer = false;
-        SetActive(0);
-
+        
         _dreamFormCollider.enabled = false;
-
         CameraPlay("Base Layer.PlayerCam");
+        SetActive(0);
     }
 
     public IEnumerator ForceToTransformToDreamform() // force switch to Dreamform when player hp is zero //This one is trans to dreamform
