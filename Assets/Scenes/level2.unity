@@ -2239,8 +2239,8 @@ Transform:
   - {fileID: 204544335}
   - {fileID: 510413092}
   - {fileID: 80158933}
-  - {fileID: 2065823293}
   - {fileID: 425780425}
+  - {fileID: 2065823293}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49211,6 +49211,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 797084719, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+      propertyPath: _DreamForm_HitP
+      value: 
+      objectReference: {fileID: 248378740}
+    - target: {fileID: 2134027319, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: _DreamForm_HitP
       value: 
       objectReference: {fileID: 248378740}
