@@ -398,6 +398,7 @@ MonoBehaviour:
   DashingCooldown: 1
   isDashing: 0
   IsCooldown: 0
+  Move: 0
   dashingPower: 7
   speed: 6.5
   jumpingPower: 15
@@ -408,7 +409,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isPressingJump: 0
-  jumpsound: {fileID: 0}
 --- !u!95 &8437296160184279262
 Animator:
   serializedVersion: 4
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca13b6ed6bb94847a4bceb6e8309a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Controll: {fileID: 0}
   _CurrentEnergy: 0
   _MaxEnergy: 150
   dValue: 20
@@ -491,6 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59d515f5a66adf4aa2194f6df8c0041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _DreamForm_HitP: {fileID: 8437296160699794363}
   _CoolUP: {fileID: 797084718}
 --- !u!114 &1872710913
 MonoBehaviour:
@@ -874,6 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59d515f5a66adf4aa2194f6df8c0041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _DreamForm_HitP: {fileID: 0}
   _CoolUP: {fileID: 797084718}
 --- !u!114 &814667504
 MonoBehaviour:

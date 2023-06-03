@@ -17340,6 +17340,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 797084719, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+      propertyPath: _DreamForm_HitP
+      value: 
+      objectReference: {fileID: 673932095}
     - target: {fileID: 8437296160184279236, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: m_RootOrder
       value: 5
