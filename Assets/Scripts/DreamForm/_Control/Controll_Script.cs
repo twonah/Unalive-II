@@ -50,7 +50,9 @@ public class Controll_Script : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
+        
+
         if(_DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints <= 0) //Force to turn to the player from lack of health
         {
             _IsDreamformDead = true;
@@ -70,6 +72,14 @@ public class Controll_Script : MonoBehaviour
         if (_IsPlayerDead == false && DM.enabled == !DM.enabled) // dreamform follows player when deactivated
         {
             DreamWalkerPosition(0.5f, 0.1f, 0f); // follows the player while deactivated
+        }
+
+
+
+        if (_player.GetComponent<HitPoints>()._CurrentHitPoints <= 0) // makes the player stop moving after dying
+        {
+            _IsPlayerDead = true;
+            PM.enabled = !PM.enabled;
         }
 
     }
@@ -104,7 +114,7 @@ public class Controll_Script : MonoBehaviour
 
         if (_control.Main.Switch.triggered) //E
         {
-            if (_Cooldown._CurrentEnergy > 0) // checks if cooldown is bigger 0 before switching
+            if (_Cooldown._CurrentEnergy > 0 && _DreamWalk.GetComponent<HitPoints>()._CurrentHitPoints > 0) // checks if cooldown is bigger than 0 before switching and health
             {
                 PM.enabled = !PM.enabled; // switch to Dreamwalk
                 DM.enabled = !DM.enabled; // switch to Player
@@ -191,7 +201,6 @@ public class Controll_Script : MonoBehaviour
         PM.enabled = true;
         //PM.enabled = !PM.enabled; // switch to Dreamwalk
         DP.enabled = !DP.enabled;
-
         DM.enabled = !DM.enabled; // switch to Player
 
         Collider2D _dreamFormCollider = _DreamWalk.GetComponent<Collider2D>();
