@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2204819792484565021}
   - component: {fileID: 8713115412167395784}
   - component: {fileID: 8307017931262740823}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: NeonCity_Building_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}

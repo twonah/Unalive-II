@@ -6,6 +6,7 @@ using TMPro;
 public class blinkText : MonoBehaviour
 {
     TextMeshPro text;
+    TextMeshProUGUI textUI;
     [SerializeField] float interval;
     float alpha;
     float elapsedTime;
@@ -15,11 +16,13 @@ public class blinkText : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshPro>();
+        textUI = GetComponent<TextMeshProUGUI>();
         StartCoroutine(Blink());
     }
     private void OnEnable()
     {
         text = GetComponent<TextMeshPro>();
+        textUI = GetComponent<TextMeshProUGUI>();
         StartCoroutine(Blink());
     }
 
@@ -34,14 +37,28 @@ public class blinkText : MonoBehaviour
         while (true)
         {
             alpha = Mathf.PingPong(Time.unscaledTime, interval);
-            text.alpha = alpha;
+            if(text != null)
+            {
+                text.alpha = alpha;
+            }
+            if (textUI != null)
+            {
+                textUI.alpha = alpha;
+            }
             yield return null;
         }
     }
 
     private void OnDisable()
     {
-        text.alpha = 1f;
+        if (text != null)
+        {
+            text.alpha = 1f;
+        }
+        if (textUI != null)
+        {
+            textUI.alpha = 1f;
+        }
         alpha = 0f;
     }
 }
