@@ -44563,6 +44563,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8437296160184279236, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
   m_PrefabInstance: {fileID: 1831296268}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1658461263 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8437296160184279259, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+  m_PrefabInstance: {fileID: 1831296268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1658461270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658461249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3bb827995b8214ead276fc8de2db92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rb: {fileID: 1658461263}
+  Hp: {fileID: 1658461253}
+  CS: {fileID: 1960291996}
 --- !u!1001 &1659555821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49376,6 +49396,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 797084719, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
+      propertyPath: _DreamForm_HitP
+      value: 
+      objectReference: {fileID: 248378740}
     - target: {fileID: 8437296160184279236, guid: 9be448ba82804964cbb1d978c154d8fa, type: 3}
       propertyPath: m_RootOrder
       value: 4
