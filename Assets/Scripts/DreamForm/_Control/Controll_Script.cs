@@ -25,11 +25,11 @@ public class Controll_Script : MonoBehaviour
     public bool isDreamWalkerToDreamform = false;
     public bool isDreamWalkerToPlayer = false;
     public bool isDreamform = false;
-    public bool isPlayer = false;
+    public bool isPlayer = true;
 
     public bool _IsDreamformDead;
     public bool _IsPlayerDead;
-
+    public bool _IsThereEnergy;
     PostProcessVolume m_Volume;
     Vignette m_Vignette;
 
@@ -65,9 +65,13 @@ public class Controll_Script : MonoBehaviour
 
         if (isDreamform == true && _Cooldown._CurrentEnergy <= 0)   // force to turn back to player from lack of energy
         {
+            _IsThereEnergy = false;
             StartCoroutine(ForceToTransformToPlayer());
         }
-
+        else
+        {
+            _IsThereEnergy = true;
+        }
 
         if (_IsPlayerDead == false && DM.enabled == !DM.enabled) // dreamform follows player when deactivated
         {
@@ -179,6 +183,7 @@ public class Controll_Script : MonoBehaviour
         Debug.Log("Post effect : On");
         yield return new WaitForSeconds(0.5f);
         isDreamform = true;
+        isPlayer = false;
         isDreamWalkerToDreamform = false;
         SetActive(1);
     }
@@ -192,6 +197,7 @@ public class Controll_Script : MonoBehaviour
         Debug.Log("Post effect : Off");
         yield return new WaitForSeconds(0.5f);
         isDreamform = false;
+        isPlayer = true;
         isDreamWalkerToPlayer = false;
         SetActive(0);
     }
@@ -200,8 +206,8 @@ public class Controll_Script : MonoBehaviour
     {
         //StartCoroutine(TransformToPlayer());
 
-        PM.enabled = true;
-        //PM.enabled = !PM.enabled; // switch to Dreamwalk
+        PM.enabled = PM.enabled;
+  
         DP.enabled = !DP.enabled;
         DM.enabled = !DM.enabled; // switch to Player
 
@@ -215,7 +221,7 @@ public class Controll_Script : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         isDreamform = false;
         isDreamWalkerToPlayer = false;
-        
+        isPlayer = true;
         _dreamFormCollider.enabled = false;
         CameraPlay("Base Layer.PlayerCam");
         SetActive(0);
@@ -235,6 +241,7 @@ public class Controll_Script : MonoBehaviour
         isDreamform = true;
         isDreamWalkerToDreamform = false;
         CameraPlay("Base Layer.DreamWalkCam");
+        isPlayer = false;
         //StartCoroutine(TransformToDreamform());
         SetActive(1);
         //print("YOU ARE PLAYING AS DREAMWALKER");
