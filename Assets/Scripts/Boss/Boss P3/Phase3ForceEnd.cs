@@ -21,11 +21,14 @@ public class Phase3ForceEnd : MonoBehaviour
         if(coreHP.currentHP <= 0)
         {
             levelLoader.GetComponent<Animator>().SetTrigger("LoadTransition");
+
+            Debug.Log("TEst");
+            if (levelLoader.GetComponent<SceneTransition>()._TransitionEnd)
+            {
+                SceneManager.LoadScene(SceneName);
+            }
         }
 
-        if (levelLoader.GetComponent<SceneTransition>()._TransitionEnd)
-        {
-            SceneManager.LoadScene(SceneName);
-        }
+
     }
 }

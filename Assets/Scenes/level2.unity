@@ -23997,6 +23997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: labWall_ML (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1121251146292361098, guid: ab7015fc8f38ef14fb656179945eec22, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4319359757213384970, guid: ab7015fc8f38ef14fb656179945eec22, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -43550,6 +43554,10 @@ PrefabInstance:
     - target: {fileID: 1121251146292361098, guid: ab7015fc8f38ef14fb656179945eec22, type: 3}
       propertyPath: m_Name
       value: labWall_ML (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121251146292361098, guid: ab7015fc8f38ef14fb656179945eec22, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4319359757213384970, guid: ab7015fc8f38ef14fb656179945eec22, type: 3}
       propertyPath: m_RootOrder
